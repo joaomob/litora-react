@@ -9,17 +9,19 @@
     "storybook": "node scripts/storybook.mjs",
     "build:css": "node scripts/build-global-css.mjs",
     "build:templates": "node scripts/build-templates.mjs",
-    "build": "npm run build:css && npm run build:templates",
+    "build": "npm run build:css && npm run build:js && npm run build:templates",
     "check": "node scripts/app-checks.cjs lang tokens hardcoded",
     "typecheck": "tsc -p src/theme/litora-react",
     "test": "vitest run",
-    "upload": "npm run build && npm run check && npm run typecheck && npm test && hs project upload"
+    "upload": "npm run build && npm run check && npm run typecheck && npm test && hs project upload",
+    "build:js": "node scripts/build-scripts.mjs"
   },
   "devDependencies": {
     "@hubspot/cli": "^8.16.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@vitejs/plugin-react": "^4.3.4",
+    "esbuild": "^0.21.5",
     "jsdom": "^25.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
