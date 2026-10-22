@@ -56,6 +56,18 @@ function toReactPaths(value) {
   return value;
 }
 
+// structured data (schema.org Event) of the webinar and event pages, copied from the Litora HubL generator
+// (flowforge, projects/eb5-real-estate/hubspot/event-schema.json); its page addresses move to the React paths
+const ORIGIN = 'https://litora.joaomob.com';
+const EVENT_SCHEMAS = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', 'event-schema.json'), 'utf8'));
+function toReactUrls(value) {
+  if (typeof value === 'string' && value.startsWith(`${ORIGIN}/`)) return ORIGIN + toReactPaths(value.slice(ORIGIN.length));
+  if (Array.isArray(value)) return value.map(toReactUrls);
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, toReactUrls(v)]));
+  return value;
+}
+const ldJson = (schema) => `<script type="application/ld+json">${JSON.stringify(toReactUrls(schema)).replace(/</g, '\\u003c')}</script>`;
+
 const isObject = (v) => v && typeof v === 'object' && !Array.isArray(v);
 // keeps only the keys the module fields define, at every object level (arrays pass whole)
 function shape(value, defaults) {
@@ -96,7 +108,7 @@ for (const page of PAGES) {
   label: ${page.label}
 -->
 {% extends "./layouts/base.hubl.html" %}
-{% block skip_link %}${skipLink}{% endblock skip_link %}
+${EVENT_SCHEMAS[page.content] ? `{% block head %}\n${ldJson(EVENT_SCHEMAS[page.content])}\n{% endblock head %}\n` : ''}{% block skip_link %}${skipLink}{% endblock skip_link %}
 {% block header %}
 ${blocks.header}
 {% endblock header %}
