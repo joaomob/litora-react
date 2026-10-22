@@ -9,10 +9,10 @@ markup, classes and texts, and swaps the modules for React components.
 - `hsproject.json`, `src/theme/theme-hsmeta.json`: the HubSpot project and its theme component.
 - `src/theme/litora-react/`: the theme. `components/modules/<Name>/` holds each React module (`index.tsx`, `fields.tsx`,
   `defaults.json` with the English texts, the section CSS, and `islands/` for the parts that run in the browser);
-  `templates/` holds the layout and the page templates; `css/global.css` the tokens and the system classes;
+  `templates/` holds the layout and the page templates; `css/global.hubl.css` the tokens and the system classes;
   `js/motion.js` the scroll motion.
 - `source/`: tokens, system CSS and fonts of the Litora HubL theme (flowforge, `projects/eb5-real-estate/src`, commit
-  8de318c3 of 04/10/2026). `npm run build:css` turns them into `css/global.css`.
+  8de318c3 of 04/10/2026). `npm run build:css` turns them into `css/global.hubl.css`.
 - `content/`: the module parameters of each page, read from the HubL templates by `scripts/extract-params.cjs`.
   `npm run build:templates` writes the page templates from them.
 
@@ -33,7 +33,7 @@ React 18 is pinned at the root as well, because the CLI brings React 19 there an
 
 ```bash
 npm run install:all   # root and theme dependencies
-npm run build         # css/global.css and the page templates
+npm run build         # css/global.hubl.css and the page templates
 npm run check         # flowforge build guards: code language, tokens, hardcoded text
 npm run typecheck     # TypeScript over the theme components
 npm test              # Vitest

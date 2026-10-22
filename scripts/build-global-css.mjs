@@ -1,4 +1,4 @@
-// Builds css/global.css of the theme from source/css (tokens and system), the same way the Litora HubL theme builds
+// Builds css/global.hubl.css of the theme from source/css (tokens and system), the same way the Litora HubL theme builds
 // css/main.css (flowforge, projects/eb5-real-estate/hubspot/build-theme.mjs):
 //   - comments out, because "{#" inside a CSS comment breaks HubL;
 //   - each font by get_asset_url, or inline when the file is 4 KB or less (the subset of the giant word);
@@ -6,6 +6,7 @@
 // The layout puts the file inside a <style> in the head ({% include %}), because a linked stylesheet was the one
 // render-blocking request left on the phone in the HubL theme (PageSpeed, 04/10/2026). Section styles live in each
 // React module, not here.
+// The .hubl in the name is how a project knows a file has HubL in it (HubSpot, "Migrate a HubL theme to projects").
 // It also writes storybook/global.css, the same file in plain CSS (the default colours and fonts of tokens.css, fonts by
 // relative URL), because the Storybook preview runs on Vite and does not render HubL.
 import fs from 'node:fs';
@@ -51,7 +52,7 @@ for (const f of FONTS) {
 }
 css += '\n' + system;
 
-fs.writeFileSync(path.join(THEME, 'css', 'global.css'), minCss(css) + '\n');
+fs.writeFileSync(path.join(THEME, 'css', 'global.hubl.css'), minCss(css) + '\n');
 
 const preview = tokens.replace(FONT_URL, fontUrl((file) => `url("../fonts/${file}")`)) + '\n' + system;
 fs.mkdirSync(path.join(THEME, 'storybook'), { recursive: true });
@@ -62,4 +63,4 @@ fs.mkdirSync(path.join(THEME, 'fonts'), { recursive: true });
 for (const f of fs.readdirSync(path.join(SOURCE, 'fonts'))) {
   if (linkedFonts.has(f) || f.startsWith('LICENSE')) fs.copyFileSync(path.join(SOURCE, 'fonts', f), path.join(THEME, 'fonts', f));
 }
-console.log(`css/global.css ${fs.statSync(path.join(THEME, 'css', 'global.css')).size} bytes`);
+console.log(`css/global.hubl.css ${fs.statSync(path.join(THEME, 'css', 'global.hubl.css')).size} bytes`);
