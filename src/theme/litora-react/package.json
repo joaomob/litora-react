@@ -1,0 +1,20 @@
+{
+  "name": "litora-react",
+  "version": "1.0.0",
+  "description": "Litora, a HubSpot CMS theme in React",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "hs-cms-dev-server .",
+    "storybook": "hs-cms-dev-server . --storybook"
+  },
+  "dependencies": {
+    "@hubspot/cms-components": "^1.2.80",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@hubspot/cms-dev-server": "^1.2.80",
+    "@types/react": "^18.3.0"
+  }
+}

@@ -1,0 +1,288 @@
+/* Litora design tokens (stage 9, redone on 03/10/2026 with the identity the owner chose). Names from
+   core/webflow-paste/VARIABLE-NAMES.md, in the CSS form the Webflow publishes: Base collection "--group--name", other
+   collections "--_<collection>---group--name". The same names go to the HubSpot theme CSS, the Framer styles and the
+   Figma Variables; only this file holds the values.
+   Values of size and space: projects/eb5-real-estate/LAYOUT-LOGIC.md (sections 1, 2 and 3). Colours and fonts: the
+   chosen identity (research/IDENTITY-DIRECTION.md, direction Palmeira for the colours: palm green, coral and cream; the
+   colour of action became sun yellow with a coral corner, chosen by the owner on 03/10/2026;
+   Jost for titles, Nunito Sans for text, 6 px corners on field and button; Unbounded 500 only for the giant word of
+   the project). Contrast of every pair: research/CONTRAST-TABLE.md, written by research/contrast-table.mjs from this
+   file. The brand name lives in one place, content/site.json ("brand"). */
+
+@font-face {
+  font-family: "Jost";
+  src: url("../assets/fonts/jost-latin-300-normal.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jost";
+  src: url("../assets/fonts/jost-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jost";
+  src: url("../assets/fonts/jost-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../assets/fonts/nunito-sans-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../assets/fonts/nunito-sans-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../assets/fonts/nunito-sans-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+/* the giant word of the project (section 2c) and nothing else: the file is the subset with the letters of the word,
+   written by build-fonts.py from unbounded-latin-500-normal.woff2, and build.mjs writes it inside the stylesheet of
+   the pages, so it is not the seventh font request */
+@font-face {
+  font-family: "Unbounded";
+  src: url("../assets/fonts/unbounded-latin-500-word.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* Fallbacks sized to the web fonts, so the swap does not move the layout. Measured on 03/10/2026 in Chrome (canvas
+   measureText) with the texts of the hero: the H1 at 44 px is 999 px wide in Arial and 927 px in Jost 300 (92.8%);
+   the details and the body at 20 px are 1864 px in Arial and 1870 px in Nunito Sans 400 (100.3%); the word TAVESSA at
+   100 px is 446 px in Arial and 557 px in Unbounded 500 with its letter spacing (124.7%). Ascent and descent are the
+   ones of each web font (Jost 1.07 and 0.38 of the size, Nunito Sans 1.01 and 0.35, Unbounded 1.00 and 0.25), divided
+   by the size adjust. The Jost fallback then went from 92.8% to 92.1%, by the lines of the titles: at 375 px the H1
+   in Portuguese took 3 lines in the fallback and 2 in Jost. Counted in Chrome on the ten pages at ten widths (320 to
+   1440 px): at 92.1% every H1 has the same lines in both fonts from 360 px up, but for the H1 of the two thank you
+   pages of the event at 479 px (1 line, then 2); no value closes every width, and 92.8% missed the two main pages
+   at 375 px. */
+@font-face {
+  font-family: "Nunito Sans Fallback";
+  src: local("Arial");
+  size-adjust: 100.3%;
+  ascent-override: 101%;
+  descent-override: 35%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Jost Fallback";
+  src: local("Arial");
+  size-adjust: 92.1%;
+  ascent-override: 116%;
+  descent-override: 41%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Unbounded Fallback";
+  src: local("Arial");
+  size-adjust: 124.7%;
+  ascent-override: 80%;
+  descent-override: 20%;
+  line-gap-override: 0%;
+}
+
+:root {
+  /* Base collection */
+  --base-color-neutral--white: #ffffff;
+  --base-color-neutral--black: #000000;
+  /* support text on the dark sections, thin line on white */
+  --base-color-neutral--neutral-lightest: #dfe9df;
+  /* field border and placeholder on the dark panel */
+  --base-color-neutral--neutral-light: #93b3a2;
+  /* field border and outline of the secondary button on the light surfaces */
+  --base-color-neutral--neutral: #748478;
+  --base-color-neutral--neutral-dark: #4f5f55;
+  --base-color-neutral--neutral-darkest: #14251d;
+  /* fields of the dark panel, veil of the photos, text of the primary button */
+  --base-color-brand--palm-darkest: #0d271e;
+  /* the dark sections */
+  --base-color-brand--palm-darker: #14382b;
+  --base-color-brand--palm: #1c6146;
+  /* the colour of action is a radial gradient: coral in the top left corner into sun yellow, mostly yellow */
+  --base-color-brand--coral: #ff7a66;
+  --base-color-brand--coral-light: #ff8f7d;
+  --base-color-brand--sun: #f6c23f;
+  --base-color-brand--sun-light: #f9cc63;
+  --base-color-brand--cream: #fbf5e9;
+  --base-color-brand--cream-dark: #f1e8d5;
+  --base-color-system--success-green: #e6f2ea;
+  --base-color-system--success-green-dark: #1e6b3a;
+  /* light red: the error text on the dark panel */
+  --base-color-system--error-red: #ffb4a9;
+  --base-color-system--error-red-dark: #a3261f;
+  --base-color-system--focus-state: #1c6146;
+  --font-family--primary: "Nunito Sans", "Nunito Sans Fallback", sans-serif;
+  --font-family--display: "Jost", "Jost Fallback", sans-serif;
+  /* the giant word of the project, chosen by the owner; changed here and in the @font-face above */
+  --font-family--accent: "Unbounded", "Unbounded Fallback", sans-serif;
+  --font-weight--light: 300;
+  --font-weight--normal: 400;
+  --font-weight--medium: 500;
+  --font-weight--semibold: 600;
+  --font-weight--bold: 600;
+
+  /* Typography (desktop): the 8 sizes of LAYOUT-LOGIC.md, section 3 */
+  --_typography---body--font-size: 1rem;
+  --_typography---heading--h1: 2.75rem;
+  --_typography---heading--h2: 2.5rem;
+  --_typography---heading--h3: 1.25rem;
+  --_typography---text--large: 1.25rem;
+  --_typography---text--regular: 1rem;
+  --_typography---text--small: 0.875rem;
+  --_typography---display--large: 13rem;
+  --_typography---display--medium: 2.75rem;
+  --_typography---line-height--display: 1;
+  --_typography---line-height--heading: 1.1;
+  --_typography---line-height--snug: 1.3;
+  --_typography---line-height--body: 1.6;
+  --_typography---letter-spacing--tight: -0.02em;
+  --_typography---letter-spacing--wide: 0.08em;
+
+  /* Layout (desktop): LAYOUT-LOGIC.md, sections 1 and 2 */
+  --_layout---spacing--tiny: 0.25rem;
+  --_layout---spacing--xxsmall: 0.5rem;
+  --_layout---spacing--xsmall: 0.75rem;
+  --_layout---spacing--small: 1rem;
+  /* the gutter of every grid */
+  --_layout---spacing--medium: 1.25rem;
+  --_layout---spacing--large: 1.5rem;
+  --_layout---spacing--xlarge: 2rem;
+  --_layout---spacing--xxlarge: 2.5rem;
+  /* height of every field and button */
+  --_layout---spacing--huge: 3.5rem;
+  /* from the header of a section (label and H2) to its content */
+  --_layout---spacing--xhuge: 4.5rem;
+  --_layout---spacing--global-padding: 5rem;
+  --_layout---section-padding--small: 6rem;
+  --_layout---section-padding--medium: 7.5rem;
+  --_layout---section-padding--large: 10rem;
+  /* height of the fixed header; read by the header, the top banner of the hero panel and the anchor jumps */
+  --_layout---nav--height: 5rem;
+
+  /* Sizes */
+  --_sizes---container--large: 80rem;
+  --_sizes---container--small: 55rem;
+  /* every control (field, button, checkbox, question), the tag and the day tile of the hero: 6 px */
+  --_sizes---border-radius--small: 0.375rem;
+  /* not used: a name of the standard list kept with its value, so the scale is whole in every tool */
+  --_sizes---border-radius--medium: 0.875rem;
+  /* photos and cards: 20 px */
+  --_sizes---border-radius--large: 1.25rem;
+  --_sizes---border-radius--round: 100vw;
+}
+
+/* Theme, base mode: light surfaces. .theme-base brings the base mode back inside a dark section (the stat cards). */
+:root,
+.theme-base {
+  --_theme---text-color--text-primary: var(--base-color-neutral--neutral-darkest);
+  --_theme---text-color--text-secondary: var(--base-color-neutral--neutral-dark);
+  /* placeholder of the fields */
+  --_theme---text-color--text-tertiary: var(--base-color-neutral--neutral-dark);
+  --_theme---text-color--text-alternate: var(--base-color-neutral--white);
+  --_theme---text-color--text-brand: var(--base-color-brand--palm);
+  --_theme---text-color--text-error: var(--base-color-system--error-red-dark);
+  --_theme---text-color--text-success: var(--base-color-system--success-green-dark);
+  /* text on the accent of the button, the tag and the day tile: dark green in both modes (white fails on coral and on yellow) */
+  --_theme---text-color--text-on-brand: var(--base-color-brand--palm-darkest);
+  /* text over a darkened photo: the same in both modes */
+  --_theme---text-color--text-on-dark: var(--base-color-neutral--white);
+  --_theme---background-color--background-primary: var(--base-color-neutral--white);
+  --_theme---background-color--background-secondary: var(--base-color-brand--cream);
+  --_theme---background-color--background-tertiary: var(--base-color-brand--cream-dark);
+  --_theme---background-color--background-alternate: var(--base-color-brand--palm-darker);
+  --_theme---background-color--background-brand: var(--base-color-brand--sun);
+  --_theme---background-color--background-brand-hover: var(--base-color-brand--sun-light);
+  --_theme---background-color--background-success: var(--base-color-system--success-green);
+  /* colour of the veil over a photo: the same in both modes */
+  --_theme---background-color--background-dark: var(--base-color-brand--palm-darkest);
+  --_theme---border-color--border-primary: var(--base-color-brand--cream-dark);
+  --_theme---border-color--border-secondary: var(--base-color-neutral--neutral-lightest);
+  --_theme---border-color--border-input: var(--base-color-neutral--neutral);
+  --_theme---border-color--border-focus: var(--base-color-system--focus-state);
+}
+
+/* Theme, Inverse mode: dark sections (palm green) */
+.theme-inverse {
+  --_theme---text-color--text-primary: var(--base-color-neutral--white);
+  --_theme---text-color--text-secondary: var(--base-color-neutral--neutral-lightest);
+  --_theme---text-color--text-tertiary: var(--base-color-neutral--neutral-light);
+  --_theme---text-color--text-alternate: var(--base-color-neutral--neutral-darkest);
+  --_theme---text-color--text-brand: var(--base-color-brand--sun-light);
+  --_theme---text-color--text-error: var(--base-color-system--error-red);
+  --_theme---text-color--text-success: var(--base-color-system--success-green);
+  --_theme---text-color--text-on-brand: var(--base-color-brand--palm-darkest);
+  --_theme---text-color--text-on-dark: var(--base-color-neutral--white);
+  --_theme---background-color--background-primary: var(--base-color-brand--palm-darker);
+  --_theme---background-color--background-secondary: var(--base-color-brand--palm-darkest);
+  --_theme---background-color--background-tertiary: var(--base-color-brand--palm-darkest);
+  --_theme---background-color--background-alternate: var(--base-color-brand--cream);
+  --_theme---background-color--background-brand: var(--base-color-brand--sun);
+  --_theme---background-color--background-brand-hover: var(--base-color-brand--sun-light);
+  --_theme---background-color--background-success: var(--base-color-system--success-green-dark);
+  --_theme---background-color--background-dark: var(--base-color-brand--palm-darkest);
+  --_theme---border-color--border-primary: var(--base-color-brand--palm);
+  --_theme---border-color--border-secondary: var(--base-color-brand--palm);
+  --_theme---border-color--border-input: var(--base-color-neutral--neutral-light);
+  --_theme---border-color--border-focus: var(--base-color-brand--sun-light);
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  :root {
+    --_typography---heading--h1: 2.75rem;
+    --_typography---heading--h2: 2.5rem;
+    --_typography---display--large: 2.75rem;
+    --_typography---display--medium: 1.75rem;
+    --_layout---spacing--xhuge: 2.25rem;
+    --_layout---spacing--global-padding: 2.5rem;
+    --_layout---section-padding--small: 3rem;
+    --_layout---section-padding--medium: 3.75rem;
+    --_layout---section-padding--large: 5rem;
+    --_layout---nav--height: 4.5rem;
+  }
+}
+/* Mobile Landscape */
+@media (max-width: 767px) {
+  :root {
+    --_typography---heading--h1: 2rem;
+    --_typography---heading--h2: 1.75rem;
+    --_typography---display--large: 2.75rem;
+    --_typography---display--medium: 1.75rem;
+    --_layout---spacing--xhuge: 1.75rem;
+    --_layout---spacing--global-padding: 1.5rem;
+    --_layout---section-padding--small: 2.25rem;
+    --_layout---section-padding--medium: 2.75rem;
+    --_layout---section-padding--large: 3.75rem;
+    --_layout---nav--height: 4.5rem;
+  }
+}
+/* Mobile Portrait: repeats Mobile Landscape (ERROS C1) */
+@media (max-width: 479px) {
+  :root {
+    --_typography---heading--h1: 2rem;
+    --_typography---heading--h2: 1.75rem;
+    --_typography---display--large: 2.75rem;
+    --_typography---display--medium: 1.75rem;
+    --_layout---spacing--xhuge: 1.75rem;
+    --_layout---spacing--global-padding: 1.5rem;
+    --_layout---section-padding--small: 2.25rem;
+    --_layout---section-padding--medium: 2.75rem;
+    --_layout---section-padding--large: 3.75rem;
+    --_layout---nav--height: 4.5rem;
+  }
+}

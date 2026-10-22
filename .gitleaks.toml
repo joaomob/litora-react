@@ -1,0 +1,12 @@
+# Default gitleaks rules, plus one allowlist. A HubSpot form GUID is public by design: every published HubSpot form
+# carries it, and the RegisterForm island sends it to the Forms API from the visitor's browser. It matches the legacy
+# hubspot-api-key rule only because the key name has "hubspot" in it. The allowlist matches the field name, so it holds
+# when the generated templates move lines (the flowforge .gitleaksignore has the same reason for the HubL theme).
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "HubSpot form GUID, public in every published form"
+targetRules = ["hubspot-api-key"]
+regexTarget = "line"
+regexes = ['''"hubspotFormGuid"\s*:\s*"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"''']

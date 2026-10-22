@@ -1,0 +1,23 @@
+{
+  "label": "Litora React",
+  "preview_path": "./templates/webinar-pt-br.hubl.html",
+  "version": "1.0.0",
+  "author": {
+    "name": "João Marcos",
+    "email": "",
+    "url": "https://joaomob.com"
+  },
+  "documentation_url": "",
+  "license": "./license.txt",
+  "is_available_for_new_content": true,
+  "hide_all_default_modules": true,
+  "responsive_breakpoints": [
+    {
+      "name": "mobile",
+      "mediaQuery": "@media (max-width: 767px)",
+      "previewWidth": {
+        "value": 375
+      }
+    }
+  ]
+}

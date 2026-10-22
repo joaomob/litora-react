@@ -1,0 +1,8 @@
+{
+  "uid": "litora-react",
+  "type": "theme",
+  "config": {
+    "themePath": "litora-react",
+    "secretNames": []
+  }
+}

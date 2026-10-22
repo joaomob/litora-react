@@ -1,0 +1,22 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+storybook-static/
+*.log
+.vite/
+
+# HubSpot CLI: the account key never enters git
+hubspot.config.*
+.hscli/
+
+# Local environment
+.env
+.env.*
+.DS_Store
+Thumbs.db
+.vscode/*
+
+# Screenshots of the local checks (kept out of git, under 100 MB rule)
+shots/
