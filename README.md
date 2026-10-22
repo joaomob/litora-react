@@ -55,9 +55,9 @@ not deploy: that needs the HubSpot key as a repository secret, which is not set 
 
 ## Build guards
 
-`npm run check` runs the guards in `scripts/guards/`, a copy of the flowforge common guards
-(`core/checks/app/` in https://github.com/joaomob/flowforge), configured in `app-checks.json`. The copy lets the
-repository run alone, in CI or on another machine; when the flowforge on this machine has a newer guard, the check warns
+`npm run check` runs the guards in `scripts/guards/`, a copy of the guards shared by João Marcos's projects (kept in
+his private flowforge repository), configured in `app-checks.json`. The copy lets the repository run alone, in CI or on
+another machine; when the flowforge on the same machine has a newer guard, the check warns
 and `node scripts/app-checks.cjs --sync` copies it in. The code language guard leaves out `meta`, the word for goal in Portuguese, because every HubSpot
 module exports a `meta` object.
 

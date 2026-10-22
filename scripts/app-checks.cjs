@@ -1,5 +1,5 @@
-// Runs the build guards kept in scripts/guards/, a copy of the flowforge common guards
-// (https://github.com/joaomob/flowforge, core/checks/app). The copy makes the repository run on its own, in CI or on a
+// Runs the build guards kept in scripts/guards/, a copy of the guards shared by the projects in the private flowforge
+// repository (core/checks/app). The copy makes the repository run on its own, in CI or on a
 // machine without the flowforge. When the flowforge is on this machine and its guards changed, a warning says so and
 // `node scripts/app-checks.cjs --sync` brings the new version in.
 const fs = require('fs');

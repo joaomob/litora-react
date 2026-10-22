@@ -1,5 +1,5 @@
 {
-  "_doc": "Token duplications that already existed. check-tokens fails the build on a NEW one (above this baseline). Write again only when the team accepts a change on purpose: node \"C:/Users/JOÃO MARCOS ACER/Documents/flowforge/core/checks/app/check-tokens.cjs\" \"--root=C:\\Users\\JOÃO MARCOS ACER\\Documents\\litora-react\" --update-baseline",
+  "_doc": "Token duplications that already existed. check-tokens fails the build on a NEW one (above this baseline). Write again only when the team accepts a change on purpose: node scripts/app-checks.cjs tokens --update-baseline",
   "generatedOn": "2026-10-22",
   "total": 0,
   "byType": {},
