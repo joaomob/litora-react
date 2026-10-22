@@ -1,0 +1,52 @@
+{
+  "src": "src/theme/litora-react/components",
+  "tokens": {
+    "css": [
+      "source/css/tokens.css"
+    ],
+    "darkSelector": ".theme-inverse",
+    "baseline": "scripts/token-baseline.json"
+  },
+  "lang": {
+    "scan": [
+      "src/theme/litora-react/components",
+      "scripts"
+    ],
+    "baseline": "scripts/lang-baseline.json",
+    "identifiers": [
+      "metas",
+      "tarefas",
+      "tarefa",
+      "projetos",
+      "projeto",
+      "perfil",
+      "foco",
+      "conquistas",
+      "conquista",
+      "categoria",
+      "categorias",
+      "senha",
+      "registrar",
+      "titulo",
+      "criar",
+      "salvar",
+      "diasUso",
+      "descricao",
+      "excluir",
+      "ativo",
+      "deusa",
+      "deuses",
+      "deus",
+      "pontos",
+      "arquetipo",
+      "usuario",
+      "nivel",
+      "ideia",
+      "adiar",
+      "revisar",
+      "reagendar",
+      "lixeira",
+      "temperamento"
+    ]
+  }
+}

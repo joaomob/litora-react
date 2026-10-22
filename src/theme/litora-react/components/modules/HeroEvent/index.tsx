@@ -6,8 +6,13 @@ import { LogoMark } from '../../shared/LogoMark.js';
 import { hubfsSrcset } from '../../utils/images.js';
 import { withNoWrap } from '../../utils/text.js';
 import type { HeroEventProps } from './types.js';
+import '../../shared/brand.css';
 import './hero-event.css';
 import './form-card.css';
+
+// React 18 knows no fetchPriority prop (it warns and writes the attribute as is); the lowercase HTML attribute goes
+// through untouched. React 19 takes fetchPriority.
+const HIGH_PRIORITY = { fetchpriority: 'high' } as Record<string, string>;
 
 // Event hero: photo, schedule and the sign up form. Same markup and classes as the Litora HubL module, so the section
 // CSS and motion.js (data-hero, data-hero-image, data-hero-runway) work unchanged. Only the form is an island.
@@ -35,7 +40,7 @@ export function Component({ fieldValues }: HeroEventProps) {
               width={image.width}
               height={image.height}
               alt={image.alt}
-              fetchPriority="high"
+              {...HIGH_PRIORITY}
               data-hero-image
             />
           </picture>

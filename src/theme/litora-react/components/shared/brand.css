@@ -1,0 +1,47 @@
+/* The logo and the language switch, shared by the top banner of the hero panel, the site header and the footer. From
+   the site header of the Litora HubL theme (flowforge, projects/eb5-real-estate/src/sections/site-header.css); the bar
+   itself comes with the header module. The logo is the symbol (LogoMark, one path in the colour of the text) and the
+   name in Jost 500. */
+.logo_component {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--_layout---spacing--xxsmall);
+  color: var(--_theme---text-color--text-primary);
+  font-family: var(--font-family--display);
+  font-size: var(--_typography---heading--h3);
+  font-weight: var(--font-weight--medium);
+  line-height: var(--_typography---line-height--heading);
+  letter-spacing: var(--_typography---letter-spacing--tight);
+  text-decoration: none;
+}
+/* the symbol is 1.4 times as wide as it is tall */
+.logo_mark {
+  flex: none;
+  width: auto;
+  height: var(--_layout---spacing--large);
+  aspect-ratio: 1288 / 920;
+}
+.language-switch_list {
+  display: flex;
+  align-items: center;
+  gap: var(--_layout---spacing--tiny);
+  list-style: none;
+}
+.language-switch_link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  color: var(--_theme---text-color--text-secondary);
+  font-size: var(--_typography---text--small);
+  font-weight: var(--font-weight--medium);
+  letter-spacing: var(--_typography---letter-spacing--wide);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.language-switch_link.is-current {
+  color: var(--_theme---text-color--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.4em;
+}

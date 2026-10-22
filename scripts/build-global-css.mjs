@@ -6,6 +6,8 @@
 // The layout puts the file inside a <style> in the head ({% include %}), because a linked stylesheet was the one
 // render-blocking request left on the phone in the HubL theme (PageSpeed, 04/10/2026). Section styles live in each
 // React module, not here.
+// It also writes storybook/global.css, the same file in plain CSS (the default colours and fonts of tokens.css, fonts by
+// relative URL), because the Storybook preview runs on Vite and does not render HubL.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -26,12 +28,17 @@ const FONTS = [
 ];
 
 const linkedFonts = new Set();
-let css = stripComments(read('css', 'tokens.css')).replace(/url\("\.\.\/assets\/fonts\/([\w.-]+\.woff2)"\)/g, (whole, file) => {
+const FONT_URL = /url\("\.\.\/assets\/fonts\/([\w.-]+\.woff2)"\)/g;
+const tokens = stripComments(read('css', 'tokens.css'));
+const system = stripComments(read('css', 'system.css'));
+const fontUrl = (linked) => (whole, file) => {
   const bytes = fs.readFileSync(path.join(SOURCE, 'fonts', file));
   if (bytes.length <= 4096) return `url("data:font/woff2;base64,${bytes.toString('base64')}")`;
   linkedFonts.add(file);
-  return `url("{{ get_asset_url('../fonts/${file}') }}")`;
-});
+  return linked(file);
+};
+
+let css = tokens.replace(FONT_URL, fontUrl((file) => `url("{{ get_asset_url('../fonts/${file}') }}")`));
 for (const c of brandColors) {
   const re = new RegExp(`--base-color-brand--${c.token}: #[0-9a-f]{6};`);
   if (!re.test(css)) throw new Error(`tokens.css: no --base-color-brand--${c.token}`);
@@ -42,9 +49,13 @@ for (const f of FONTS) {
   if (!css.includes(from)) throw new Error(`tokens.css: no ${from}`);
   css = css.replace(from, `${f.token}: "{{ theme.fonts.${f.name}.font }}", "${f.fallback}", sans-serif;`);
 }
-css += '\n' + stripComments(read('css', 'system.css'));
+css += '\n' + system;
 
 fs.writeFileSync(path.join(THEME, 'css', 'global.css'), minCss(css) + '\n');
+
+const preview = tokens.replace(FONT_URL, fontUrl((file) => `url("../fonts/${file}")`)) + '\n' + system;
+fs.mkdirSync(path.join(THEME, 'storybook'), { recursive: true });
+fs.writeFileSync(path.join(THEME, 'storybook', 'global.css'), minCss(preview) + '\n');
 
 // fonts: every file the CSS loads by URL, with the licences
 fs.mkdirSync(path.join(THEME, 'fonts'), { recursive: true });
