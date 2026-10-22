@@ -17,7 +17,6 @@
 .skip-link_component:focus {
   transform: none;
 }
-.site-header_component {
 .logo_component {
   display: inline-flex;
   align-items: center;

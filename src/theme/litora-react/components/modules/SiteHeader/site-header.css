@@ -2,6 +2,7 @@
    the language switch, the logo in the middle, the button. Over a hero it starts hidden and comes down when the hero
    ends (js/motion.js); without JavaScript it shows from the start. The skip link, the logo and the language switch are
    in the global CSS (source/css/shell.css). */
+.site-header_component {
   position: fixed;
   top: 0;
   right: 0;
