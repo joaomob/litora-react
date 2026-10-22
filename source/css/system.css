@@ -235,7 +235,12 @@ strong {
 }
 .background-color-brand {
   background-color: var(--_theme---background-color--background-brand);
-  background-image: radial-gradient(90% 140% at 0% 0%, var(--base-color-brand--coral) 0%, color-mix(in srgb, var(--base-color-brand--coral), var(--base-color-brand--sun)) 22%, var(--base-color-brand--sun) 48%);
+  background-image: radial-gradient(
+    90% 140% at 0% 0%,
+    var(--base-color-brand--coral) 0%,
+    color-mix(in srgb, var(--base-color-brand--coral), var(--base-color-brand--sun)) 22%,
+    var(--base-color-brand--sun) 48%
+  );
 }
 .background-color-brand-hover {
   background-color: var(--_theme---background-color--background-brand-hover);
@@ -270,7 +275,12 @@ strong {
   border: 0;
   border-radius: var(--_sizes---border-radius--small);
   background-color: var(--_theme---background-color--background-brand);
-  background-image: radial-gradient(90% 140% at 0% 0%, var(--base-color-brand--coral) 0%, color-mix(in srgb, var(--base-color-brand--coral), var(--base-color-brand--sun)) 22%, var(--base-color-brand--sun) 48%);
+  background-image: radial-gradient(
+    90% 140% at 0% 0%,
+    var(--base-color-brand--coral) 0%,
+    color-mix(in srgb, var(--base-color-brand--coral), var(--base-color-brand--sun)) 22%,
+    var(--base-color-brand--sun) 48%
+  );
   color: var(--_theme---text-color--text-on-brand);
   font-family: var(--font-family--primary);
   font-size: var(--_typography---text--regular);
@@ -279,7 +289,9 @@ strong {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.5s cubic-bezier(0.375, 0, 0.625, 1), border-color 0.5s cubic-bezier(0.375, 0, 0.625, 1),
+  transition:
+    background-color 0.5s cubic-bezier(0.375, 0, 0.625, 1),
+    border-color 0.5s cubic-bezier(0.375, 0, 0.625, 1),
     color 0.5s cubic-bezier(0.375, 0, 0.625, 1);
 }
 .button_text-wrap {
@@ -326,7 +338,12 @@ strong {
   padding: var(--_layout---spacing--tiny) var(--_layout---spacing--xsmall);
   border-radius: var(--_sizes---border-radius--small);
   background-color: var(--_theme---background-color--background-brand);
-  background-image: radial-gradient(90% 140% at 0% 0%, var(--base-color-brand--coral) 0%, color-mix(in srgb, var(--base-color-brand--coral), var(--base-color-brand--sun)) 22%, var(--base-color-brand--sun) 48%);
+  background-image: radial-gradient(
+    90% 140% at 0% 0%,
+    var(--base-color-brand--coral) 0%,
+    color-mix(in srgb, var(--base-color-brand--coral), var(--base-color-brand--sun)) 22%,
+    var(--base-color-brand--sun) 48%
+  );
   color: var(--_theme---text-color--text-on-brand);
   font-size: var(--_typography---text--small);
   font-weight: var(--font-weight--medium);

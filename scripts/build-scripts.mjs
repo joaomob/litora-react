@@ -12,7 +12,10 @@ const OUT = path.join(ROOT, 'src', 'theme', 'litora-react', 'js');
 
 fs.mkdirSync(OUT, { recursive: true });
 for (const file of fs.readdirSync(SOURCE).filter((f) => f.endsWith('.js'))) {
-  const { code } = esbuild.transformSync(fs.readFileSync(path.join(SOURCE, file), 'utf8'), { minify: true, target: 'es2018' });
+  const { code } = esbuild.transformSync(fs.readFileSync(path.join(SOURCE, file), 'utf8'), {
+    minify: true,
+    target: 'es2018',
+  });
   fs.writeFileSync(path.join(OUT, file), code);
   console.log(`js/${file} ${Buffer.byteLength(code)} bytes`);
 }

@@ -19,10 +19,21 @@ const THEME = path.join(ROOT, 'src', 'theme', 'litora-react');
 
 const read = (...p) => fs.readFileSync(path.join(SOURCE, ...p), 'utf8');
 const stripComments = (css) => css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n{3,}/g, '\n\n');
-const minCss = (css) => css.replace(/\s+/g, ' ').replace(/\s*([{};,>])\s*/g, '$1').replace(/:\s+/g, ':').replace(/;}/g, '}').trim();
+const minCss = (css) =>
+  css
+    .replace(/\s+/g, ' ')
+    .replace(/\s*([{};,>])\s*/g, '$1')
+    .replace(/:\s+/g, ':')
+    // A value broken over lines (Prettier) leaves a space inside the parentheses
+    .replace(/\(\s+/g, '(')
+    .replace(/\s+\)/g, ')')
+    .replace(/;}/g, '}')
+    .trim();
 
 const fields = JSON.parse(fs.readFileSync(path.join(THEME, 'fields.json'), 'utf8'));
-const brandColors = fields.find((f) => f.name === 'brand_colors').children.map((c) => ({ name: c.name, token: c.name.replace(/_/g, '-') }));
+const brandColors = fields
+  .find((f) => f.name === 'brand_colors')
+  .children.map((c) => ({ name: c.name, token: c.name.replace(/_/g, '-') }));
 const FONTS = [
   { name: 'heading_font', token: '--font-family--display', family: 'Jost', fallback: 'Jost Fallback' },
   { name: 'body_font', token: '--font-family--primary', family: 'Nunito Sans', fallback: 'Nunito Sans Fallback' },
@@ -39,7 +50,10 @@ const fontUrl = (linked) => (whole, file) => {
   return linked(file);
 };
 
-let css = tokens.replace(FONT_URL, fontUrl((file) => `url("{{ get_asset_url('../fonts/${file}') }}")`));
+let css = tokens.replace(
+  FONT_URL,
+  fontUrl((file) => `url("{{ get_asset_url('../fonts/${file}') }}")`),
+);
 for (const c of brandColors) {
   const re = new RegExp(`--base-color-brand--${c.token}: #[0-9a-f]{6};`);
   if (!re.test(css)) throw new Error(`tokens.css: no --base-color-brand--${c.token}`);
@@ -54,13 +68,20 @@ css += '\n' + system;
 
 fs.writeFileSync(path.join(THEME, 'css', 'global.hubl.css'), minCss(css) + '\n');
 
-const preview = tokens.replace(FONT_URL, fontUrl((file) => `url("../fonts/${file}")`)) + '\n' + system;
+const preview =
+  tokens.replace(
+    FONT_URL,
+    fontUrl((file) => `url("../fonts/${file}")`),
+  ) +
+  '\n' +
+  system;
 fs.mkdirSync(path.join(THEME, 'storybook'), { recursive: true });
 fs.writeFileSync(path.join(THEME, 'storybook', 'global.css'), minCss(preview) + '\n');
 
 // fonts: every file the CSS loads by URL, with the licences
 fs.mkdirSync(path.join(THEME, 'fonts'), { recursive: true });
 for (const f of fs.readdirSync(path.join(SOURCE, 'fonts'))) {
-  if (linkedFonts.has(f) || f.startsWith('LICENSE')) fs.copyFileSync(path.join(SOURCE, 'fonts', f), path.join(THEME, 'fonts', f));
+  if (linkedFonts.has(f) || f.startsWith('LICENSE'))
+    fs.copyFileSync(path.join(SOURCE, 'fonts', f), path.join(THEME, 'fonts', f));
 }
 console.log(`css/global.hubl.css ${fs.statSync(path.join(THEME, 'css', 'global.hubl.css')).size} bytes`);

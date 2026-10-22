@@ -30,7 +30,12 @@ export function Component({ fieldValues }: SiteFooterProps) {
                   </a>
                 </li>
                 <li>
-                  <a className="site-footer_link" href={links.alternate} hrefLang={links.alternateLang} lang={links.alternateLang}>
+                  <a
+                    className="site-footer_link"
+                    href={links.alternate}
+                    hrefLang={links.alternateLang}
+                    lang={links.alternateLang}
+                  >
                     {footer.languageLinkLabel}
                   </a>
                 </li>

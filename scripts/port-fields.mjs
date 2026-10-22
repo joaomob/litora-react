@@ -16,43 +16,138 @@ if (!HUBL) throw new Error('usage: node scripts/port-fields.mjs <HubL modules fo
 const HEADER = { header: { logoText: true, languageCurrent: true, languageOther: true, languageOtherLabel: true } };
 const LINKS = { self: true, alternate: true, alternateLang: true };
 const PORTS = [
-  { hubl: 'site-header', folder: 'SiteHeader', page: 'webinar-en-us', pick: { ctaLabel: true, ctaTarget: true, links: LINKS, global: HEADER } },
-  { hubl: 'statement-reveal', folder: 'StatementReveal', page: 'webinar-en-us', pick: { labelText: true, text: true, background: true } },
   {
-    hubl: 'project-reveal', folder: 'ProjectReveal', page: 'webinar-en-us', noWrap: true,
-    pick: { labelText: true, word: true, nameText: true, text: true, caption: true, buttonLabel: true, buttonTarget: true, image: true, imageTall: true, background: true },
+    hubl: 'site-header',
+    folder: 'SiteHeader',
+    page: 'webinar-en-us',
+    pick: { ctaLabel: true, ctaTarget: true, links: LINKS, global: HEADER },
   },
-  { hubl: 'topic-grid', folder: 'TopicGrid', page: 'webinar-en-us', noWrap: true, pick: { heading: true, intro: true, items: true, background: true } },
-  { hubl: 'audience-cards', folder: 'AudienceCards', page: 'webinar-en-us', noWrap: true, pick: { heading: true, items: true, background: true } },
-  { hubl: 'speakers', folder: 'Speakers', page: 'webinar-en-us', noWrap: true, pick: { heading: true, note: true, items: true, background: true } },
-  { hubl: 'stat-row', folder: 'StatRow', page: 'webinar-en-us', noWrap: true, pick: { heading: true, items: true, source: true, cost: true, background: true } },
+  {
+    hubl: 'statement-reveal',
+    folder: 'StatementReveal',
+    page: 'webinar-en-us',
+    pick: { labelText: true, text: true, background: true },
+  },
+  {
+    hubl: 'project-reveal',
+    folder: 'ProjectReveal',
+    page: 'webinar-en-us',
+    noWrap: true,
+    pick: {
+      labelText: true,
+      word: true,
+      nameText: true,
+      text: true,
+      caption: true,
+      buttonLabel: true,
+      buttonTarget: true,
+      image: true,
+      imageTall: true,
+      background: true,
+    },
+  },
+  {
+    hubl: 'topic-grid',
+    folder: 'TopicGrid',
+    page: 'webinar-en-us',
+    noWrap: true,
+    pick: { heading: true, intro: true, items: true, background: true },
+  },
+  {
+    hubl: 'audience-cards',
+    folder: 'AudienceCards',
+    page: 'webinar-en-us',
+    noWrap: true,
+    pick: { heading: true, items: true, background: true },
+  },
+  {
+    hubl: 'speakers',
+    folder: 'Speakers',
+    page: 'webinar-en-us',
+    noWrap: true,
+    pick: { heading: true, note: true, items: true, background: true },
+  },
+  {
+    hubl: 'stat-row',
+    folder: 'StatRow',
+    page: 'webinar-en-us',
+    noWrap: true,
+    pick: { heading: true, items: true, source: true, cost: true, background: true },
+  },
   { hubl: 'project-stack', folder: 'ProjectStack', page: 'webinar-en-us', pick: { labelText: true, items: true } },
   {
-    hubl: 'faq-accordion', folder: 'FaqAccordion', page: 'webinar-en-us', noWrap: true,
+    hubl: 'faq-accordion',
+    folder: 'FaqAccordion',
+    page: 'webinar-en-us',
+    noWrap: true,
     pick: { heading: true, intro: true, timeline: true, items: true, background: true },
     // a paragraph of an answer is a text or a list
     optional: ['items.answer.text', 'items.answer.list'],
   },
-  { hubl: 'cta-band', folder: 'CtaBand', page: 'webinar-en-us', noWrap: true, pick: { heading: true, text: true, buttonLabel: true, buttonTarget: true, image: true, imageTall: true } },
   {
-    hubl: 'confirmation-hero', folder: 'ConfirmationHero', page: 'webinar-thank-you-en-us', noWrap: true,
-    pick: { heading: true, details: true, timeBlock: true, bodyText: true, showCalendar: true, calendar: true, image: true, imageTall: true, links: LINKS, global: HEADER },
+    hubl: 'cta-band',
+    folder: 'CtaBand',
+    page: 'webinar-en-us',
+    noWrap: true,
+    pick: { heading: true, text: true, buttonLabel: true, buttonTarget: true, image: true, imageTall: true },
+  },
+  {
+    hubl: 'confirmation-hero',
+    folder: 'ConfirmationHero',
+    page: 'webinar-thank-you-en-us',
+    noWrap: true,
+    pick: {
+      heading: true,
+      details: true,
+      timeBlock: true,
+      bodyText: true,
+      showCalendar: true,
+      calendar: true,
+      image: true,
+      imageTall: true,
+      links: LINKS,
+      global: HEADER,
+    },
     // the event has a time range with no exact time
     optional: ['timeBlock.rows.datetime'],
   },
-  { hubl: 'steps-list', folder: 'StepsList', page: 'webinar-thank-you-en-us', noWrap: true, pick: { heading: true, intro: true, items: true, background: true } },
-  { hubl: 'legal-text', folder: 'LegalText', page: 'privacy-en-us', noWrap: true, pick: { heading: true, updated: true, paragraphs: true, background: true } },
   {
-    hubl: 'site-footer', folder: 'SiteFooter', page: 'webinar-en-us',
+    hubl: 'steps-list',
+    folder: 'StepsList',
+    page: 'webinar-thank-you-en-us',
+    noWrap: true,
+    pick: { heading: true, intro: true, items: true, background: true },
+  },
+  {
+    hubl: 'legal-text',
+    folder: 'LegalText',
+    page: 'privacy-en-us',
+    noWrap: true,
+    pick: { heading: true, updated: true, paragraphs: true, background: true },
+  },
+  {
+    hubl: 'site-footer',
+    folder: 'SiteFooter',
+    page: 'webinar-en-us',
     pick: {
-      fictionalNotice: true, background: true, links: { ...LINKS, privacy: true },
-      global: { header: { logoText: true }, footer: { about: true, legalNoticeTitle: true, legalNotice: true, privacyLabel: true, languageLinkLabel: true } },
+      fictionalNotice: true,
+      background: true,
+      links: { ...LINKS, privacy: true },
+      global: {
+        header: { logoText: true },
+        footer: { about: true, legalNoticeTitle: true, legalNotice: true, privacyLabel: true, languageLinkLabel: true },
+      },
     },
   },
 ];
 
 // the same field HeroEvent has: the HubL theme wraps "EB-5" of each heading in span.text-style-nowrap
-const NO_WRAP = { name: 'noWrapTerm', label: 'Term kept on one line', type: 'text', inline_help_text: 'Wherever this term appears in a heading, it never breaks across two lines.' };
+const NO_WRAP = {
+  name: 'noWrapTerm',
+  label: 'Term kept on one line',
+  type: 'text',
+  inline_help_text: 'Wherever this term appears in a heading, it never breaks across two lines.',
+};
 
 const isRepeated = (f) => Boolean(f.occurrence);
 function pickFields(fields, pick) {
@@ -76,7 +171,7 @@ function pickValue(fields, value, where) {
 const q = (s) => `'${String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`;
 // a JSX attribute: a plain string when it has no double quote (JSX strings take no escapes)
 const attr = (s) => (String(s).includes('"') ? `{${q(s)}}` : `"${s}"`);
-const COMPONENT ={ text: 'TextField', image: 'ImageField', choice: 'ChoiceField', boolean: 'BooleanField' };
+const COMPONENT = { text: 'TextField', image: 'ImageField', choice: 'ChoiceField', boolean: 'BooleanField' };
 function tsx(fields, indent, defaultsPath) {
   const pad = ' '.repeat(indent);
   return fields
@@ -85,7 +180,11 @@ function tsx(fields, indent, defaultsPath) {
       if (f.inline_help_text) props.push(`inlineHelpText=${attr(f.inline_help_text)}`);
       if (f.occurrence) props.push(`occurrence={{ min: ${f.occurrence.min}, max: ${f.occurrence.max} }}`);
       if (f.type === 'image') props.push('resizable={false}', 'responsive', 'showLoading={false}');
-      if (f.type === 'choice') props.push(`display=${attr(f.display)}`, `choices={[${f.choices.map((c) => `[${c.map(q).join(', ')}]`).join(', ')}]}`);
+      if (f.type === 'choice')
+        props.push(
+          `display=${attr(f.display)}`,
+          `choices={[${f.choices.map((c) => `[${c.map(q).join(', ')}]`).join(', ')}]}`,
+        );
       if (f.type === 'boolean') props.push(`display=${attr(f.display)}`);
       const dflt = defaultsPath && `default={${defaultsPath}.${f.name}}`;
       if (f.type === 'group') {
@@ -107,7 +206,8 @@ function tsType(f, indent, at, optional) {
   else if (f.type === 'boolean') t = 'boolean';
   else if (f.type === 'image') t = 'ImageValue';
   else if (f.type === 'choice') t = f.choices.map(([v]) => q(v)).join(' | ');
-  else t = `{\n${f.children.map((c) => tsMember(c, indent + 2, `${at}.`, optional)).join('\n')}\n${' '.repeat(indent)}}`;
+  else
+    t = `{\n${f.children.map((c) => tsMember(c, indent + 2, `${at}.`, optional)).join('\n')}\n${' '.repeat(indent)}}`;
   return isRepeated(f) ? (t.includes('|') ? `(${t})[]` : `${t}[]`) : t;
 }
 const tsMember = (f, indent, prefix, optional) =>
@@ -125,7 +225,11 @@ for (const port of PORTS) {
   if (port.noWrap) {
     const at = fields.findIndex((f) => f.name === 'heading') + 1;
     fields = [...fields.slice(0, at), NO_WRAP, ...fields.slice(at)];
-    defaults = Object.fromEntries([...Object.entries(defaults).slice(0, at), ['noWrapTerm', 'EB-5'], ...Object.entries(defaults).slice(at)]);
+    defaults = Object.fromEntries([
+      ...Object.entries(defaults).slice(0, at),
+      ['noWrapTerm', 'EB-5'],
+      ...Object.entries(defaults).slice(at),
+    ]);
   }
 
   const dir = path.join(MODULES, port.folder);
@@ -133,9 +237,22 @@ for (const port of PORTS) {
   fs.writeFileSync(path.join(dir, 'defaults.json'), JSON.stringify(defaults, null, 2) + '\n');
 
   const used = new Set(['ModuleFields']);
-  const scan = (list) => list.forEach((f) => (f.type === 'group' ? (used.add(isRepeated(f) ? 'RepeatedFieldGroup' : 'FieldGroup'), scan(f.children)) : used.add(COMPONENT[f.type])));
+  const scan = (list) =>
+    list.forEach((f) =>
+      f.type === 'group'
+        ? (used.add(isRepeated(f) ? 'RepeatedFieldGroup' : 'FieldGroup'), scan(f.children))
+        : used.add(COMPONENT[f.type]),
+    );
   scan(fields);
-  const order = ['ModuleFields', 'TextField', 'FieldGroup', 'RepeatedFieldGroup', 'ImageField', 'ChoiceField', 'BooleanField'];
+  const order = [
+    'ModuleFields',
+    'TextField',
+    'FieldGroup',
+    'RepeatedFieldGroup',
+    'ImageField',
+    'ChoiceField',
+    'BooleanField',
+  ];
   fs.writeFileSync(
     path.join(dir, 'fields.tsx'),
     `import { ${order.filter((c) => used.has(c)).join(', ')} } from '@hubspot/cms-components/fields';

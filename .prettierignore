@@ -1,0 +1,10 @@
+node_modules
+dist
+storybook-static
+package-lock.json
+src/theme/litora-react/js
+src/theme/litora-react/css
+src/theme/litora-react/storybook
+src/theme/litora-react/templates
+scripts/guards
+*.md

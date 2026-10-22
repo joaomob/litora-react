@@ -17,7 +17,11 @@ export const fields = (
         <TextField label="Logo Text" name="logoText" default={defaults.global.header.logoText} />
         <TextField label="Language Current" name="languageCurrent" default={defaults.global.header.languageCurrent} />
         <TextField label="Language Other" name="languageOther" default={defaults.global.header.languageOther} />
-        <TextField label="Language Other Label" name="languageOtherLabel" default={defaults.global.header.languageOtherLabel} />
+        <TextField
+          label="Language Other Label"
+          name="languageOtherLabel"
+          default={defaults.global.header.languageOtherLabel}
+        />
       </FieldGroup>
     </FieldGroup>
   </ModuleFields>

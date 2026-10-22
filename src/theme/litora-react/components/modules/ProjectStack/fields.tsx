@@ -11,7 +11,14 @@ export const fields = (
       <TextField label="Name Text" name="nameText" />
       <TextField label="Caption" name="caption" />
       <ImageField label="Image" name="image" resizable={false} responsive showLoading={false} />
-      <ImageField label="Image, phone crop" name="imageTall" inlineHelpText="The crop shown on phones (767 px and narrower)." resizable={false} responsive showLoading={false} />
+      <ImageField
+        label="Image, phone crop"
+        name="imageTall"
+        inlineHelpText="The crop shown on phones (767 px and narrower)."
+        resizable={false}
+        responsive
+        showLoading={false}
+      />
     </RepeatedFieldGroup>
   </ModuleFields>
 );

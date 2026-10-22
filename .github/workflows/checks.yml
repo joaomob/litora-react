@@ -1,0 +1,33 @@
+# Every push and pull request runs the same checks as `npm run upload`, without the upload: build, build guards,
+# lint (with jsx-a11y), formatting, types and tests. Deploying from CI needs the HubSpot key as a repository secret,
+# which is not set up.
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            src/theme/litora-react/package-lock.json
+      - run: npm ci
+      - run: npm ci --prefix src/theme/litora-react
+      - name: Guards self-test
+        run: for g in lang tokens hardcoded; do node scripts/guards/check-$g.cjs --self-test; done
+      - run: npm run verify
+      - name: Generated files are committed
+        run: npm run check:generated

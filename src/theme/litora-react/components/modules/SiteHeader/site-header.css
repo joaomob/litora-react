@@ -10,7 +10,9 @@
   z-index: 100;
   background-color: var(--_theme---background-color--background-primary);
   box-shadow: 0 1px 0 var(--_theme---border-color--border-primary);
-  transition: transform 0.01s linear, visibility 0.01s linear;
+  transition:
+    transform 0.01s linear,
+    visibility 0.01s linear;
 }
 .site-header_layout {
   display: grid;

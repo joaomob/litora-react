@@ -13,7 +13,8 @@ import formCardCss from './form-card.css?inline';
 // Event hero: photo, schedule and the sign up form. Same markup and classes as the Litora HubL module, so the section
 // CSS and motion.js (data-hero, data-hero-image, data-hero-runway) work unchanged. Only the form is an island.
 export function Component({ fieldValues }: HeroEventProps) {
-  const { eyebrow, heading, noWrapTerm, details, timeBlock, bodyText, image, imageTall, form, links, global } = fieldValues;
+  const { eyebrow, heading, noWrapTerm, details, timeBlock, bodyText, image, imageTall, form, links, global } =
+    fieldValues;
   const { header } = global;
 
   return (

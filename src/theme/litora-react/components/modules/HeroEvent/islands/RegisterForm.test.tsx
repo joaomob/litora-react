@@ -14,7 +14,7 @@ function fillValid() {
   fireEvent.change(screen.getByLabelText(field('email').labelText), { target: { value: 'ana@example.com' } });
   fireEvent.change(screen.getByLabelText(field('mobilephone').labelText), { target: { value: '+55 11 91234 5678' } });
   fireEvent.change(screen.getByLabelText(field('city').labelText), { target: { value: 'Campinas' } });
-  fireEvent.click(screen.getByLabelText(field('residence').options![0].labelText));
+  fireEvent.click(screen.getByLabelText(field('residence').options![0]!.labelText));
   fireEvent.click(screen.getByLabelText(field('eb5_minimum_acknowledged').labelText));
   fireEvent.click(screen.getByLabelText(field('lgpd_consent').labelText));
 }
@@ -60,7 +60,7 @@ describe('RegisterForm', () => {
     fillValid();
     submit();
     await waitFor(() => expect(assign).toHaveBeenCalled());
-    const [url, init] = fetchMock.mock.calls[0];
+    const [url, init] = fetchMock.mock.calls[0]!;
     expect(url).toBe(`${ENDPOINT}149475007/${form.hubspotFormGuid}`);
     const body = JSON.parse(init.body);
     expect(body.fields).toEqual([
@@ -72,7 +72,9 @@ describe('RegisterForm', () => {
       { name: 'residence', value: 'brazil' },
       { name: 'eb5_minimum_acknowledged', value: 'true' },
     ]);
-    expect(body.legalConsentOptions).toEqual({ consent: { consentToProcess: true, text: field('lgpd_consent').labelText } });
+    expect(body.legalConsentOptions).toEqual({
+      consent: { consentToProcess: true, text: field('lgpd_consent').labelText },
+    });
     expect(body.context.pageUri).toBe('https://litora.joaomob.com/en/eb5-visa-webinar');
     expect(assign).toHaveBeenCalledWith(new URL(form.redirectUrl, 'https://litora.joaomob.com/').href);
   });

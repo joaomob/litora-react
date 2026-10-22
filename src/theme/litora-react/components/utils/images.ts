@@ -5,9 +5,8 @@ const HUBFS_PATH = /\/hubfs\/\d+\/(.+)$/;
 const THEME_FOLDER = '/litora/images/';
 
 export function hubfsSrcset(src: string, widths: number[]): string | undefined {
-  const match = HUBFS_PATH.exec(src);
-  if (!match) return undefined;
-  const filePath = match[1];
+  const filePath = HUBFS_PATH.exec(src)?.[1];
+  if (!filePath) return undefined;
   const largest = Math.max(...widths);
   if (src.includes(THEME_FOLDER)) {
     return widths.map((w) => `/hubfs/${filePath.replace(`-${largest}.`, `-${w}.`)} ${w}w`).join(', ');
@@ -18,9 +17,8 @@ export function hubfsSrcset(src: string, widths: number[]): string | undefined {
 // The src of a photo, as HubL's resize_image_url writes it: HubSpot's resizer on the site's domain, with the height kept
 // in proportion. Any photo outside File Manager stays as it is.
 export function resizedSrc(image: { src: string; width: number; height: number }, width: number): string {
-  const match = HUBFS_PATH.exec(image.src);
-  if (!match) return image.src;
-  const filePath = match[1];
+  const filePath = HUBFS_PATH.exec(image.src)?.[1];
+  if (!filePath) return image.src;
   const height = Math.round((width * image.height) / image.width);
   return `/hs-fs/hubfs/${filePath}?width=${width}&height=${height}&name=${filePath.split('/').pop()}`;
 }

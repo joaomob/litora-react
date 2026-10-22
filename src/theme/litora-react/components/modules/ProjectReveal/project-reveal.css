@@ -59,8 +59,19 @@
   right: 0;
   bottom: 0;
   left: 0;
-  height: min(45%, calc(min(var(--_typography---display--large), (100vw - 2 * var(--_layout---spacing--global-padding)) / 5.9) + 8rem));
-  background-image: linear-gradient(to top, color-mix(in srgb, var(--_theme---background-color--background-dark) 64%, transparent) calc(min(var(--_typography---display--large), (100vw - 2 * var(--_layout---spacing--global-padding)) / 5.9) * 0.8 + 2rem), transparent);
+  height: min(
+    45%,
+    calc(min(var(--_typography---display--large), (100vw - 2 * var(--_layout---spacing--global-padding)) / 5.9) + 8rem)
+  );
+  background-image: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--_theme---background-color--background-dark) 64%, transparent)
+      calc(
+        min(var(--_typography---display--large), (100vw - 2 * var(--_layout---spacing--global-padding)) / 5.9) * 0.8 +
+          2rem
+      ),
+    transparent
+  );
 }
 /* the word rests on the foot of the band: its baseline 2rem above the edge (measured: the line box of Unbounded at
    line height 1 leaves 0.125 of the size under the baseline, and the capitals rise 0.75 of the size above it, 0.77
@@ -74,7 +85,10 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: calc(2rem - min(var(--_typography---display--large), (100vw - 2 * var(--_layout---spacing--global-padding)) / 5.9) * 0.125);
+  padding-bottom: calc(
+    2rem - min(var(--_typography---display--large), (100vw - 2 * var(--_layout---spacing--global-padding)) / 5.9) *
+      0.125
+  );
 }
 /* the word is 5.57 times its size wide in Unbounded 500 with its letter spacing (1158 px at 13rem, inside the band
    of 1280 px): between 992 and 1387 px of window the size follows the width of the band, so the word takes 94% of it
@@ -82,7 +96,10 @@
    a new family changes it here, in the veil and in the title above. */
 .project-reveal_word {
   color: var(--_theme---text-color--text-on-dark);
-  font-size: min(var(--_typography---display--large), calc((100vw - 2 * var(--_layout---spacing--global-padding)) / 5.9));
+  font-size: min(
+    var(--_typography---display--large),
+    calc((100vw - 2 * var(--_layout---spacing--global-padding)) / 5.9)
+  );
 }
 /* the ring of 1 px around the circle that opens the photo: the circle is the sun of the logo (interaction 4). It only
    exists with motion on: without script and with reduced motion the photo shows whole. */

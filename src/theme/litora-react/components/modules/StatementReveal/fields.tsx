@@ -7,6 +7,17 @@ export const fields = (
   <ModuleFields>
     <TextField label="Label Text" name="labelText" default={defaults.labelText} />
     <TextField label="Text" name="text" default={defaults.text} />
-    <ChoiceField label="Section colour" name="background" inlineHelpText="Colours come from the theme settings." display="select" choices={[['primary', 'Light'], ['secondary', 'Light alternate'], ['inverse', 'Dark']]} default={defaults.background} />
+    <ChoiceField
+      label="Section colour"
+      name="background"
+      inlineHelpText="Colours come from the theme settings."
+      display="select"
+      choices={[
+        ['primary', 'Light'],
+        ['secondary', 'Light alternate'],
+        ['inverse', 'Dark'],
+      ]}
+      default={defaults.background}
+    />
   </ModuleFields>
 );

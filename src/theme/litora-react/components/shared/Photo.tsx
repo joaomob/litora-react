@@ -25,7 +25,18 @@ type ArtDirectedPhotoProps = {
 
 // A wide photo with a tall crop for the phone, the <picture> of the Litora HubL modules
 export function ArtDirectedPhoto(props: ArtDirectedPhotoProps) {
-  const { image, imageTall, tallMedia, tallWidths, wideWidths, srcWidth, sizes, className, firstScreen, dataAttribute } = props;
+  const {
+    image,
+    imageTall,
+    tallMedia,
+    tallWidths,
+    wideWidths,
+    srcWidth,
+    sizes,
+    className,
+    firstScreen,
+    dataAttribute,
+  } = props;
   return (
     <picture>
       <source

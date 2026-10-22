@@ -10,7 +10,19 @@ import projectRevealCss from './project-reveal.css?inline';
 // The project photo opening through a circle as the page scrolls (data-project-*, js/motion.js). Same markup and
 // classes as the Litora HubL module.
 export function Component({ fieldValues }: ProjectRevealProps) {
-  const { noWrapTerm, labelText, word, nameText, text, caption, buttonLabel, buttonTarget, image, imageTall, background } = fieldValues;
+  const {
+    noWrapTerm,
+    labelText,
+    word,
+    nameText,
+    text,
+    caption,
+    buttonLabel,
+    buttonTarget,
+    image,
+    imageTall,
+    background,
+  } = fieldValues;
   return (
     <>
       <InlineStyle sheet={projectRevealCss} />
@@ -50,7 +62,9 @@ export function Component({ fieldValues }: ProjectRevealProps) {
                     </span>
                   </h2>
                 </div>
-                <figcaption className="project-reveal_caption text-size-small text-color-secondary">{caption}</figcaption>
+                <figcaption className="project-reveal_caption text-size-small text-color-secondary">
+                  {caption}
+                </figcaption>
               </figure>
             </div>
           </div>

@@ -86,7 +86,12 @@
   padding: var(--_layout---spacing--xsmall) var(--_layout---spacing--small);
   border-radius: var(--_sizes---border-radius--small);
   background-color: var(--_theme---background-color--background-brand);
-  background-image: radial-gradient(90% 140% at 0% 0%, var(--base-color-brand--coral) 0%, color-mix(in srgb, var(--base-color-brand--coral), var(--base-color-brand--sun)) 22%, var(--base-color-brand--sun) 48%);
+  background-image: radial-gradient(
+    90% 140% at 0% 0%,
+    var(--base-color-brand--coral) 0%,
+    color-mix(in srgb, var(--base-color-brand--coral), var(--base-color-brand--sun)) 22%,
+    var(--base-color-brand--sun) 48%
+  );
   color: var(--_theme---text-color--text-on-brand);
 }
 .hero_time-list {

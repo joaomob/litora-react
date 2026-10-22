@@ -31,7 +31,7 @@ const REACT_MODULES = {
   'project-reveal': 'ProjectReveal',
   'topic-grid': 'TopicGrid',
   'audience-cards': 'AudienceCards',
-  'speakers': 'Speakers',
+  speakers: 'Speakers',
   'stat-row': 'StatRow',
   'project-stack': 'ProjectStack',
   'faq-accordion': 'FaqAccordion',
@@ -46,13 +46,20 @@ const FIXED = { 'site-header': 'header', 'site-footer': 'footer' };
 // The React pages live next to the HubL pages on the same domain, under /react/ and /en/react/, so every link between
 // the 10 pages (logo, language switch, privacy, form redirect) points to the React page of the same path
 const readContent = (page) => JSON.parse(fs.readFileSync(path.join(ROOT, 'content', `${page.content}.json`), 'utf8'));
-const PAGE_PATHS = new Set(PAGES.flatMap((page) => readContent(page).map((m) => m.params.links?.self).filter(Boolean)));
+const PAGE_PATHS = new Set(
+  PAGES.flatMap((page) =>
+    readContent(page)
+      .map((m) => m.params.links?.self)
+      .filter(Boolean),
+  ),
+);
 if (PAGE_PATHS.size !== PAGES.length) throw new Error(`expected ${PAGES.length} page paths, found ${PAGE_PATHS.size}`);
 const reactPath = (p) => p.replace(/^\/(en\/)?/, (_, en) => (en ? '/en/react/' : '/react/'));
 function toReactPaths(value) {
   if (typeof value === 'string') return PAGE_PATHS.has(value) ? reactPath(value) : value;
   if (Array.isArray(value)) return value.map(toReactPaths);
-  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, toReactPaths(v)]));
+  if (value && typeof value === 'object')
+    return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, toReactPaths(v)]));
   return value;
 }
 
@@ -61,18 +68,25 @@ function toReactPaths(value) {
 const ORIGIN = 'https://litora.joaomob.com';
 const EVENT_SCHEMAS = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', 'event-schema.json'), 'utf8'));
 function toReactUrls(value) {
-  if (typeof value === 'string' && value.startsWith(`${ORIGIN}/`)) return ORIGIN + toReactPaths(value.slice(ORIGIN.length));
+  if (typeof value === 'string' && value.startsWith(`${ORIGIN}/`))
+    return ORIGIN + toReactPaths(value.slice(ORIGIN.length));
   if (Array.isArray(value)) return value.map(toReactUrls);
-  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, toReactUrls(v)]));
+  if (value && typeof value === 'object')
+    return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, toReactUrls(v)]));
   return value;
 }
-const ldJson = (schema) => `<script type="application/ld+json">${JSON.stringify(toReactUrls(schema)).replace(/</g, '\\u003c')}</script>`;
+const ldJson = (schema) =>
+  `<script type="application/ld+json">${JSON.stringify(toReactUrls(schema)).replace(/</g, '\\u003c')}</script>`;
 
 const isObject = (v) => v && typeof v === 'object' && !Array.isArray(v);
 // keeps only the keys the module fields define, at every object level (arrays pass whole)
 function shape(value, defaults) {
   if (!isObject(value) || !isObject(defaults)) return value;
-  return Object.fromEntries(Object.keys(defaults).filter((k) => k in value).map((k) => [k, shape(value[k], defaults[k])]));
+  return Object.fromEntries(
+    Object.keys(defaults)
+      .filter((k) => k in value)
+      .map((k) => [k, shape(value[k], defaults[k])]),
+  );
 }
 
 // JSON is valid HubL for strings, numbers, booleans, lists and dicts; a HubL tag inside a value would run, so it stops the build
@@ -100,7 +114,9 @@ for (const page of PAGES) {
       blocks[block] = `{% module "site_${block}" ${args.join(',\n  ')}\n%}`;
       continue;
     }
-    sections.push(`{% dnd_section full_width=true %}\n{% dnd_module\n  ${args.join(',\n  ')}\n%}\n{% end_dnd_module %}\n{% end_dnd_section %}`);
+    sections.push(
+      `{% dnd_section full_width=true %}\n{% dnd_module\n  ${args.join(',\n  ')}\n%}\n{% end_dnd_module %}\n{% end_dnd_section %}`,
+    );
   }
   const template = `<!--
   templateType: page

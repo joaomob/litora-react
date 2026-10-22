@@ -23,7 +23,13 @@
   bottom: 0;
   left: calc((100% - 13.75rem) / 12 * 5 + 5.375rem);
   width: var(--_layout---spacing--xxsmall);
-  background-image: repeating-linear-gradient(to bottom, color-mix(in srgb, var(--_theme---text-color--text-brand) 45%, transparent) 0, color-mix(in srgb, var(--_theme---text-color--text-brand) 45%, transparent) 1px, transparent 1px, transparent 0.75rem);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--_theme---text-color--text-brand) 45%, transparent) 0,
+    color-mix(in srgb, var(--_theme---text-color--text-brand) 45%, transparent) 1px,
+    transparent 1px,
+    transparent 0.75rem
+  );
 }
 .stat-ruler_list {
   list-style: none;

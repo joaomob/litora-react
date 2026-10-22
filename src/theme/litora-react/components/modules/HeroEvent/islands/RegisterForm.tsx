@@ -29,7 +29,8 @@ function messageFor(field: FormFieldValue, form: HTMLFormElement): string {
   const control = inputOf(form, field.propertyName);
   if (!control) return '';
   if (field.type === 'radio') return (control as RadioNodeList).value ? '' : field.errors.required;
-  if (field.type === 'checkbox' || field.type === 'consent') return (control as HTMLInputElement).checked ? '' : field.errors.required;
+  if (field.type === 'checkbox' || field.type === 'consent')
+    return (control as HTMLInputElement).checked ? '' : field.errors.required;
   const value = (control as HTMLInputElement).value.trim();
   if (!value) return field.errors.required;
   if (field.type === 'email' && !EMAIL.test(value)) return field.errors.invalid ?? '';
@@ -38,8 +39,8 @@ function messageFor(field: FormFieldValue, form: HTMLFormElement): string {
 }
 
 function cookie(name: string) {
-  const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
-  return match ? decodeURIComponent(match[1]) : '';
+  const value = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`))?.[1];
+  return value ? decodeURIComponent(value) : '';
 }
 
 export function payload(fields: FormFieldValue[], form: HTMLFormElement) {
@@ -52,11 +53,14 @@ export function payload(fields: FormFieldValue[], form: HTMLFormElement) {
     const control = inputOf(form, field.propertyName);
     if (!control) continue;
     if (field.type === 'consent') {
-      data.legalConsentOptions = { consent: { consentToProcess: (control as HTMLInputElement).checked, text: field.labelText } };
+      data.legalConsentOptions = {
+        consent: { consentToProcess: (control as HTMLInputElement).checked, text: field.labelText },
+      };
     } else if (field.type === 'checkbox') {
       data.fields.push({ name: field.propertyName, value: (control as HTMLInputElement).checked ? 'true' : 'false' });
     } else if (field.type === 'radio') {
-      if ((control as RadioNodeList).value) data.fields.push({ name: field.propertyName, value: (control as RadioNodeList).value });
+      if ((control as RadioNodeList).value)
+        data.fields.push({ name: field.propertyName, value: (control as RadioNodeList).value });
     } else {
       data.fields.push({ name: field.propertyName, value: (control as HTMLInputElement).value.trim() });
     }
@@ -120,11 +124,14 @@ export default function RegisterForm({ form, portalId }: Props) {
 
     setBusy(true);
     try {
-      const response = await fetch(`${ENDPOINT}${encodeURIComponent(portalId)}/${encodeURIComponent(form.hubspotFormGuid)}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload(form.fields, el)),
-      });
+      const response = await fetch(
+        `${ENDPOINT}${encodeURIComponent(portalId)}/${encodeURIComponent(form.hubspotFormGuid)}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload(form.fields, el)),
+        },
+      );
       if (!response.ok) throw new Error(`HubSpot answered ${response.status}`);
       window.location.assign(redirect);
     } catch {
@@ -152,6 +159,7 @@ export default function RegisterForm({ form, portalId }: Props) {
 
           if (field.type === 'radio') {
             return (
+              // ARIA does not support aria-invalid on a radio: the group points to its error text instead (GOV.UK pattern)
               <fieldset className="form_field is-full" aria-describedby={`${id}-error`} key={field.propertyName}>
                 <legend className="form_label">{field.labelText}</legend>
                 <div className="form_options">
@@ -163,7 +171,6 @@ export default function RegisterForm({ form, portalId }: Props) {
                         name={field.propertyName}
                         value={option.value}
                         required
-                        aria-invalid={invalid}
                         onChange={onChange}
                       />
                       <span>{option.labelText}</span>
