@@ -1,5 +1,7 @@
 # Litora React
 
+[![checks](https://github.com/joaomob/litora-react/actions/workflows/checks.yml/badge.svg)](https://github.com/joaomob/litora-react/actions/workflows/checks.yml)
+
 Litora, a fictional EB-5 brand made for João Marcos's design portfolio, rebuilt as a HubSpot CMS theme in React
 (projects platform 2025.2). The same site is live as a HubL theme at https://litora.joaomob.com; this theme copies its
 markup, classes and texts, and swaps the modules for React components.
