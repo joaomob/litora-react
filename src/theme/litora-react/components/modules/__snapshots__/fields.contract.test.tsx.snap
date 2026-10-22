@@ -69,6 +69,7 @@ exports[`./FaqAccordion/fields.tsx > keeps the field paths and types 1`] = `
   "heading: text",
   "noWrapTerm: text",
   "intro: text",
+  "anchorId: text",
   "timeline: group",
   "timeline.legend: text",
   "timeline.items: group",

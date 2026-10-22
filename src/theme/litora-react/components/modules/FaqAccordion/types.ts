@@ -4,6 +4,7 @@ export type FaqAccordionProps = {
     heading: string;
     noWrapTerm: string;
     intro: string;
+    anchorId: string;
     timeline: {
       legend: string;
       items: {

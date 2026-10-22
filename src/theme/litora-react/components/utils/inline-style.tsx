@@ -5,6 +5,8 @@ import { useInlineHeadAsset } from '@hubspot/cms-components';
 // the first screen goes into the head as a <style> instead: the module imports its file with Vite's ?inline (a string)
 // and hands it to useInlineHeadAsset, the hook HubSpot's styling docs use to put CSS in the head on the server render.
 // The hook does nothing outside the server render, so the browser-only render (Storybook) gets the <style> in place.
+// A module placed twice on a page still writes its CSS once: the published webinar thank you page has two StepsList
+// modules and one copy of their rules in the head (measured 22/10/2026), so the hook needs no deduplication of its own.
 // Not for modules inside an island: the server and the browser would render different markup.
 // The prop is "sheet": HubSpot's build reads a "css" prop as the styled-components css prop and fails.
 // The CSS goes in as raw HTML, because React escapes the text of a <style> child (">" of a child selector).

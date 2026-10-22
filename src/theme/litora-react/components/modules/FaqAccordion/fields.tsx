@@ -9,6 +9,12 @@ export const fields = (
     <TextField label="Heading" name="heading" required default={defaults.heading} />
     <NoWrapTerm defaultValue={defaults.noWrapTerm} />
     <TextField label="Intro" name="intro" default={defaults.intro} />
+    <TextField
+      label="Section anchor"
+      name="anchorId"
+      inlineHelpText="Links reach the questions with # in front, such as #faq. A second question section on the page needs another one."
+      default={defaults.anchorId}
+    />
     <FieldGroup
       label="Timeline"
       name="timeline"

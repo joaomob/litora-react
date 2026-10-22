@@ -5,15 +5,18 @@ import { withNoWrap } from '../../utils/text.js';
 import type { FaqAccordionProps } from './types.js';
 import faqAccordionCss from './faq-accordion.css?inline';
 
-// The questions, one open at a time (details name="faq", the first one open), beside a timeline of the capital that
-// draws itself (data-timeline, js/motion.js). Same markup and classes as the Litora HubL module.
+// The questions, one open at a time (details sharing a name, the first one open), beside a timeline of the capital that
+// draws itself (data-timeline, js/motion.js). Same markup and classes as the Litora HubL module. The section anchor is
+// a field (default faq, the id of the HubL module) and also names the group of questions, so a second question section
+// with its own anchor keeps its own open question and its own id.
 export function Component({ fieldValues }: FaqAccordionProps) {
-  const { heading, noWrapTerm, intro, timeline, items, style } = fieldValues;
+  const { heading, noWrapTerm, intro, anchorId, timeline, items, style } = fieldValues;
   const lastMilestone = timeline.items.length - 1;
+  const group = anchorId || 'faq';
   return (
     <>
       <InlineStyle sheet={faqAccordionCss} />
-      <section className={`section_faq-accordion ${backgroundClass(style.background)}`} id="faq">
+      <section className={`section_faq-accordion ${backgroundClass(style.background)}`} id={anchorId || undefined}>
         <div className="padding-global padding-section-medium">
           <div className="container-large">
             <span className="faq-accordion_line" aria-hidden="true" data-line></span>
@@ -49,7 +52,7 @@ export function Component({ fieldValues }: FaqAccordionProps) {
               </div>
               <div className="faq-accordion_list">
                 {items.map((item, i) => (
-                  <details className="faq_item" name="faq" open={i === 0} data-reveal key={i}>
+                  <details className="faq_item" name={group} open={i === 0} data-reveal key={i}>
                     <summary className="faq_question">
                       <h3>{withNoWrap(item.question, noWrapTerm)}</h3>
                       <svg
