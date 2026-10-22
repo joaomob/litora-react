@@ -1,7 +1,7 @@
 import { moduleStates } from '../../shared/storyStates.js';
 import { Component, fields } from './index.js';
 
-// The states of every module (shared/storyStates.ts); stories.test.ts checks this file exports the ones that apply
+// The states of every module (shared/storyStates.ts); tests/stories.test.tsx checks this file exports the ones that apply
 const states = moduleStates('StepsList', Component, fields);
 
 export default {

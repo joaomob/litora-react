@@ -17,8 +17,10 @@ vi.mock('@hubspot/cms-components', async (original) => ({
 type Story = { render: (args: Record<string, unknown>) => ReactElement; args: Record<string, unknown> };
 type StoryFile = Record<string, Story | { title: string }>;
 
-const files = import.meta.glob<StoryFile>('./*/*.stories.tsx', { eager: true });
-const modules = import.meta.glob<{ Component: unknown; fields: ReactElement }>('./*/index.tsx', { eager: true });
+const files = import.meta.glob<StoryFile>('../modules/*/*.stories.tsx', { eager: true });
+const modules = import.meta.glob<{ Component: unknown; fields: ReactElement }>('../modules/*/index.tsx', {
+  eager: true,
+});
 const EXPORTS = {
   english: 'English',
   portuguese: 'Portuguese',
@@ -29,8 +31,8 @@ const EXPORTS = {
 };
 
 const cases = Object.entries(files).map(([file, stories]) => {
-  const name = file.split('/')[1] as ModuleName;
-  return { name, stories, module: modules[`./${name}/index.tsx`]! };
+  const name = file.split('/')[2] as ModuleName;
+  return { name, stories, module: modules[`../modules/${name}/index.tsx`]! };
 });
 
 describe.each(cases)('$name', ({ name, stories, module }) => {

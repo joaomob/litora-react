@@ -20,3 +20,7 @@ Thumbs.db
 
 # Screenshots of the local checks (kept out of git, under 100 MB rule)
 shots/
+
+# Written by HubSpot validate-fields (npx validate-fields .), rebuilt by the HubSpot build from fields.tsx
+src/theme/litora-react/components/modules/*/fields.json
+src/theme/litora-react/components/modules/*/fields.type.ts

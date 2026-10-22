@@ -4,7 +4,7 @@ import { fieldsJson, type FieldJson } from '../shared/fieldsJson.js';
 // The editor stores each value under the field path (name inside its groups) and reads it with the field type. A renamed
 // or retyped field shows the default again on every page that already set it, so the paths and types are a contract:
 // this test fails when one changes, unless the new field maps the old path with an alias (HubSpot alias mapping).
-const modules = import.meta.glob<{ fields: ReactElement }>('./*/fields.tsx', { eager: true });
+const modules = import.meta.glob<{ fields: ReactElement }>('../modules/*/fields.tsx', { eager: true });
 
 function contract(fields: FieldJson[], prefix = ''): string[] {
   return fields.flatMap((f) => {
@@ -51,7 +51,7 @@ function walk(fields: FieldJson[], prefix = ''): (FieldJson & { path: string })[
 
 describe.each(Object.entries(modules))('%s', (file, { fields }) => {
   const json = fieldsJson(fields);
-  const folder = file.split('/')[1]!;
+  const folder = file.split('/')[2]!;
 
   it('keeps the field paths and types', () => {
     expect(contract(json)).toMatchSnapshot();

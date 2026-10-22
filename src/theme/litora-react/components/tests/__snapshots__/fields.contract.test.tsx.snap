@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`./AudienceCards/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/AudienceCards/fields.tsx > keeps the field paths and types 1`] = `
 [
   "heading: text",
   "noWrapTerm: text",
@@ -14,7 +14,7 @@ exports[`./AudienceCards/fields.tsx > keeps the field paths and types 1`] = `
 ]
 `;
 
-exports[`./ConfirmationHero/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/ConfirmationHero/fields.tsx > keeps the field paths and types 1`] = `
 [
   "heading: text",
   "noWrapTerm: text",
@@ -52,7 +52,7 @@ exports[`./ConfirmationHero/fields.tsx > keeps the field paths and types 1`] = `
 ]
 `;
 
-exports[`./CtaBand/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/CtaBand/fields.tsx > keeps the field paths and types 1`] = `
 [
   "heading: text",
   "noWrapTerm: text",
@@ -64,7 +64,7 @@ exports[`./CtaBand/fields.tsx > keeps the field paths and types 1`] = `
 ]
 `;
 
-exports[`./FaqAccordion/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/FaqAccordion/fields.tsx > keeps the field paths and types 1`] = `
 [
   "heading: text",
   "noWrapTerm: text",
@@ -86,7 +86,7 @@ exports[`./FaqAccordion/fields.tsx > keeps the field paths and types 1`] = `
 ]
 `;
 
-exports[`./HeroEvent/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/HeroEvent/fields.tsx > keeps the field paths and types 1`] = `
 [
   "eyebrow: text",
   "heading: text",
@@ -142,7 +142,7 @@ exports[`./HeroEvent/fields.tsx > keeps the field paths and types 1`] = `
 ]
 `;
 
-exports[`./LegalText/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/LegalText/fields.tsx > keeps the field paths and types 1`] = `
 [
   "heading: text",
   "noWrapTerm: text",
@@ -154,7 +154,7 @@ exports[`./LegalText/fields.tsx > keeps the field paths and types 1`] = `
 ]
 `;
 
-exports[`./ProjectReveal/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/ProjectReveal/fields.tsx > keeps the field paths and types 1`] = `
 [
   "noWrapTerm: text",
   "labelText: text",
@@ -171,7 +171,7 @@ exports[`./ProjectReveal/fields.tsx > keeps the field paths and types 1`] = `
 ]
 `;
 
-exports[`./ProjectStack/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/ProjectStack/fields.tsx > keeps the field paths and types 1`] = `
 [
   "labelText: text",
   "items: group",
@@ -183,7 +183,7 @@ exports[`./ProjectStack/fields.tsx > keeps the field paths and types 1`] = `
 ]
 `;
 
-exports[`./SiteFooter/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/SiteFooter/fields.tsx > keeps the field paths and types 1`] = `
 [
   "fictionalNotice: text",
   "links: group",
@@ -205,7 +205,7 @@ exports[`./SiteFooter/fields.tsx > keeps the field paths and types 1`] = `
 ]
 `;
 
-exports[`./SiteHeader/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/SiteHeader/fields.tsx > keeps the field paths and types 1`] = `
 [
   "ctaLabel: text",
   "ctaTarget: text",
@@ -222,7 +222,7 @@ exports[`./SiteHeader/fields.tsx > keeps the field paths and types 1`] = `
 ]
 `;
 
-exports[`./Speakers/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/Speakers/fields.tsx > keeps the field paths and types 1`] = `
 [
   "heading: text",
   "noWrapTerm: text",
@@ -237,7 +237,7 @@ exports[`./Speakers/fields.tsx > keeps the field paths and types 1`] = `
 ]
 `;
 
-exports[`./StatRow/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/StatRow/fields.tsx > keeps the field paths and types 1`] = `
 [
   "heading: text",
   "noWrapTerm: text",
@@ -258,7 +258,7 @@ exports[`./StatRow/fields.tsx > keeps the field paths and types 1`] = `
 ]
 `;
 
-exports[`./StatementReveal/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/StatementReveal/fields.tsx > keeps the field paths and types 1`] = `
 [
   "labelText: text",
   "text: text",
@@ -267,7 +267,7 @@ exports[`./StatementReveal/fields.tsx > keeps the field paths and types 1`] = `
 ]
 `;
 
-exports[`./StepsList/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/StepsList/fields.tsx > keeps the field paths and types 1`] = `
 [
   "heading: text",
   "noWrapTerm: text",
@@ -279,7 +279,7 @@ exports[`./StepsList/fields.tsx > keeps the field paths and types 1`] = `
 ]
 `;
 
-exports[`./TopicGrid/fields.tsx > keeps the field paths and types 1`] = `
+exports[`../modules/TopicGrid/fields.tsx > keeps the field paths and types 1`] = `
 [
   "heading: text",
   "noWrapTerm: text",
