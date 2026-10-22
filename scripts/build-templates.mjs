@@ -107,6 +107,10 @@ function hubl(value) {
   return text;
 }
 
+// The values of each module on the first page that has it, by language: the Storybook states start from them
+// (components/shared/storyStates.ts), so the stories show the copy of the pages in both languages
+const storyContent = {};
+
 for (const page of PAGES) {
   const modules = toReactPaths(readContent(page));
   const skipLink = modules.find((m) => m.params.global?.skipLink)?.params.global.skipLink;
@@ -125,6 +129,7 @@ for (const page of PAGES) {
     const moved =
       defaults.style && 'background' in params ? { ...params, style: { background: params.background } } : params;
     const values = shape(moved, defaults);
+    (storyContent[folder] ??= {})[language] ??= values;
     if (module === FOOTER) {
       const footer = { ...values, style: { background: 'contrast' } };
       const text = footerContent(footer);
@@ -191,3 +196,6 @@ for (const { name, language, campaign, values } of footers.values()) {
   fs.writeFileSync(path.join(THEME, 'templates', 'partials', `${name}.hubl.html`), partial);
   console.log(`templates/partials/${name}.hubl.html`);
 }
+
+fs.writeFileSync(path.join(THEME, 'storybook', 'module-content.json'), `${JSON.stringify(storyContent, null, 2)}\n`);
+console.log('storybook/module-content.json');

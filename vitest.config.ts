@@ -8,10 +8,10 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: ['./vitest.setup.ts'],
+    setupFiles: ['./vitest.setup.ts', './src/theme/litora-react/vitest.environment.ts'],
     include: ['src/**/*.test.{ts,tsx}'],
     // Processed by Vite, so the fields library uses the deduplicated React instead of the theme folder copy
-    server: { deps: { inline: ['@hubspot/cms-components'] } },
+    server: { deps: { inline: ['@hubspot/cms-components', '@hubspot/cms-dev-server'] } },
   },
   resolve: {
     dedupe: ['react', 'react-dom'],

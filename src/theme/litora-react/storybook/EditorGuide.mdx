@@ -1,0 +1,56 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Guide/Marketing editor" />
+
+# Litora for the marketing team
+
+How a page of this theme is built in the HubSpot page editor, and what each module story shows.
+
+## Start a page from a ready made section
+
+Every module of the page body is also a ready made section of the page editor, with a preview image:
+
+- Event hero with photo, schedule and sign up form (HeroEvent)
+- Confirmation hero with photo and schedule (ConfirmationHero)
+- Statement revealed word by word (StatementReveal)
+- Project photo opening through a circle (ProjectReveal)
+- Topic rows with number and thumbnail (TopicGrid)
+- Audience photo cards (AudienceCards)
+- Speaker photo cards (Speakers)
+- Numbers on a ruler with cost table (StatRow)
+- Stacked full screen photos with captions (ProjectStack)
+- Questions with a capital timeline (FaqAccordion)
+- Numbered steps list (StepsList)
+- Final call over a photo (CtaBand)
+- Legal text page body (LegalText)
+
+A section starts with the default copy of its module, so it is valid as soon as it is dropped.
+
+## The footer is shared
+
+The footer is a global partial, one per campaign and language (webinar and event, Portuguese and English). Editing it
+once in the global content editor changes it on every page of that campaign and language. Its colour follows the last
+section of the page by itself: it takes the light colour that section does not use, so the two never blend.
+
+## Language links follow the translation
+
+The header, the hero and the footer link to this page and to the page in the other language. Once the page is linked
+to its translation (a multi-language variation in HubSpot), those links come from that pair and stay right when a page
+moves. A page without a translation keeps the paths typed in the module fields.
+
+## The Style tab
+
+Modules with a section colour keep it in the **Style** tab: **Light**, **Light alternate** or **Dark**. Copy stays in the
+**Content** tab.
+
+## What the stories show
+
+Each module has the same states, built from the copy of the 10 published pages:
+
+- **English** and **Portuguese**: the copy of the first page that uses the module, in each language.
+- **Long Text**: every sentence said twice, to see how headings, cards and buttons grow with a longer translation.
+- **Fewest Items** and **Most Items**: every list at the smallest and the largest count the editor allows.
+- **Dark**: the dark section colour of the Style tab.
+
+The **Accessibility** panel runs axe on the open story. The unit tests run the same checks on the English and
+Portuguese stories of every module, except colour contrast, which needs a browser.

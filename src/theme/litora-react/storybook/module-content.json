@@ -1,0 +1,1664 @@
+{
+  "SiteHeader": {
+    "pt-br": {
+      "ctaLabel": "Inscrever-se",
+      "ctaTarget": "#register",
+      "links": {
+        "self": "/react/webinar-visto-eb5",
+        "alternate": "/en/react/eb5-visa-webinar",
+        "alternateLang": "en-US"
+      },
+      "global": {
+        "header": {
+          "logoText": "Litora",
+          "languageCurrent": "PT",
+          "languageOther": "EN",
+          "languageOtherLabel": "Ver esta página em inglês"
+        }
+      }
+    },
+    "en-us": {
+      "ctaLabel": "Register",
+      "ctaTarget": "#register",
+      "links": {
+        "self": "/en/react/eb5-visa-webinar",
+        "alternate": "/react/webinar-visto-eb5",
+        "alternateLang": "pt-BR"
+      },
+      "global": {
+        "header": {
+          "logoText": "Litora",
+          "languageCurrent": "EN",
+          "languageOther": "PT",
+          "languageOtherLabel": "View this page in Portuguese"
+        }
+      }
+    }
+  },
+  "HeroEvent": {
+    "pt-br": {
+      "eyebrow": "Online e gratuito",
+      "heading": "Webinar ao vivo sobre o visto EB-5 para brasileiros",
+      "noWrapTerm": "EB-5",
+      "details": [
+        {
+          "text": "Quinta-feira, 12 de novembro de 2026, às 20h de Brasília."
+        },
+        {
+          "text": "75 minutos no Zoom."
+        }
+      ],
+      "timeBlock": {
+        "date": "2026-11-12",
+        "day": "12",
+        "month": "nov",
+        "rows": [
+          {
+            "time": "20h",
+            "datetime": "2026-11-12T20:00-03:00",
+            "place": "São Paulo"
+          },
+          {
+            "time": "18h",
+            "datetime": "2026-11-12T18:00-05:00",
+            "place": "Nova York"
+          }
+        ]
+      },
+      "bodyText": "O visto EB-5 para brasileiros é o caminho até o green card para quem investe pelo menos 800 mil dólares num negócio nos EUA. No webinar, a Dra. Helena Prado, advogada de imigração nos EUA, e Rafael Moura, da Litora, mostram para onde o dinheiro vai e quando ele pode voltar, e respondem às perguntas no fim.",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/hero/hero-wide-1920.webp",
+        "alt": "Prédio residencial branco, com varandas de vidro em todos os andares, visto da água no fim da tarde, com palmeiras na orla e duas lanchas no píer",
+        "width": 1920,
+        "height": 1200
+      },
+      "form": {
+        "anchorId": "register",
+        "heading": "Faça sua inscrição",
+        "hubspotFormGuid": "4c3db844-aa48-49c3-b045-830e43b1b1da",
+        "fields": [
+          {
+            "propertyName": "firstname",
+            "type": "text",
+            "labelText": "Nome",
+            "autocomplete": "given-name",
+            "half": true,
+            "errors": {
+              "required": "Escreva seu nome."
+            }
+          },
+          {
+            "propertyName": "lastname",
+            "type": "text",
+            "labelText": "Sobrenome",
+            "autocomplete": "family-name",
+            "half": true,
+            "errors": {
+              "required": "Escreva seu sobrenome."
+            }
+          },
+          {
+            "propertyName": "email",
+            "type": "email",
+            "labelText": "E-mail",
+            "help": "O link da sala chega neste endereço.",
+            "autocomplete": "email",
+            "errors": {
+              "required": "Escreva seu e-mail.",
+              "invalid": "Confira o e-mail. Ele precisa ter @ e um domínio, como gmail.com."
+            }
+          },
+          {
+            "propertyName": "mobilephone",
+            "type": "tel",
+            "labelText": "WhatsApp",
+            "help": "Com o código do país e o DDD, como +55 11 9XXXX XXXX.",
+            "autocomplete": "tel",
+            "errors": {
+              "required": "Escreva seu WhatsApp.",
+              "invalid": "Confira o número. Ele precisa ter o código do país e o DDD."
+            }
+          },
+          {
+            "propertyName": "city",
+            "type": "text",
+            "labelText": "Cidade",
+            "autocomplete": "address-level2",
+            "errors": {
+              "required": "Escreva sua cidade."
+            }
+          },
+          {
+            "propertyName": "residence",
+            "type": "radio",
+            "labelText": "Onde você mora hoje?",
+            "options": [
+              {
+                "value": "brazil",
+                "labelText": "Brasil"
+              },
+              {
+                "value": "united_states_temporary_visa",
+                "labelText": "EUA, com visto temporário"
+              },
+              {
+                "value": "another_country",
+                "labelText": "Outro país"
+              }
+            ],
+            "errors": {
+              "required": "Escolha uma opção."
+            }
+          },
+          {
+            "propertyName": "eb5_minimum_acknowledged",
+            "type": "checkbox",
+            "labelText": "Sei que o EB-5 pede investimento mínimo de 800 mil dólares.",
+            "errors": {
+              "required": "Para se inscrever, confirme que sabe do investimento mínimo."
+            }
+          },
+          {
+            "propertyName": "lgpd_consent",
+            "type": "consent",
+            "labelText": "Autorizo a Litora a usar meus dados (nome, e-mail, WhatsApp, cidade e país onde moro) para enviar o link e os avisos deste webinar e para falar comigo sobre o EB-5, conforme a Lei Geral de Proteção de Dados Pessoais (LGPD, Lei 13.709/2018). Posso pedir a correção ou a exclusão dos meus dados quando quiser.",
+            "linkLabel": "Política de privacidade",
+            "errors": {
+              "required": "Para se inscrever, marque a autorização de uso dos dados."
+            },
+            "linkUrl": "/react/privacidade"
+          }
+        ],
+        "submitLabel": "Confirmar inscrição",
+        "submitNote": "Você recebe a confirmação agora e o link da sala 24 horas antes.",
+        "notice": "Litora é uma marca fictícia, criada para um portfólio de design. Esta página não é oferta de venda de valores mobiliários.",
+        "submitError": "A inscrição não foi enviada. Confira a sua conexão e tente de novo.",
+        "redirectUrl": "/react/webinar-visto-eb5/obrigado"
+      },
+      "imageTall": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/hero/hero-tall-1534.webp",
+        "alt": "Prédio residencial branco, com varandas de vidro em todos os andares, visto da água no fim da tarde, com palmeiras na orla e duas lanchas no píer",
+        "width": 1534,
+        "height": 1227
+      },
+      "links": {
+        "self": "/react/webinar-visto-eb5",
+        "alternate": "/en/react/eb5-visa-webinar",
+        "alternateLang": "en-US",
+        "privacy": "/react/privacidade"
+      },
+      "global": {
+        "header": {
+          "logoText": "Litora",
+          "languageCurrent": "PT",
+          "languageOther": "EN",
+          "languageOtherLabel": "Ver esta página em inglês"
+        }
+      }
+    },
+    "en-us": {
+      "eyebrow": "Free and online",
+      "heading": "A live EB-5 visa webinar for investors from Brazil",
+      "noWrapTerm": "EB-5",
+      "details": [
+        {
+          "text": "Thursday, November 12, 2026, at 6 p.m. in New York."
+        },
+        {
+          "text": "75 minutes on Zoom, presented in Portuguese."
+        }
+      ],
+      "timeBlock": {
+        "date": "2026-11-12",
+        "day": "12",
+        "month": "Nov",
+        "rows": [
+          {
+            "time": "8 p.m.",
+            "datetime": "2026-11-12T20:00-03:00",
+            "place": "São Paulo"
+          },
+          {
+            "time": "6 p.m.",
+            "datetime": "2026-11-12T18:00-05:00",
+            "place": "New York"
+          }
+        ]
+      },
+      "bodyText": "The EB-5 visa is the path to a green card for people who invest at least $800,000 in a U.S. business. In this EB-5 visa webinar, Helena Prado, a U.S. immigration attorney, and Rafael Moura of Litora show where the money goes and when it can come back, and take questions at the end.",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/hero/hero-wide-1920.webp",
+        "alt": "A white residential building with glass balconies on every floor, seen from the water in the late afternoon, with palm trees on the waterfront and two boats at the dock",
+        "width": 1920,
+        "height": 1200
+      },
+      "form": {
+        "anchorId": "register",
+        "heading": "Register",
+        "hubspotFormGuid": "4c3db844-aa48-49c3-b045-830e43b1b1da",
+        "fields": [
+          {
+            "propertyName": "firstname",
+            "type": "text",
+            "labelText": "First name",
+            "autocomplete": "given-name",
+            "half": true,
+            "errors": {
+              "required": "Enter your first name."
+            }
+          },
+          {
+            "propertyName": "lastname",
+            "type": "text",
+            "labelText": "Last name",
+            "autocomplete": "family-name",
+            "half": true,
+            "errors": {
+              "required": "Enter your last name."
+            }
+          },
+          {
+            "propertyName": "email",
+            "type": "email",
+            "labelText": "Email",
+            "help": "We send the Zoom link to this address.",
+            "autocomplete": "email",
+            "errors": {
+              "required": "Enter your email.",
+              "invalid": "Check your email. It needs an @ and a domain, like gmail.com."
+            }
+          },
+          {
+            "propertyName": "mobilephone",
+            "type": "tel",
+            "labelText": "WhatsApp",
+            "help": "Include the country code and area code, like +55 11 9XXXX XXXX.",
+            "autocomplete": "tel",
+            "errors": {
+              "required": "Enter your WhatsApp number.",
+              "invalid": "Check the number. It needs the country code and area code."
+            }
+          },
+          {
+            "propertyName": "city",
+            "type": "text",
+            "labelText": "City",
+            "autocomplete": "address-level2",
+            "errors": {
+              "required": "Enter your city."
+            }
+          },
+          {
+            "propertyName": "residence",
+            "type": "radio",
+            "labelText": "Where do you live now?",
+            "options": [
+              {
+                "value": "brazil",
+                "labelText": "Brazil"
+              },
+              {
+                "value": "united_states_temporary_visa",
+                "labelText": "United States, on a temporary visa"
+              },
+              {
+                "value": "another_country",
+                "labelText": "Another country"
+              }
+            ],
+            "errors": {
+              "required": "Choose an option."
+            }
+          },
+          {
+            "propertyName": "eb5_minimum_acknowledged",
+            "type": "checkbox",
+            "labelText": "I understand that EB-5 requires a minimum investment of $800,000.",
+            "errors": {
+              "required": "To register, confirm that you know the minimum investment."
+            }
+          },
+          {
+            "propertyName": "lgpd_consent",
+            "type": "consent",
+            "labelText": "I authorize Litora to use my data (name, email, WhatsApp, city and country of residence) to send the link and reminders for this webinar and to contact me about EB-5, under Brazil's General Personal Data Protection Law (LGPD, Law No. 13,709/2018). I can ask to correct or delete my data at any time.",
+            "linkLabel": "Privacy policy",
+            "errors": {
+              "required": "To register, check the box that authorizes the use of your data."
+            },
+            "linkUrl": "/en/react/privacy"
+          }
+        ],
+        "submitLabel": "Confirm registration",
+        "submitNote": "You get a confirmation now and the Zoom link 24 hours before.",
+        "notice": "Litora is a fictional brand created for a design portfolio. This page is not an offer to sell securities.",
+        "submitError": "Your registration wasn't sent. Check your connection and try again.",
+        "redirectUrl": "/en/react/eb5-visa-webinar/thank-you"
+      },
+      "imageTall": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/hero/hero-tall-1534.webp",
+        "alt": "A white residential building with glass balconies on every floor, seen from the water in the late afternoon, with palm trees on the waterfront and two boats at the dock",
+        "width": 1534,
+        "height": 1227
+      },
+      "links": {
+        "self": "/en/react/eb5-visa-webinar",
+        "alternate": "/react/webinar-visto-eb5",
+        "alternateLang": "pt-BR",
+        "privacy": "/en/react/privacy"
+      },
+      "global": {
+        "header": {
+          "logoText": "Litora",
+          "languageCurrent": "EN",
+          "languageOther": "PT",
+          "languageOtherLabel": "View this page in Portuguese"
+        }
+      }
+    }
+  },
+  "StatementReveal": {
+    "pt-br": {
+      "labelText": "O webinar",
+      "text": "Em 75 minutos, você entende o que o green card pede de você e da sua família e sai com as perguntas para levar ao seu advogado.",
+      "style": {
+        "background": "secondary"
+      }
+    },
+    "en-us": {
+      "labelText": "The webinar",
+      "text": "In 75 minutes, you learn what the green card asks of you and your family, and you leave with the questions to take to your attorney.",
+      "style": {
+        "background": "secondary"
+      }
+    }
+  },
+  "ProjectReveal": {
+    "pt-br": {
+      "labelText": "O projeto de exemplo",
+      "word": "TAVESSA",
+      "nameText": "Tavessa, em Fort Pierce, na Flórida",
+      "text": "O Tavessa é um prédio residencial para aluguel em Fort Pierce, na Flórida. No EB-5, você investe na empresa de um projeto como este, que cria os empregos que a lei pede, e não recebe um apartamento.",
+      "caption": "Vista aérea do Tavessa, um empreendimento fictício criado para esta página.",
+      "buttonLabel": "Inscrever-se no webinar",
+      "buttonTarget": "#register",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/aerial-wide-1920.webp",
+        "alt": "Vista aérea do prédio residencial branco à beira da lagoa, com um píer e duas lanchas, uma lancha passando na água, palmeiras em volta, uma marina e uma ponte ao fundo",
+        "width": 1920,
+        "height": 1080
+      },
+      "imageTall": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/aerial-tall-864.webp",
+        "alt": "Vista aérea do prédio residencial branco à beira da lagoa, com um píer e duas lanchas, uma lancha passando na água, palmeiras em volta, uma marina e uma ponte ao fundo",
+        "width": 864,
+        "height": 1440
+      },
+      "style": {
+        "background": "primary"
+      }
+    },
+    "en-us": {
+      "labelText": "The sample project",
+      "word": "TAVESSA",
+      "nameText": "Tavessa, in Fort Pierce, Florida",
+      "text": "Tavessa is a residential rental building in Fort Pierce, Florida. With EB-5, you invest in the company behind a project like this one, which creates the jobs the law requires, and you don't receive an apartment.",
+      "caption": "Aerial view of Tavessa, a fictional project created for this page.",
+      "buttonLabel": "Register for the webinar",
+      "buttonTarget": "#register",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/aerial-wide-1920.webp",
+        "alt": "Aerial view of the white residential building on the lagoon, with a dock and two boats, a boat passing on the water, palm trees around it, a marina and a bridge in the background",
+        "width": 1920,
+        "height": 1080
+      },
+      "imageTall": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/aerial-tall-864.webp",
+        "alt": "Aerial view of the white residential building on the lagoon, with a dock and two boats, a boat passing on the water, palm trees around it, a marina and a bridge in the background",
+        "width": 864,
+        "height": 1440
+      },
+      "style": {
+        "background": "primary"
+      }
+    }
+  },
+  "TopicGrid": {
+    "pt-br": {
+      "heading": "O que você vai aprender",
+      "intro": "",
+      "items": [
+        {
+          "heading": "Como o EB-5 funciona",
+          "text": "As etapas entre o investimento e o green card, em ordem, e o que a lei exige do negócio que recebe o dinheiro.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/topics/topic-construction.webp",
+            "alt": "Prédio em obra com dois guindastes e a estrutura de concreto aparente",
+            "width": 280,
+            "height": 240,
+            "loading": "lazy"
+          }
+        },
+        {
+          "heading": "Quanto investir",
+          "text": "O mínimo é de 1.050.000 dólares e cai para 800 mil em área TEA, que é zona rural ou de alto desemprego. Você vê o que o reajuste pela inflação muda para pedidos a partir de 2027.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/topics/topic-scale-model.webp",
+            "alt": "Maquete branca de um prédio de apartamentos com piscina sobre uma mesa de madeira, com régua, lápis e um desenho enrolado ao lado",
+            "width": 280,
+            "height": 240,
+            "loading": "lazy"
+          }
+        },
+        {
+          "heading": "Regional Center ou investimento direto",
+          "text": "O Regional Center é uma entidade aprovada pelo USCIS, o órgão de imigração dos EUA, que reúne vários investidores num mesmo projeto. Você vê como cada caminho chega aos 10 empregos em tempo integral exigidos por investidor.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/topics/topic-site-plan.webp",
+            "alt": "Planta de implantação impressa sobre uma mesa de madeira, com uma caneta e uma xícara de café",
+            "width": 280,
+            "height": 240,
+            "loading": "lazy"
+          }
+        },
+        {
+          "heading": "Origem do dinheiro",
+          "text": "Como se organiza a prova de onde veio o dinheiro investido. Os exemplos são de quem vendeu imóvel ou empresa no Brasil, de quem recebeu herança e de quem pegou empréstimo.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/topics/topic-documents.webp",
+            "alt": "Pilha de pastas claras amarradas com uma fita, com uma caneta-tinteiro em cima",
+            "width": 280,
+            "height": 240,
+            "loading": "lazy"
+          }
+        },
+        {
+          "heading": "Risco e capital de volta",
+          "text": "Onde o seu dinheiro entra no projeto, o que acontece se a obra atrasar e do que depende a devolução do capital. A Litora não promete retorno, e o webinar explica por quê.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/topics/topic-concrete-frame.webp",
+            "alt": "Pilares e lajes de concreto de um prédio em obra, com vergalhões aparentes",
+            "width": 280,
+            "height": 240,
+            "loading": "lazy"
+          }
+        },
+        {
+          "heading": "Família, prazos e impostos",
+          "text": "Quem da família entra no pedido, do que o prazo depende e o que o green card muda no imposto sobre a renda do Brasil. Você sai com as perguntas para levar ao seu contador.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/topics/topic-kitchen.webp",
+            "alt": "Cozinha com ilha de mármore, armários de madeira e janela para palmeiras",
+            "width": 280,
+            "height": 240,
+            "loading": "lazy"
+          }
+        }
+      ],
+      "style": {
+        "background": "inverse"
+      }
+    },
+    "en-us": {
+      "heading": "What you will learn",
+      "intro": "",
+      "items": [
+        {
+          "heading": "How EB-5 works",
+          "text": "Each step between the investment and the green card, in order, and what the law requires of the business that receives the money.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/topics/topic-construction.webp",
+            "alt": "A building under construction with two cranes and its concrete frame exposed",
+            "width": 280,
+            "height": 240,
+            "loading": "lazy"
+          }
+        },
+        {
+          "heading": "How much to invest",
+          "text": "The minimum is $1,050,000 and drops to $800,000 in a targeted employment area (TEA), which means a rural area or one with high unemployment. You see what the inflation adjustment changes for petitions filed in 2027 or later.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/topics/topic-scale-model.webp",
+            "alt": "A white scale model of an apartment building with a pool on a wooden table, with a ruler, a pencil and a rolled drawing beside it",
+            "width": 280,
+            "height": 240,
+            "loading": "lazy"
+          }
+        },
+        {
+          "heading": "Regional center or direct investment",
+          "text": "A regional center is an entity approved by USCIS, the U.S. immigration agency, that pools several investors in the same project. You see how each path reaches the 10 jobs required per investor, all of them full time.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/topics/topic-site-plan.webp",
+            "alt": "A printed site plan on a wooden table, with a pen and a cup of coffee",
+            "width": 280,
+            "height": 240,
+            "loading": "lazy"
+          }
+        },
+        {
+          "heading": "Source of funds",
+          "text": "How to document where the invested money came from. The examples cover the sale of a home or a company in Brazil, an inheritance and a loan.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/topics/topic-documents.webp",
+            "alt": "A stack of light folders tied with a ribbon, with a fountain pen on top",
+            "width": 280,
+            "height": 240,
+            "loading": "lazy"
+          }
+        },
+        {
+          "heading": "Risk and getting your capital back",
+          "text": "Where your money sits in the project, what happens if construction runs late and what repayment of your capital depends on. Litora doesn't promise a return, and the webinar explains why.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/topics/topic-concrete-frame.webp",
+            "alt": "Concrete columns and slabs of a building under construction, with rebar showing",
+            "width": 280,
+            "height": 240,
+            "loading": "lazy"
+          }
+        },
+        {
+          "heading": "Family, timing and taxes",
+          "text": "Which family members are included, what the timing depends on and what the green card changes in the tax on your income from Brazil. You leave with the questions to take to your tax advisor.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/topics/topic-kitchen.webp",
+            "alt": "A kitchen with a marble island, wood cabinets and a window facing palm trees",
+            "width": 280,
+            "height": 240,
+            "loading": "lazy"
+          }
+        }
+      ],
+      "style": {
+        "background": "inverse"
+      }
+    }
+  },
+  "AudienceCards": {
+    "pt-br": {
+      "heading": "Para quem é",
+      "items": [
+        {
+          "heading": "Morar nos EUA com a família",
+          "text": "Para entender o caminho inteiro antes de contratar um advogado.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/audience/audience-family-square-840.webp",
+            "alt": "Casal e dois filhos, de costas, na varanda de um apartamento, olhando o pôr do sol sobre a água",
+            "width": 840,
+            "height": 840,
+            "loading": "lazy"
+          },
+          "focus": "upper"
+        },
+        {
+          "heading": "Investir em imóveis nos EUA",
+          "text": "Para saber o que o EB-5 pede além do dinheiro.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/audience/audience-entrepreneur-square-840.webp",
+            "alt": "Homem de cabelo grisalho e paletó de linho claro, inclinado sobre plantas numa mesa de madeira, ao lado da maquete branca de um prédio de apartamentos com piscina, com a lagoa ao fundo",
+            "width": 840,
+            "height": 840,
+            "loading": "lazy"
+          },
+          "focus": "top"
+        },
+        {
+          "heading": "Ficar de vez nos EUA",
+          "text": "Para quem já mora lá com visto temporário e quer o green card.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/audience/audience-resident-square-840.webp",
+            "alt": "Mulher de blazer claro e bolsa no ombro caminhando numa calçada de pedra entre palmeiras e casas",
+            "width": 840,
+            "height": 840,
+            "loading": "lazy"
+          },
+          "focus": "upper"
+        }
+      ],
+      "style": {
+        "background": "primary"
+      }
+    },
+    "en-us": {
+      "heading": "Who it is for",
+      "items": [
+        {
+          "heading": "Live in the U.S. with your family",
+          "text": "See the whole path before you hire an attorney.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/audience/audience-family-square-840.webp",
+            "alt": "A couple and their two sons, seen from behind on an apartment balcony, watching the sunset over the water",
+            "width": 840,
+            "height": 840,
+            "loading": "lazy"
+          },
+          "focus": "upper"
+        },
+        {
+          "heading": "Invest in U.S. real estate",
+          "text": "Learn what EB-5 requires beyond the money.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/audience/audience-entrepreneur-square-840.webp",
+            "alt": "A man with gray hair in a light linen jacket, leaning over floor plans on a wooden table, next to the white scale model of an apartment building with a pool, with the lagoon behind him",
+            "width": 840,
+            "height": 840,
+            "loading": "lazy"
+          },
+          "focus": "top"
+        },
+        {
+          "heading": "Stay in the U.S. for good",
+          "text": "For people who live there on a temporary visa and want the green card.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/audience/audience-resident-square-840.webp",
+            "alt": "A woman in a light blazer with a bag on her shoulder walking on a stone sidewalk between palm trees and houses",
+            "width": 840,
+            "height": 840,
+            "loading": "lazy"
+          },
+          "focus": "upper"
+        }
+      ],
+      "style": {
+        "background": "primary"
+      }
+    }
+  },
+  "Speakers": {
+    "pt-br": {
+      "heading": "Quem apresenta",
+      "note": "Helena Prado e Rafael Moura são personagens fictícios, como a Litora.",
+      "items": [
+        {
+          "nameText": "Dra. Helena Prado",
+          "role": "Advogada de imigração nos EUA",
+          "text": "Explica o pedido ao USCIS, a prova da origem do dinheiro e o green card condicional. Responde às perguntas sobre imigração.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/speakers/speaker-helena-square-840.webp",
+            "alt": "Retrato de Helena Prado, mulher de cabelo escuro preso, blazer verde escuro e blusa clara, sorrindo de leve para a câmera diante de uma estante de livros",
+            "width": 840,
+            "height": 840,
+            "loading": "lazy"
+          }
+        },
+        {
+          "nameText": "Rafael Moura",
+          "role": "Diretor de relação com investidores da Litora",
+          "text": "Mostra como um projeto imobiliário do EB-5 se estrutura e onde estão os riscos. Responde às perguntas sobre o projeto.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/speakers/speaker-rafael-square-840.webp",
+            "alt": "Retrato de Rafael Moura, homem de cabelo cacheado curto e barba grisalha, de paletó de linho bege e camisa branca, sorrindo para a câmera, com a maquete de um prédio ao fundo",
+            "width": 840,
+            "height": 840,
+            "loading": "lazy"
+          }
+        }
+      ],
+      "style": {
+        "background": "secondary"
+      }
+    },
+    "en-us": {
+      "heading": "Speakers",
+      "note": "Helena Prado and Rafael Moura are fictional characters, and so is Litora.",
+      "items": [
+        {
+          "nameText": "Helena Prado",
+          "role": "U.S. immigration attorney",
+          "text": "Covers the USCIS petition, proof of the source of funds and the conditional green card. Takes the immigration questions.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/speakers/speaker-helena-square-840.webp",
+            "alt": "Portrait of Helena Prado, a woman with dark hair pulled back, a dark green blazer and a light blouse, smiling slightly at the camera in front of a bookshelf",
+            "width": 840,
+            "height": 840,
+            "loading": "lazy"
+          }
+        },
+        {
+          "nameText": "Rafael Moura",
+          "role": "Investor relations director at Litora",
+          "text": "Shows how an EB-5 real estate project is structured and where the risks are. Takes the project questions.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/speakers/speaker-rafael-square-840.webp",
+            "alt": "Portrait of Rafael Moura, a man with short curly hair and a graying beard, in a beige linen jacket and a white shirt, smiling at the camera, with a scale model of a building behind him",
+            "width": 840,
+            "height": 840,
+            "loading": "lazy"
+          }
+        }
+      ],
+      "style": {
+        "background": "secondary"
+      }
+    }
+  },
+  "StatRow": {
+    "pt-br": {
+      "heading": "Os requisitos do visto EB-5 em números",
+      "items": [
+        {
+          "value": "800.000 dólares",
+          "caption": "investimento mínimo em área TEA (zona rural ou de alto desemprego) ou em projeto de infraestrutura"
+        },
+        {
+          "value": "1.050.000 dólares",
+          "caption": "investimento mínimo fora dessas áreas"
+        },
+        {
+          "value": "10 empregos",
+          "caption": "em tempo integral por investidor, criados pelo negócio que recebe o investimento"
+        },
+        {
+          "value": "2 anos",
+          "caption": "tempo mínimo com o capital investido"
+        },
+        {
+          "value": "20%, 10% e 2%",
+          "caption": "dos vistos EB-5 ficam reservados para área rural, área de alto desemprego e infraestrutura"
+        }
+      ],
+      "source": "Valores de outubro de 2026. Fontes: USCIS e lei americana (8 U.S.C. 1153). O mínimo muda com a inflação para pedidos feitos a partir de 1º de janeiro de 2027.",
+      "cost": {
+        "heading": "Quanto custa no total",
+        "rows": [
+          {
+            "labelText": "Investimento mínimo",
+            "values": [
+              {
+                "amount": "800.000 ou 1.050.000 dólares, conforme a área.",
+                "when": ""
+              }
+            ]
+          },
+          {
+            "labelText": "Taxa do I-526E, a petição do investidor ao USCIS",
+            "values": [
+              {
+                "amount": "3.675 dólares",
+                "when": "Pedidos postados até 29 de novembro de 2026."
+              },
+              {
+                "amount": "7.850 dólares",
+                "when": "Pedidos postados a partir de 30 de novembro de 2026."
+              }
+            ]
+          },
+          {
+            "labelText": "Integrity Fund, taxa que a lei cobra junto com a petição",
+            "values": [
+              {
+                "amount": "1.000 dólares",
+                "when": "Pedidos postados até 29 de novembro de 2026."
+              },
+              {
+                "amount": "1.100 dólares",
+                "when": "Pedidos postados a partir de 30 de novembro de 2026."
+              }
+            ]
+          },
+          {
+            "labelText": "Honorários do advogado de imigração",
+            "values": [
+              {
+                "amount": "Valor combinado com o seu advogado.",
+                "when": ""
+              }
+            ]
+          },
+          {
+            "labelText": "Taxas do projeto",
+            "values": [
+              {
+                "amount": "Ficam nos documentos da oferta.",
+                "when": ""
+              }
+            ]
+          }
+        ],
+        "note": "As taxas do USCIS ficam fora do valor investido. A lei pede que a petição declare todos os valores pagos por causa do investimento."
+      },
+      "style": {
+        "background": "inverse"
+      }
+    },
+    "en-us": {
+      "heading": "EB-5 visa requirements in numbers",
+      "items": [
+        {
+          "value": "$800,000",
+          "caption": "minimum investment in a targeted employment area (rural or high unemployment) or an infrastructure project"
+        },
+        {
+          "value": "$1,050,000",
+          "caption": "minimum investment outside those areas"
+        },
+        {
+          "value": "10 jobs",
+          "caption": "full time, per investor, created by the business that receives the investment"
+        },
+        {
+          "value": "2 years",
+          "caption": "minimum time the capital stays invested"
+        },
+        {
+          "value": "20%, 10% and 2%",
+          "caption": "of EB-5 visas are set aside for rural areas, high unemployment areas and infrastructure"
+        }
+      ],
+      "source": "Figures as of October 2026. Sources: USCIS and U.S. law (8 U.S.C. 1153). The minimum will be adjusted for inflation for petitions filed on or after January 1, 2027.",
+      "cost": {
+        "heading": "What it costs in total",
+        "rows": [
+          {
+            "labelText": "Minimum investment",
+            "values": [
+              {
+                "amount": "$800,000 or $1,050,000, depending on the area.",
+                "when": ""
+              }
+            ]
+          },
+          {
+            "labelText": "Fee for Form I-526E, the investor's petition to USCIS",
+            "values": [
+              {
+                "amount": "$3,675",
+                "when": "Petitions postmarked through November 29, 2026."
+              },
+              {
+                "amount": "$7,850",
+                "when": "Petitions postmarked on or after November 30, 2026."
+              }
+            ]
+          },
+          {
+            "labelText": "Integrity Fund, a fee the law charges with the petition",
+            "values": [
+              {
+                "amount": "$1,000",
+                "when": "Petitions postmarked through November 29, 2026."
+              },
+              {
+                "amount": "$1,100",
+                "when": "Petitions postmarked on or after November 30, 2026."
+              }
+            ]
+          },
+          {
+            "labelText": "Immigration attorney fees",
+            "values": [
+              {
+                "amount": "Agreed with your attorney.",
+                "when": ""
+              }
+            ]
+          },
+          {
+            "labelText": "Project fees",
+            "values": [
+              {
+                "amount": "Listed in the offering documents.",
+                "when": ""
+              }
+            ]
+          }
+        ],
+        "note": "USCIS fees are separate from the amount you invest. The law requires the petition to disclose every fee paid in connection with the investment."
+      },
+      "style": {
+        "background": "inverse"
+      }
+    }
+  },
+  "ProjectStack": {
+    "pt-br": {
+      "labelText": "O Tavessa por dentro",
+      "items": [
+        {
+          "labelText": "Imagem ilustrativa",
+          "nameText": "Fachada",
+          "caption": "Prédio residencial para aluguel, em Fort Pierce.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-facade-wide-2560.webp",
+            "alt": "Entrada do prédio vista de frente, com marquise branca, varandas de vidro, palmeiras dos dois lados e um carro prata parado diante da porta, sob céu azul",
+            "width": 2560,
+            "height": 1440,
+            "loading": "lazy"
+          },
+          "imageTall": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-facade-tall-709.webp",
+            "alt": "Entrada do prédio vista de frente, com marquise branca, varandas de vidro, palmeiras dos dois lados e um carro prata parado diante da porta, sob céu azul",
+            "width": 709,
+            "height": 1536,
+            "loading": "lazy"
+          }
+        },
+        {
+          "labelText": "Imagem ilustrativa",
+          "nameText": "Área de lazer",
+          "caption": "Piscina e área comum dos moradores.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-pool-wide-2560.webp",
+            "alt": "Piscina no terraço do prédio no fim da tarde, com espreguiçadeiras, uma mulher lendo, cabanas de tecido e vista para a marina e a lagoa",
+            "width": 2560,
+            "height": 1440,
+            "loading": "lazy"
+          },
+          "imageTall": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-pool-tall-709.webp",
+            "alt": "Piscina no terraço do prédio no fim da tarde, com espreguiçadeiras, uma mulher lendo, cabanas de tecido e vista para a marina e a lagoa",
+            "width": 709,
+            "height": 1536,
+            "loading": "lazy"
+          }
+        },
+        {
+          "labelText": "Imagem ilustrativa",
+          "nameText": "Saguão",
+          "caption": "Entrada do prédio, com recepção e sala de espera.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-lobby-wide-2560.webp",
+            "alt": "Saguão de pé-direito duplo com painéis de madeira clara, balcão de pedra com um atendente, uma mulher entrando com uma mala, sofás e vasos de palmeira, e uma parede de vidro voltada para a marina",
+            "width": 2560,
+            "height": 1440,
+            "loading": "lazy"
+          },
+          "imageTall": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-lobby-tall-709.webp",
+            "alt": "Saguão de pé-direito duplo com painéis de madeira clara, balcão de pedra com um atendente, uma mulher entrando com uma mala, sofás e vasos de palmeira, e uma parede de vidro voltada para a marina",
+            "width": 709,
+            "height": 1536,
+            "loading": "lazy"
+          }
+        },
+        {
+          "labelText": "Imagem ilustrativa",
+          "nameText": "Sala com vista",
+          "caption": "Sala de um apartamento, com varanda.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-living-wide-2560.webp",
+            "alt": "Sala de estar com sofá claro, mesa de centro e mesa de jantar de madeira, com as portas de vidro abertas para a varanda e a vista da marina e da lagoa",
+            "width": 2560,
+            "height": 1440,
+            "loading": "lazy"
+          },
+          "imageTall": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-living-tall-709.webp",
+            "alt": "Sala de estar com sofá claro, mesa de centro e mesa de jantar de madeira, com as portas de vidro abertas para a varanda e a vista da marina e da lagoa",
+            "width": 709,
+            "height": 1536,
+            "loading": "lazy"
+          }
+        }
+      ]
+    },
+    "en-us": {
+      "labelText": "Inside Tavessa",
+      "items": [
+        {
+          "labelText": "Illustrative image",
+          "nameText": "Facade",
+          "caption": "A residential rental building in Fort Pierce.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-facade-wide-2560.webp",
+            "alt": "The building entrance seen from the front, with a white canopy, glass balconies, palm trees on both sides and a silver car stopped at the door, under a blue sky",
+            "width": 2560,
+            "height": 1440,
+            "loading": "lazy"
+          },
+          "imageTall": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-facade-tall-709.webp",
+            "alt": "The building entrance seen from the front, with a white canopy, glass balconies, palm trees on both sides and a silver car stopped at the door, under a blue sky",
+            "width": 709,
+            "height": 1536,
+            "loading": "lazy"
+          }
+        },
+        {
+          "labelText": "Illustrative image",
+          "nameText": "Amenities",
+          "caption": "A pool and shared space for residents.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-pool-wide-2560.webp",
+            "alt": "The pool on the building terrace in the late afternoon, with lounge chairs, a woman reading, fabric cabanas and a view of the marina and the lagoon",
+            "width": 2560,
+            "height": 1440,
+            "loading": "lazy"
+          },
+          "imageTall": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-pool-tall-709.webp",
+            "alt": "The pool on the building terrace in the late afternoon, with lounge chairs, a woman reading, fabric cabanas and a view of the marina and the lagoon",
+            "width": 709,
+            "height": 1536,
+            "loading": "lazy"
+          }
+        },
+        {
+          "labelText": "Illustrative image",
+          "nameText": "Lobby",
+          "caption": "The building entrance, with a front desk and a lounge.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-lobby-wide-2560.webp",
+            "alt": "A double height lobby with light wood panels, a stone front desk with an attendant, a woman walking in with a suitcase, sofas and potted palms, and a glass wall facing the marina",
+            "width": 2560,
+            "height": 1440,
+            "loading": "lazy"
+          },
+          "imageTall": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-lobby-tall-709.webp",
+            "alt": "A double height lobby with light wood panels, a stone front desk with an attendant, a woman walking in with a suitcase, sofas and potted palms, and a glass wall facing the marina",
+            "width": 709,
+            "height": 1536,
+            "loading": "lazy"
+          }
+        },
+        {
+          "labelText": "Illustrative image",
+          "nameText": "Living room with a view",
+          "caption": "The living room of an apartment, with a balcony.",
+          "image": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-living-wide-2560.webp",
+            "alt": "A living room with a light sofa, a coffee table and a wooden dining table, with the glass doors open to the balcony and a view of the marina and the lagoon",
+            "width": 2560,
+            "height": 1440,
+            "loading": "lazy"
+          },
+          "imageTall": {
+            "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-living-tall-709.webp",
+            "alt": "A living room with a light sofa, a coffee table and a wooden dining table, with the glass doors open to the balcony and a view of the marina and the lagoon",
+            "width": 709,
+            "height": 1536,
+            "loading": "lazy"
+          }
+        }
+      ]
+    }
+  },
+  "FaqAccordion": {
+    "pt-br": {
+      "heading": "O que pode dar errado",
+      "intro": "As dúvidas de quem estuda o EB-5, respondidas sem promessa.",
+      "timeline": {
+        "legend": "Traço cheio: o que a lei fixa. Tracejado: o que depende do projeto.",
+        "items": [
+          {
+            "title": "Investimento",
+            "text": "O capital entra no projeto.",
+            "trace": "fixado pela lei"
+          },
+          {
+            "title": "2 anos",
+            "text": "Prazo mínimo que a lei pede com o capital investido.",
+            "trace": "depende do projeto"
+          },
+          {
+            "title": "Devolução",
+            "text": "Depende do resultado do projeto. Não tem garantia.",
+            "trace": ""
+          }
+        ]
+      },
+      "items": [
+        {
+          "question": "Comprar imóvel nos EUA dá direito a green card?",
+          "answer": [
+            {
+              "text": "Não dá. No EB-5, o dinheiro vai para um negócio que cria pelo menos 10 empregos em tempo integral. O USCIS diz que ter uma casa para morar não conta como esse negócio. No Tavessa, o projeto de exemplo, você investe na empresa do projeto e não recebe um apartamento."
+            }
+          ]
+        },
+        {
+          "question": "Posso perder o dinheiro investido?",
+          "answer": [
+            {
+              "text": "Pode. O EB-5 pede que o capital fique investido por pelo menos 2 anos num negócio, e esse negócio pode dar prejuízo. No webinar, Rafael Moura mostra onde o dinheiro entra no projeto e quais riscos ficam com o investidor."
+            }
+          ]
+        },
+        {
+          "question": "Quando e como o capital volta?",
+          "answer": [
+            {
+              "text": "A lei pede que o capital fique investido por pelo menos 2 anos. Depois disso, a devolução depende do resultado do projeto e não tem garantia. A SEC, o órgão que fiscaliza investimentos nos EUA, e o USCIS mandam desconfiar de quem promete devolver o dinheiro. Os documentos da oferta dizem em que condições a devolução está prevista, e Rafael Moura mostra no webinar onde ler isso."
+            }
+          ]
+        },
+        {
+          "question": "O green card depende do projeto dar certo?",
+          "answer": [
+            {
+              "text": "Em parte, sim. O green card começa condicional, por 2 anos. A retirada da condição se pede no formulário I-829, nos 90 dias antes de completar esse prazo. No I-829, você prova que manteve o capital investido nos 2 anos e que o projeto criou os 10 empregos, ou vai criá-los num prazo razoável. Por isso o andamento do projeto pesa nesse pedido. Se o USCIS negar o I-829, o investidor, o cônjuge e os filhos perdem o green card na data da decisão. A revisão só pode ser pedida no processo de remoção do país, que o USCIS abre em seguida. A Dra. Helena explica o que acontece quando a obra atrasa."
+            }
+          ]
+        },
+        {
+          "question": "Quem da família entra no pedido?",
+          "answer": [
+            {
+              "text": "Entram o cônjuge e os filhos solteiros com menos de 21 anos. Eles recebem o mesmo green card condicional de 2 anos que o investidor. A lei não inclui os pais do investidor nesse pedido. Se um filho está perto de fazer 21 anos, leve o caso ao seu advogado."
+            }
+          ]
+        },
+        {
+          "question": "Quanto tempo demora o visto EB-5?",
+          "answer": [
+            {
+              "text": "Ninguém pode garantir o prazo, nem a Litora. O tempo de análise depende do USCIS, e a emissão do green card depende de haver visto disponível. No webinar, a Dra. Helena mostra as etapas em ordem (petição, green card condicional de 2 anos e pedido I-829)."
+            }
+          ]
+        },
+        {
+          "question": "Posso morar nos EUA enquanto espero?",
+          "answer": [
+            {
+              "text": "Depende de onde você está. Quem está no Brasil pede o visto de imigrante ao governo americano, ainda fora dos EUA, depois que a petição é aprovada. Quem já está nos EUA pode pedir o green card junto com a petição, quando há visto disponível. A Dra. Helena explica os dois caminhos no webinar."
+            }
+          ]
+        },
+        {
+          "question": "Como provo a origem do dinheiro?",
+          "answer": [
+            {
+              "text": "Com documentos que mostram de onde ele veio e que ele foi obtido de forma lícita, como a venda de um imóvel ou de uma empresa. A lei pede o mesmo para o dinheiro das taxas e lista, conforme o caso, registros da empresa e declarações de imposto dos últimos 7 anos. Dinheiro emprestado ou doado só conta se veio de boa-fé, e a lei pede documentos de quem doou e de quem emprestou, quando não for um banco. Quem monta o seu conjunto de documentos é o seu advogado."
+            }
+          ]
+        },
+        {
+          "question": "Vou pagar imposto nos EUA sobre o que tenho no Brasil?",
+          "answer": [
+            {
+              "text": "Quem tem green card é residente fiscal nos EUA, segundo o IRS, a Receita americana. O residente declara lá a renda do mundo inteiro, e isso inclui a renda do Brasil. Quanto você paga depende do seu caso. Leve a pergunta a um contador que conheça os dois países antes de investir."
+            }
+          ]
+        },
+        {
+          "question": "E se a regra mudar no meio do pedido?",
+          "answer": [
+            {
+              "text": "Hoje, o programa de Regional Center, que reúne vários investidores num mesmo projeto, tem autorização até 30 de setembro de 2027. A lei manda o governo seguir com a análise dos pedidos feitos até 30 de setembro de 2026, mesmo se essa autorização acabar. Essa data já passou. Pergunte ao seu advogado o que vale para um pedido feito agora."
+            }
+          ]
+        },
+        {
+          "question": "Qual é o retorno do investimento?",
+          "answer": [
+            {
+              "text": "A Litora não promete retorno. As condições de cada projeto ficam nos documentos da oferta, e a Litora só apresenta esses documentos a investidores qualificados."
+            }
+          ]
+        },
+        {
+          "question": "O que perguntar antes de investir?",
+          "answer": [
+            {
+              "text": "Desconfie de quem garante green card, prazo ou retorno. A Litora não garante nenhum dos três. Antes de transferir qualquer valor, peça os documentos da oferta por escrito e leve estas perguntas ao seu advogado:"
+            },
+            {
+              "list": [
+                "Os projetos anteriores devolveram o capital aos investidores?",
+                "Quanto dinheiro próprio o incorporador pôs no projeto?",
+                "O contrato deixa reaplicar o meu dinheiro em outro projeto sem a minha escolha?",
+                "O empréstimo ao projeto tem garantia?",
+                "Quem me indicou o investimento recebe comissão?"
+              ]
+            },
+            {
+              "text": "Depois do webinar, o passo seguinte é uma conversa com um advogado de imigração escolhido por você."
+            }
+          ]
+        }
+      ],
+      "style": {
+        "background": "primary"
+      }
+    },
+    "en-us": {
+      "heading": "EB-5 visa risks: what can go wrong",
+      "intro": "The questions people ask about EB-5, answered with no promises.",
+      "timeline": {
+        "legend": "Solid line: what the law sets. Dashed line: what depends on the project.",
+        "items": [
+          {
+            "title": "Investment",
+            "text": "The capital goes into the project.",
+            "trace": "set by law"
+          },
+          {
+            "title": "2 years",
+            "text": "The minimum time the law requires the capital to stay invested.",
+            "trace": "depends on the project"
+          },
+          {
+            "title": "Repayment",
+            "text": "Depends on how the project performs. It isn't guaranteed.",
+            "trace": ""
+          }
+        ]
+      },
+      "items": [
+        {
+          "question": "Does buying a home in the U.S. get me a green card?",
+          "answer": [
+            {
+              "text": "No. With EB-5, the money goes into a business that creates at least 10 jobs, all of them full time. USCIS says that owning a home to live in doesn't count as that business. In Tavessa, the sample project, you invest in the project company and you don't receive an apartment."
+            }
+          ]
+        },
+        {
+          "question": "Can I lose the money I invest?",
+          "answer": [
+            {
+              "text": "Yes. EB-5 requires the capital to stay invested for at least 2 years in a business, and that business can lose money. In the webinar, Rafael Moura shows where the money goes in the project and which risks stay with the investor."
+            }
+          ]
+        },
+        {
+          "question": "When and how does my capital come back?",
+          "answer": [
+            {
+              "text": "The law requires the capital to stay invested for at least 2 years. After that, repayment depends on how the project performs, and it isn't guaranteed. The SEC, the U.S. securities regulator, and USCIS say to be suspicious of anyone who promises to give your money back. The offering documents state the conditions for repayment, and Rafael Moura shows in the webinar where to read them."
+            }
+          ]
+        },
+        {
+          "question": "Does my green card depend on the project?",
+          "answer": [
+            {
+              "text": "In part, yes. The first green card is conditional, for 2 years. You file Form I-829 to remove the conditions in the 90 days before it expires. With Form I-829, you show that you kept the capital invested for the 2 years and that the project created the 10 jobs, or will create them within a reasonable time. That's why the project's progress matters for that filing. If USCIS denies Form I-829, the investor, the spouse and the children lose the green card as of the date of the decision. You can ask for a review only in the removal proceedings that USCIS opens next. Helena Prado explains what happens when construction runs late."
+            }
+          ]
+        },
+        {
+          "question": "Which family members are included?",
+          "answer": [
+            {
+              "text": "Your spouse and your unmarried children under 21 are included. They receive the same conditional green card, for 2 years, as the investor. The law doesn't include the investor's parents in the petition. If a child is close to turning 21, take the case to your attorney."
+            }
+          ]
+        },
+        {
+          "question": "What is the EB-5 processing time?",
+          "answer": [
+            {
+              "text": "No one can guarantee the timing, Litora included. Review time depends on USCIS, and the green card depends on a visa being available. In the webinar, Helena Prado lays out the steps in order (the petition, the conditional green card for 2 years and Form I-829)."
+            }
+          ]
+        },
+        {
+          "question": "Can I live in the U.S. while I wait?",
+          "answer": [
+            {
+              "text": "It depends on where you are. If you're in Brazil, you apply to the U.S. government for the immigrant visa, from outside the U.S., after the petition is approved. If you're already in the U.S., you can apply for the green card together with the petition when a visa is available. Helena Prado explains both paths in the webinar."
+            }
+          ]
+        },
+        {
+          "question": "How do I prove the source of my funds?",
+          "answer": [
+            {
+              "text": "With documents that show where the money came from and that it was obtained lawfully, such as the sale of a home or a company. The law asks the same for the money used for fees and lists, as applicable, business records and tax returns from the past 7 years. Borrowed or gifted money counts only if it was lent or given in good faith, and the law asks for records from the donor and from the lender, unless the lender is a bank. Your attorney puts your set of documents together."
+            }
+          ]
+        },
+        {
+          "question": "Will I pay U.S. tax on what I have in Brazil?",
+          "answer": [
+            {
+              "text": "The IRS, the U.S. tax agency, treats green card holders as U.S. tax residents. A resident reports worldwide income on the U.S. tax return, and that includes income from Brazil. How much you pay depends on your case. Take the question to a tax advisor who knows both countries before you invest."
+            }
+          ]
+        },
+        {
+          "question": "What if the rules change midway?",
+          "answer": [
+            {
+              "text": "Today, the Regional Center Program, which pools several investors in the same project, is authorized through September 30, 2027. The law tells the government to keep processing petitions filed on or before September 30, 2026, even if that authorization ends. That date has passed. Ask your attorney what applies to a petition filed now."
+            }
+          ]
+        },
+        {
+          "question": "What return will I get?",
+          "answer": [
+            {
+              "text": "Litora doesn't promise a return. Each project's terms are in the offering documents, and Litora shares those documents only with accredited investors."
+            }
+          ]
+        },
+        {
+          "question": "What should I ask before I invest?",
+          "answer": [
+            {
+              "text": "Be wary of anyone who guarantees a green card, a timeline or a return. Litora guarantees none of them. Before you send any money, ask for the offering documents in writing and take these questions to your attorney:"
+            },
+            {
+              "list": [
+                "Did the earlier projects repay the investors' capital?",
+                "How much of its own money did the developer put into the project?",
+                "Does the contract allow my money to be moved to another project without my choice?",
+                "Is the loan to the project backed by collateral?",
+                "Is the person who referred me paid a commission?"
+              ]
+            },
+            {
+              "text": "After the webinar, the next step is a conversation with an immigration attorney of your choice."
+            }
+          ]
+        }
+      ],
+      "style": {
+        "background": "primary"
+      }
+    }
+  },
+  "CtaBand": {
+    "pt-br": {
+      "heading": "Quinta-feira, 12 de novembro, às 20h de Brasília",
+      "text": "Webinar sobre o visto EB-5 para brasileiros. 18h em Nova York. Online e gratuito, no Zoom.",
+      "buttonLabel": "Inscrever-se no webinar",
+      "buttonTarget": "#register",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/cta/cta-wide-1920.webp",
+        "alt": "O prédio visto da água ao anoitecer, com as janelas acesas, as luzes do píer refletidas na lagoa e o céu alaranjado no horizonte",
+        "width": 1920,
+        "height": 1080
+      },
+      "imageTall": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/cta/cta-tall-824.webp",
+        "alt": "O prédio visto da água ao anoitecer, com as janelas acesas, as luzes do píer refletidas na lagoa e o céu alaranjado no horizonte",
+        "width": 824,
+        "height": 1536
+      }
+    },
+    "en-us": {
+      "heading": "Thursday, November 12, at 6 p.m. New York time",
+      "text": "A free EB-5 visa webinar on Zoom, presented in Portuguese. 8 p.m. in Brasília.",
+      "buttonLabel": "Register for the webinar",
+      "buttonTarget": "#register",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/cta/cta-wide-1920.webp",
+        "alt": "The building seen from the water at nightfall, with its windows lit, the dock lights reflected on the lagoon and an orange sky on the horizon",
+        "width": 1920,
+        "height": 1080
+      },
+      "imageTall": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/cta/cta-tall-824.webp",
+        "alt": "The building seen from the water at nightfall, with its windows lit, the dock lights reflected on the lagoon and an orange sky on the horizon",
+        "width": 824,
+        "height": 1536
+      }
+    }
+  },
+  "SiteFooter": {
+    "pt-br": {
+      "fictionalNotice": "Litora é uma marca fictícia, criada para um portfólio de design. Esta página não é oferta de venda de valores mobiliários. O empreendimento Tavessa e os palestrantes também são fictícios.",
+      "style": {
+        "background": "secondary"
+      },
+      "links": {
+        "self": "/react/webinar-visto-eb5",
+        "alternate": "/en/react/eb5-visa-webinar",
+        "alternateLang": "en-US",
+        "privacy": "/react/privacidade"
+      },
+      "global": {
+        "header": {
+          "logoText": "Litora"
+        },
+        "footer": {
+          "about": "A Litora estrutura projetos imobiliários nos EUA para investidores brasileiros pelo EB-5.",
+          "legalNoticeTitle": "Aviso legal.",
+          "legalNotice": "Esta página tem fim informativo e não é oferta de venda nem pedido de oferta de compra de valores mobiliários. Qualquer oferta seria feita só por memorando de oferta, e a Litora só apresenta esse memorando a investidores qualificados. Investir num projeto do EB-5 tem risco, inclusive o de perder o capital. Aprovação, prazo e green card dependem das autoridades de imigração dos EUA, e nenhum resultado é garantido. Antes de decidir, consulte um advogado de imigração e um contador. Os valores do programa são de outubro de 2026, com fonte no USCIS e na lei americana (8 U.S.C. 1153), e mudam com a inflação para pedidos feitos a partir de 1º de janeiro de 2027.",
+          "privacyLabel": "Política de privacidade",
+          "languageLinkLabel": "English"
+        }
+      }
+    },
+    "en-us": {
+      "fictionalNotice": "Litora is a fictional brand created for a design portfolio. This page is not an offer to sell securities. The Tavessa project and the speakers are fictional too.",
+      "style": {
+        "background": "secondary"
+      },
+      "links": {
+        "self": "/en/react/eb5-visa-webinar",
+        "alternate": "/react/webinar-visto-eb5",
+        "alternateLang": "pt-BR",
+        "privacy": "/en/react/privacy"
+      },
+      "global": {
+        "header": {
+          "logoText": "Litora"
+        },
+        "footer": {
+          "about": "Litora structures U.S. real estate projects for Brazilian investors through EB-5.",
+          "legalNoticeTitle": "Legal notice.",
+          "legalNotice": "This page is for information only. It is not an offer to sell, or a solicitation of an offer to buy, any securities. Any offer would be made only through an offering memorandum, which Litora shares only with accredited investors. Investing in an EB-5 project carries risk, including the loss of capital. Approval, timing and the green card depend on U.S. immigration authorities, and no result is guaranteed. Consult an immigration attorney and a tax advisor before you decide. Program figures are as of October 2026, from USCIS and U.S. law (8 U.S.C. 1153), and will be adjusted for inflation for petitions filed on or after January 1, 2027.",
+          "privacyLabel": "Privacy policy",
+          "languageLinkLabel": "Português"
+        }
+      }
+    }
+  },
+  "ConfirmationHero": {
+    "pt-br": {
+      "heading": "Sua inscrição no webinar está confirmada",
+      "details": [
+        {
+          "text": "Quinta-feira, 12 de novembro de 2026, às 20h de Brasília, no Zoom."
+        }
+      ],
+      "bodyText": "",
+      "timeBlock": {
+        "date": "2026-11-12",
+        "day": "12",
+        "month": "nov",
+        "rows": [
+          {
+            "time": "20h",
+            "datetime": "2026-11-12T20:00-03:00",
+            "place": "São Paulo"
+          },
+          {
+            "time": "18h",
+            "datetime": "2026-11-12T18:00-05:00",
+            "place": "Nova York"
+          }
+        ]
+      },
+      "calendar": {
+        "buttonLabel": "Adicionar ao calendário",
+        "fileName": "litora-eb5-webinar.ics",
+        "title": "Webinar sobre o visto EB-5 · Litora",
+        "description": "O link da sala chega por e-mail 24 horas antes.",
+        "startUtc": "20261112T230000Z",
+        "endUtc": "20261113T001500Z"
+      },
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/hero/hero-wide-1920.webp",
+        "alt": "Prédio residencial branco, com varandas de vidro em todos os andares, visto da água no fim da tarde, com palmeiras na orla e duas lanchas no píer",
+        "width": 1920,
+        "height": 1200
+      },
+      "imageTall": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/hero/hero-tall-1534.webp",
+        "alt": "Prédio residencial branco, com varandas de vidro em todos os andares, visto da água no fim da tarde, com palmeiras na orla e duas lanchas no píer",
+        "width": 1534,
+        "height": 1227
+      },
+      "showCalendar": true,
+      "links": {
+        "self": "/react/webinar-visto-eb5/obrigado",
+        "alternate": "/en/react/eb5-visa-webinar/thank-you",
+        "alternateLang": "en-US"
+      },
+      "global": {
+        "header": {
+          "logoText": "Litora",
+          "languageCurrent": "PT",
+          "languageOther": "EN",
+          "languageOtherLabel": "Ver esta página em inglês"
+        }
+      }
+    },
+    "en-us": {
+      "heading": "You're registered for the EB-5 visa webinar",
+      "details": [
+        {
+          "text": "Thursday, November 12, 2026, at 6 p.m. in New York, on Zoom. The webinar is in Portuguese."
+        }
+      ],
+      "bodyText": "",
+      "timeBlock": {
+        "date": "2026-11-12",
+        "day": "12",
+        "month": "Nov",
+        "rows": [
+          {
+            "time": "8 p.m.",
+            "datetime": "2026-11-12T20:00-03:00",
+            "place": "São Paulo"
+          },
+          {
+            "time": "6 p.m.",
+            "datetime": "2026-11-12T18:00-05:00",
+            "place": "New York"
+          }
+        ]
+      },
+      "calendar": {
+        "buttonLabel": "Add to calendar",
+        "fileName": "litora-eb5-webinar.ics",
+        "title": "EB-5 Visa Webinar · Litora",
+        "description": "The Zoom link arrives by email 24 hours before.",
+        "startUtc": "20261112T230000Z",
+        "endUtc": "20261113T001500Z"
+      },
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/hero/hero-wide-1920.webp",
+        "alt": "A white residential building with glass balconies on every floor, seen from the water in the late afternoon, with palm trees on the waterfront and two boats at the dock",
+        "width": 1920,
+        "height": 1200
+      },
+      "imageTall": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/hero/hero-tall-1534.webp",
+        "alt": "A white residential building with glass balconies on every floor, seen from the water in the late afternoon, with palm trees on the waterfront and two boats at the dock",
+        "width": 1534,
+        "height": 1227
+      },
+      "showCalendar": true,
+      "links": {
+        "self": "/en/react/eb5-visa-webinar/thank-you",
+        "alternate": "/react/webinar-visto-eb5/obrigado",
+        "alternateLang": "pt-BR"
+      },
+      "global": {
+        "header": {
+          "logoText": "Litora",
+          "languageCurrent": "EN",
+          "languageOther": "PT",
+          "languageOtherLabel": "View this page in Portuguese"
+        }
+      }
+    }
+  },
+  "StepsList": {
+    "pt-br": {
+      "heading": "O que acontece agora",
+      "intro": "",
+      "items": [
+        {
+          "text": "Um e-mail de confirmação chega agora no endereço que você informou. Se ele não aparecer em alguns minutos, procure na pasta de spam."
+        },
+        {
+          "text": "No dia 11 de novembro, às 20h de Brasília, mandamos o link da sala no Zoom."
+        },
+        {
+          "text": "No dia 12, a sala abre às 20h. Os últimos minutos ficam para as perguntas."
+        },
+        {
+          "text": "Depois do webinar, a equipe da Litora fala com você pelo WhatsApp que você informou."
+        }
+      ],
+      "style": {
+        "background": "primary"
+      }
+    },
+    "en-us": {
+      "heading": "What happens next",
+      "intro": "",
+      "items": [
+        {
+          "text": "A confirmation email is on its way to the address you entered. If it doesn't show up in a few minutes, check your spam folder."
+        },
+        {
+          "text": "On November 11, at 6 p.m. New York time, we send the Zoom link."
+        },
+        {
+          "text": "On November 12, the room opens at 6 p.m. New York time. The last minutes are for questions."
+        },
+        {
+          "text": "After the webinar, the Litora team contacts you on the WhatsApp number you entered."
+        }
+      ],
+      "style": {
+        "background": "primary"
+      }
+    }
+  },
+  "LegalText": {
+    "pt-br": {
+      "heading": "Política de privacidade",
+      "updated": "Atualizada em 2 de outubro de 2026.",
+      "paragraphs": [
+        {
+          "text": "Litora é uma marca fictícia, criada para um portfólio de design. Esta política descreve como a Litora trataria os dados enviados pelos formulários do webinar e do evento."
+        },
+        {
+          "text": "Os dados são os que você informa no formulário: nome, sobrenome, e-mail, WhatsApp, cidade, país onde mora e, no evento, o período preferido. Junto vão a confirmação de que você sabe do investimento mínimo, a sua autorização e o endereço da página."
+        },
+        {
+          "text": "A Litora usaria esses dados para enviar o link e os avisos do webinar, confirmar o horário do evento e falar com você sobre o EB-5. A base é o seu consentimento, conforme a Lei Geral de Proteção de Dados Pessoais (LGPD, Lei 13.709/2018)."
+        },
+        {
+          "text": "Os dados ficariam no CRM da HubSpot, a ferramenta que recebe os formulários. A HubSpot trataria os dados como operadora, em nome da Litora e só para os fins acima. Os servidores da HubSpot ficam fora do Brasil."
+        },
+        {
+          "text": "Você pode pedir a confirmação, o acesso, a correção ou a exclusão dos seus dados e retirar o consentimento quando quiser."
+        },
+        {
+          "text": "Como a Litora é fictícia, não existe um canal para esses pedidos."
+        }
+      ],
+      "style": {
+        "background": "primary"
+      }
+    },
+    "en-us": {
+      "heading": "Privacy policy",
+      "updated": "Updated October 2, 2026.",
+      "paragraphs": [
+        {
+          "text": "Litora is a fictional brand created for a design portfolio. This policy describes how Litora would handle the data sent through the webinar and event forms."
+        },
+        {
+          "text": "The data is what you enter in the form: first name, last name, email, WhatsApp, city, country of residence and, for the event, the preferred time of day. Your confirmation that you know the minimum investment, your consent and the page address go with it."
+        },
+        {
+          "text": "Litora would use this data to send the webinar link and reminders, confirm your event time and contact you about EB-5. The legal basis is your consent, under Brazil's General Personal Data Protection Law (LGPD, Law No. 13,709/2018)."
+        },
+        {
+          "text": "The data would be stored in the HubSpot CRM, the tool that receives the forms. HubSpot would act as a processor, handling the data on Litora's behalf and only for the purposes above. Its servers are outside Brazil."
+        },
+        {
+          "text": "You can ask to confirm, access, correct or delete your data, and withdraw your consent at any time."
+        },
+        {
+          "text": "Since Litora is fictional, there's no channel for these requests."
+        }
+      ],
+      "style": {
+        "background": "primary"
+      }
+    }
+  }
+}

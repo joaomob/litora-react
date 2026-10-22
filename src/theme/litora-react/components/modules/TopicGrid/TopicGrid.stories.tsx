@@ -1,15 +1,19 @@
-import { moduleStory } from '@hubspot/cms-dev-server/storybook';
+import { moduleStates } from '../../shared/storyStates.js';
 import { Component, fields } from './index.js';
-import defaults from './defaults.json';
 
-// The repeated groups get their defaults here, as in HeroEvent.stories.tsx (moduleStory loses the default of a group).
-type StoryComponent = Parameters<typeof moduleStory>[0];
+// The states of every module (shared/storyStates.ts); stories.test.ts checks this file exports the ones that apply
+const states = moduleStates('TopicGrid', Component, fields);
+
 export default {
   title: 'Modules/TopicGrid',
   component: Component,
+  tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
 };
 
-export const Default = moduleStory(Component as unknown as StoryComponent, fields, {
-  items: defaults.items,
-});
+export const English = states.english;
+export const Portuguese = states.portuguese;
+export const LongText = states.longText;
+export const FewestItems = states.fewestItems!;
+export const MostItems = states.mostItems!;
+export const Dark = states.dark!;
