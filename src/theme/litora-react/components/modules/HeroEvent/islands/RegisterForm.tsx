@@ -159,8 +159,15 @@ export default function RegisterForm({ form, portalId }: Props) {
 
           if (field.type === 'radio') {
             return (
-              // ARIA does not support aria-invalid on a radio: the group points to its error text instead (GOV.UK pattern)
-              <fieldset className="form_field is-full" aria-describedby={`${id}-error`} key={field.propertyName}>
+              // ARIA 1.2 takes aria-invalid on a radiogroup and not on a radio, so the group carries the state and points to
+              // its error text; the legend still names it
+              <fieldset
+                className="form_field is-full"
+                role="radiogroup"
+                aria-invalid={invalid}
+                aria-describedby={`${id}-error`}
+                key={field.propertyName}
+              >
                 <legend className="form_label">{field.labelText}</legend>
                 <div className="form_options">
                   {(field.options ?? []).map((option) => (

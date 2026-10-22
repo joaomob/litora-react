@@ -32,6 +32,9 @@ export default tseslint.config(
       'react/prop-types': 'off',
       // role="list" stays on styled lists: Safari drops the list role when list-style is none
       'jsx-a11y/no-redundant-roles': ['error', { ul: ['list'], ol: ['list'] }],
+      // ARIA in HTML allows radiogroup on a fieldset (https://www.w3.org/TR/html-aria/), the exception the plugin's own
+      // recommended set keeps; the radio question needs it, since ARIA 1.2 takes aria-invalid on the group only
+      'jsx-a11y/no-noninteractive-element-to-interactive-role': ['error', { fieldset: ['radiogroup'] }],
     },
   },
   {

@@ -37,6 +37,9 @@ describe('RegisterForm', () => {
     for (const f of form.fields) expect(screen.getByText(f.errors.required)).toBeInTheDocument();
     expect(screen.getByLabelText(field('firstname').labelText)).toHaveFocus();
     expect(screen.getByLabelText(field('firstname').labelText)).toHaveAttribute('aria-invalid', 'true');
+    const residence = screen.getByRole('radiogroup', { name: field('residence').labelText });
+    expect(residence).toHaveAttribute('aria-invalid', 'true');
+    expect(residence).toHaveAccessibleDescription(field('residence').errors.required);
   });
 
   it('checks the email and the phone format, and clears the message once fixed', () => {
