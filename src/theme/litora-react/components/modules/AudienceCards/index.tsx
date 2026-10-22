@@ -9,11 +9,11 @@ import audienceCardsCss from './audience-cards.css?inline';
 // Audience photo cards (photo-card_* in system.css). Same markup and classes as the Litora HubL module; the focus of
 // each photo is a class (is-focus-top, is-focus-upper).
 export function Component({ fieldValues }: AudienceCardsProps) {
-  const { heading, noWrapTerm, items, background } = fieldValues;
+  const { heading, noWrapTerm, items, style } = fieldValues;
   return (
     <>
       <InlineStyle sheet={audienceCardsCss} />
-      <section className={`section_audience-cards ${backgroundClass(background)}`} id="audience">
+      <section className={`section_audience-cards ${backgroundClass(style.background)}`} id="audience">
         <div className="padding-global padding-section-medium">
           <div className="container-large">
             <div className="section-header_component" data-reveal>

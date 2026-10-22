@@ -9,7 +9,8 @@ exports[`./AudienceCards/fields.tsx > keeps the field paths and types 1`] = `
   "items.text: text",
   "items.image: image",
   "items.focus: text",
-  "background: choice",
+  "style: group",
+  "style.background: choice (alias of background)",
 ]
 `;
 
@@ -28,6 +29,7 @@ exports[`./ConfirmationHero/fields.tsx > keeps the field paths and types 1`] = `
   "timeBlock.rows.time: text",
   "timeBlock.rows.datetime: text",
   "timeBlock.rows.place: text",
+  "showCalendar: boolean",
   "calendar: group",
   "calendar.buttonLabel: text",
   "calendar.fileName: text",
@@ -37,7 +39,6 @@ exports[`./ConfirmationHero/fields.tsx > keeps the field paths and types 1`] = `
   "calendar.endUtc: text",
   "image: image",
   "imageTall: image",
-  "showCalendar: boolean",
   "links: group",
   "links.self: text",
   "links.alternate: text",
@@ -79,7 +80,8 @@ exports[`./FaqAccordion/fields.tsx > keeps the field paths and types 1`] = `
   "items.answer: group",
   "items.answer.text: text",
   "items.answer.list: text",
-  "background: choice",
+  "style: group",
+  "style.background: choice (alias of background)",
 ]
 `;
 
@@ -146,7 +148,8 @@ exports[`./LegalText/fields.tsx > keeps the field paths and types 1`] = `
   "updated: text",
   "paragraphs: group",
   "paragraphs.text: text",
-  "background: choice",
+  "style: group",
+  "style.background: choice (alias of background)",
 ]
 `;
 
@@ -162,7 +165,8 @@ exports[`./ProjectReveal/fields.tsx > keeps the field paths and types 1`] = `
   "buttonTarget: text",
   "image: image",
   "imageTall: image",
-  "background: choice",
+  "style: group",
+  "style.background: choice (alias of background)",
 ]
 `;
 
@@ -181,7 +185,6 @@ exports[`./ProjectStack/fields.tsx > keeps the field paths and types 1`] = `
 exports[`./SiteFooter/fields.tsx > keeps the field paths and types 1`] = `
 [
   "fictionalNotice: text",
-  "background: choice",
   "links: group",
   "links.self: text",
   "links.alternate: text",
@@ -196,6 +199,8 @@ exports[`./SiteFooter/fields.tsx > keeps the field paths and types 1`] = `
   "global.footer.legalNotice: text",
   "global.footer.privacyLabel: text",
   "global.footer.languageLinkLabel: text",
+  "style: group",
+  "style.background: choice (alias of background)",
 ]
 `;
 
@@ -226,7 +231,8 @@ exports[`./Speakers/fields.tsx > keeps the field paths and types 1`] = `
   "items.role: text",
   "items.text: text",
   "items.image: image",
-  "background: choice",
+  "style: group",
+  "style.background: choice (alias of background)",
 ]
 `;
 
@@ -246,7 +252,8 @@ exports[`./StatRow/fields.tsx > keeps the field paths and types 1`] = `
   "cost.rows.values.amount: text",
   "cost.rows.values.when: text",
   "cost.note: text",
-  "background: choice",
+  "style: group",
+  "style.background: choice (alias of background)",
 ]
 `;
 
@@ -254,7 +261,8 @@ exports[`./StatementReveal/fields.tsx > keeps the field paths and types 1`] = `
 [
   "labelText: text",
   "text: text",
-  "background: choice",
+  "style: group",
+  "style.background: choice (alias of background)",
 ]
 `;
 
@@ -265,7 +273,8 @@ exports[`./StepsList/fields.tsx > keeps the field paths and types 1`] = `
   "intro: text",
   "items: group",
   "items.text: text",
-  "background: choice",
+  "style: group",
+  "style.background: choice (alias of background)",
 ]
 `;
 
@@ -278,6 +287,7 @@ exports[`./TopicGrid/fields.tsx > keeps the field paths and types 1`] = `
   "items.heading: text",
   "items.text: text",
   "items.image: image",
-  "background: choice",
+  "style: group",
+  "style.background: choice (alias of background)",
 ]
 `;

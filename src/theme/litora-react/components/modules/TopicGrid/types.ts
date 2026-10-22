@@ -1,3 +1,4 @@
+import type { Background } from '../../utils/background.js';
 import type { ImageValue } from '../../shared/types.js';
 
 export type TopicGridProps = {
@@ -10,6 +11,6 @@ export type TopicGridProps = {
       text: string;
       image: ImageValue;
     }[];
-    background: 'primary' | 'secondary' | 'inverse';
+    style: { background: Background };
   };
 };

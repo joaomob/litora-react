@@ -3,10 +3,10 @@ import {
   TextField,
   FieldGroup,
   RepeatedFieldGroup,
-  ImageField,
   ChoiceField,
   BooleanField,
 } from '@hubspot/cms-components/fields';
+import { HeaderText, NoWrapTerm, PageLinks, PhotoWithPhoneCrop, TimeBlock } from '../../fieldLibrary/index.js';
 // Every visitor text is a field. The defaults are the English page (content/webinar-en-us.json); the Portuguese
 // template passes its own values, as in the Litora HubL theme.
 import defaults from './defaults.json';
@@ -15,92 +15,115 @@ const { form, timeBlock, links, global } = defaults;
 
 export const fields = (
   <ModuleFields>
-    <TextField label="Eyebrow" name="eyebrow" default={defaults.eyebrow} />
-    <TextField label="Heading" name="heading" default={defaults.heading} />
     <TextField
-      label="Term kept on one line"
-      name="noWrapTerm"
-      inlineHelpText="Wherever this term appears in a heading, it never breaks across two lines."
-      default={defaults.noWrapTerm}
+      label="Eyebrow"
+      name="eyebrow"
+      inlineHelpText="The short line above the heading."
+      default={defaults.eyebrow}
     />
-    <RepeatedFieldGroup label="Details" name="details" occurrence={{ min: 0, max: 20 }} default={defaults.details}>
+    <TextField label="Heading" name="heading" required default={defaults.heading} />
+    <NoWrapTerm defaultValue={defaults.noWrapTerm} />
+    <RepeatedFieldGroup
+      label="Details"
+      name="details"
+      inlineHelpText="Short lines under the heading: when, where, in which language."
+      occurrence={{ min: 0, max: 4 }}
+      default={defaults.details}
+    >
       <TextField label="Text" name="text" />
     </RepeatedFieldGroup>
-    <FieldGroup label="Time block" name="timeBlock">
-      <TextField label="Date" name="date" inlineHelpText="As YYYY-MM-DD." default={timeBlock.date} />
-      <TextField label="Day" name="day" default={timeBlock.day} />
-      <TextField label="Month" name="month" default={timeBlock.month} />
-      <RepeatedFieldGroup label="Rows" name="rows" occurrence={{ min: 0, max: 20 }} default={timeBlock.rows}>
-        <TextField label="Time" name="time" />
-        <TextField label="Datetime" name="datetime" inlineHelpText="With the time zone, as 2026-11-12T20:00-03:00." />
-        <TextField label="Place" name="place" />
-      </RepeatedFieldGroup>
-    </FieldGroup>
-    <TextField label="Body text" name="bodyText" default={defaults.bodyText} />
-    <ImageField label="Image" name="image" resizable={false} default={defaults.image} />
-    <ImageField
-      label="Image, phone crop"
-      name="imageTall"
-      inlineHelpText="The crop shown on phones (767 px and narrower)."
-      resizable={false}
-      default={defaults.imageTall}
-    />
-    <FieldGroup label="Form" name="form">
-      <TextField label="Anchor ID" name="anchorId" default={form.anchorId} />
-      <TextField label="Heading" name="heading" default={form.heading} />
-      <TextField label="HubSpot form GUID" name="hubspotFormGuid" default={form.hubspotFormGuid} />
-      <RepeatedFieldGroup label="Fields" name="fields" occurrence={{ min: 0, max: 20 }} default={form.fields}>
-        <TextField label="Property name" name="propertyName" />
+    <TimeBlock defaults={timeBlock} />
+    <TextField label="Text" name="bodyText" default={defaults.bodyText} />
+    {/* The hero is the first screen: no responsive image request, as in the HubL module */}
+    <PhotoWithPhoneCrop responsive={false} defaults={defaults} />
+    <FieldGroup label="Registration form" name="form">
+      <TextField
+        label="Section anchor"
+        name="anchorId"
+        inlineHelpText="Buttons link here with # in front, such as #register."
+        required
+        default={form.anchorId}
+      />
+      <TextField label="Heading" name="heading" required default={form.heading} />
+      <TextField
+        label="HubSpot form ID"
+        name="hubspotFormGuid"
+        inlineHelpText="Marketing, Forms, the form, then the ID in the address bar. Entries go to that form and to the CRM."
+        required
+        default={form.hubspotFormGuid}
+      />
+      <RepeatedFieldGroup
+        label="Form fields"
+        name="fields"
+        inlineHelpText="Each one must match a property of the HubSpot form above."
+        occurrence={{ min: 1, max: 12, sorting_label_field: 'form.fields.labelText' }}
+        default={form.fields}
+      >
+        <TextField
+          label="HubSpot property"
+          name="propertyName"
+          inlineHelpText="The internal name of the property, such as firstname."
+        />
         <ChoiceField
           label="Field type"
           name="type"
+          display="select"
           choices={[
-            ['text', 'text'],
-            ['email', 'email'],
-            ['tel', 'tel'],
-            ['radio', 'radio'],
-            ['checkbox', 'checkbox'],
-            ['consent', 'consent'],
+            ['text', 'Short text'],
+            ['email', 'Email'],
+            ['tel', 'Phone number'],
+            ['radio', 'One choice from a list'],
+            ['checkbox', 'Checkbox'],
+            ['consent', 'Consent checkbox, with a link'],
           ]}
         />
-        <TextField label="Label text" name="labelText" />
-        <TextField label="Autocomplete" name="autocomplete" />
-        <BooleanField label="Half" name="half" />
-        <FieldGroup label="Errors" name="errors">
-          <TextField label="Required" name="required" />
-          <TextField label="Invalid" name="invalid" />
-        </FieldGroup>
-        <TextField label="Help" name="help" />
-        <RepeatedFieldGroup label="Options" name="options" occurrence={{ min: 0, max: 20 }}>
-          <TextField label="Value" name="value" />
-          <TextField label="Label text" name="labelText" />
-        </RepeatedFieldGroup>
-        <TextField label="Link label" name="linkLabel" />
-        <TextField label="Link URL" name="linkUrl" />
-      </RepeatedFieldGroup>
-      <TextField label="Submit label" name="submitLabel" default={form.submitLabel} />
-      <TextField label="Submit note" name="submitNote" default={form.submitNote} />
-      <TextField label="Notice" name="notice" default={form.notice} />
-      <TextField label="Submit error" name="submitError" default={form.submitError} />
-      <TextField label="Redirect URL" name="redirectUrl" default={form.redirectUrl} />
-    </FieldGroup>
-    <FieldGroup label="Links" name="links">
-      <TextField label="Self" name="self" default={links.self} />
-      <TextField label="Alternate" name="alternate" default={links.alternate} />
-      <TextField label="Alternate language" name="alternateLang" default={links.alternateLang} />
-      <TextField label="Privacy" name="privacy" default={links.privacy} />
-    </FieldGroup>
-    <FieldGroup label="Global" name="global">
-      <FieldGroup label="Header" name="header">
-        <TextField label="Logo text" name="logoText" default={global.header.logoText} />
-        <TextField label="Current language" name="languageCurrent" default={global.header.languageCurrent} />
-        <TextField label="Other language" name="languageOther" default={global.header.languageOther} />
+        <TextField label="Label" name="labelText" />
         <TextField
-          label="Other language, full label"
-          name="languageOtherLabel"
-          default={global.header.languageOtherLabel}
+          label="Autofill"
+          name="autocomplete"
+          inlineHelpText="What the browser may fill in, such as given-name, email or tel."
         />
-      </FieldGroup>
+        <BooleanField label="Half width on a computer" name="half" display="checkbox" />
+        <FieldGroup label="Error messages" name="errors">
+          <TextField label="When empty" name="required" />
+          <TextField label="When the format is wrong" name="invalid" />
+        </FieldGroup>
+        <TextField label="Help text" name="help" inlineHelpText="Shown under the field." />
+        <RepeatedFieldGroup
+          label="Choices"
+          name="options"
+          inlineHelpText="Only for One choice from a list."
+          occurrence={{ min: 0, max: 6, sorting_label_field: 'form.fields.options.labelText' }}
+        >
+          <TextField label="Value saved in HubSpot" name="value" />
+          <TextField label="Label" name="labelText" />
+        </RepeatedFieldGroup>
+        <TextField label="Link text" name="linkLabel" inlineHelpText="Only for the consent checkbox." />
+        <TextField label="Link" name="linkUrl" inlineHelpText="Only for the consent checkbox." />
+      </RepeatedFieldGroup>
+      <TextField label="Button text" name="submitLabel" required default={form.submitLabel} />
+      <TextField label="Note under the button" name="submitNote" default={form.submitNote} />
+      <TextField
+        label="Error summary"
+        name="notice"
+        inlineHelpText="Shown above the fields when one has an error."
+        default={form.notice}
+      />
+      <TextField
+        label="Sending error"
+        name="submitError"
+        inlineHelpText="Shown when HubSpot cannot be reached."
+        default={form.submitError}
+      />
+      <TextField
+        label="Thank you page"
+        name="redirectUrl"
+        inlineHelpText="Where the visitor goes after the form is sent."
+        required
+        default={form.redirectUrl}
+      />
     </FieldGroup>
+    <PageLinks defaults={links} />
+    <HeaderText defaults={global.header} />
   </ModuleFields>
 );

@@ -22,5 +22,7 @@
       "text": "Since Litora is fictional, there's no channel for these requests."
     }
   ],
-  "background": "primary"
+  "style": {
+    "background": "primary"
+  }
 }

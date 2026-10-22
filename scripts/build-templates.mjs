@@ -108,7 +108,10 @@ for (const page of PAGES) {
     const defaults = JSON.parse(fs.readFileSync(path.join(MODULES, folder, 'defaults.json'), 'utf8'));
     const args = [`path="../components/modules/${folder}"`];
     if (params.label) args.push(`label=${hubl(params.label)}`);
-    for (const [key, value] of Object.entries(shape(params, defaults))) args.push(`${key}=${hubl(value)}`);
+    // The HubL modules keep the section colour at the top level; the React fields keep it in the Style tab group
+    const moved =
+      defaults.style && 'background' in params ? { ...params, style: { background: params.background } } : params;
+    for (const [key, value] of Object.entries(shape(moved, defaults))) args.push(`${key}=${hubl(value)}`);
     const block = FIXED[module];
     if (block) {
       blocks[block] = `{% module "site_${block}" ${args.join(',\n  ')}\n%}`;

@@ -83,5 +83,7 @@
     ],
     "note": "USCIS fees are separate from the amount you invest. The law requires the petition to disclose every fee paid in connection with the investment."
   },
-  "background": "inverse"
+  "style": {
+    "background": "inverse"
+  }
 }

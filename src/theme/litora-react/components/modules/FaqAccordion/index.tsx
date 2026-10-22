@@ -8,12 +8,12 @@ import faqAccordionCss from './faq-accordion.css?inline';
 // The questions, one open at a time (details name="faq", the first one open), beside a timeline of the capital that
 // draws itself (data-timeline, js/motion.js). Same markup and classes as the Litora HubL module.
 export function Component({ fieldValues }: FaqAccordionProps) {
-  const { heading, noWrapTerm, intro, timeline, items, background } = fieldValues;
+  const { heading, noWrapTerm, intro, timeline, items, style } = fieldValues;
   const lastMilestone = timeline.items.length - 1;
   return (
     <>
       <InlineStyle sheet={faqAccordionCss} />
-      <section className={`section_faq-accordion ${backgroundClass(background)}`} id="faq">
+      <section className={`section_faq-accordion ${backgroundClass(style.background)}`} id="faq">
         <div className="padding-global padding-section-medium">
           <div className="container-large">
             <span className="faq-accordion_line" aria-hidden="true" data-line></span>

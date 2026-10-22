@@ -19,5 +19,7 @@
     "width": 864,
     "height": 1440
   },
-  "background": "primary"
+  "style": {
+    "background": "primary"
+  }
 }

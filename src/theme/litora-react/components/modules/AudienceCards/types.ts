@@ -1,3 +1,4 @@
+import type { Background } from '../../utils/background.js';
 import type { ImageValue } from '../../shared/types.js';
 
 export type AudienceCardsProps = {
@@ -10,6 +11,6 @@ export type AudienceCardsProps = {
       image: ImageValue;
       focus: string;
     }[];
-    background: 'primary' | 'secondary' | 'inverse';
+    style: { background: Background };
   };
 };

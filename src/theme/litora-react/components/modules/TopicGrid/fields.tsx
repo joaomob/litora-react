@@ -1,34 +1,24 @@
-import { ModuleFields, TextField, RepeatedFieldGroup, ImageField, ChoiceField } from '@hubspot/cms-components/fields';
-// Every visitor text is a field, ported from the Litora HubL module (topic-grid.module/fields.json, by
-// scripts/port-fields.mjs). The defaults are the English page (content/webinar-en-us.json).
+import { ModuleFields, TextField, RepeatedFieldGroup } from '@hubspot/cms-components/fields';
+import { NoWrapTerm, Photo, SectionStyle } from '../../fieldLibrary/index.js';
+// Every visitor text is a field, ported from the Litora HubL module (topic-grid.module/fields.json).
+// The defaults are the English page (content/webinar-en-us.json).
 import defaults from './defaults.json';
 
 export const fields = (
   <ModuleFields>
-    <TextField label="Heading" name="heading" default={defaults.heading} />
-    <TextField
-      label="Term kept on one line"
-      name="noWrapTerm"
-      inlineHelpText="Wherever this term appears in a heading, it never breaks across two lines."
-      default={defaults.noWrapTerm}
-    />
+    <TextField label="Heading" name="heading" required default={defaults.heading} />
+    <NoWrapTerm defaultValue={defaults.noWrapTerm} />
     <TextField label="Intro" name="intro" default={defaults.intro} />
-    <RepeatedFieldGroup label="Items" name="items" occurrence={{ min: 0, max: 20 }} default={defaults.items}>
+    <RepeatedFieldGroup
+      label="Topics"
+      name="items"
+      occurrence={{ min: 1, max: 10, sorting_label_field: 'items.heading' }}
+      default={defaults.items}
+    >
       <TextField label="Heading" name="heading" />
       <TextField label="Text" name="text" />
-      <ImageField label="Image" name="image" resizable={false} responsive showLoading={false} />
+      <Photo />
     </RepeatedFieldGroup>
-    <ChoiceField
-      label="Section colour"
-      name="background"
-      inlineHelpText="Colours come from the theme settings."
-      display="select"
-      choices={[
-        ['primary', 'Light'],
-        ['secondary', 'Light alternate'],
-        ['inverse', 'Dark'],
-      ]}
-      default={defaults.background}
-    />
+    <SectionStyle defaultBackground={defaults.style.background} />
   </ModuleFields>
 );

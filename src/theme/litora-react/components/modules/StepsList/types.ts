@@ -1,3 +1,4 @@
+import type { Background } from '../../utils/background.js';
 export type StepsListProps = {
   fieldValues: {
     heading: string;
@@ -6,6 +7,6 @@ export type StepsListProps = {
     items: {
       text: string;
     }[];
-    background: 'primary' | 'secondary' | 'inverse';
+    style: { background: Background };
   };
 };

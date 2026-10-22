@@ -132,5 +132,7 @@
       ]
     }
   ],
-  "background": "primary"
+  "style": {
+    "background": "primary"
+  }
 }

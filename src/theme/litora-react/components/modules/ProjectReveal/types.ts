@@ -1,3 +1,4 @@
+import type { Background } from '../../utils/background.js';
 import type { ImageValue } from '../../shared/types.js';
 
 export type ProjectRevealProps = {
@@ -12,6 +13,6 @@ export type ProjectRevealProps = {
     buttonTarget: string;
     image: ImageValue;
     imageTall: ImageValue;
-    background: 'primary' | 'secondary' | 'inverse';
+    style: { background: Background };
   };
 };

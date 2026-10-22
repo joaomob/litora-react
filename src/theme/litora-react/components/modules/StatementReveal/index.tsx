@@ -6,11 +6,11 @@ import statementRevealCss from './statement-reveal.css?inline';
 
 // A statement revealed word by word (data-statement, js/motion.js). Same markup and classes as the Litora HubL module.
 export function Component({ fieldValues }: StatementRevealProps) {
-  const { labelText, text, background } = fieldValues;
+  const { labelText, text, style } = fieldValues;
   return (
     <>
       <InlineStyle sheet={statementRevealCss} />
-      <section className={`section_statement-reveal ${backgroundClass(background)}`}>
+      <section className={`section_statement-reveal ${backgroundClass(style.background)}`}>
         <div className="padding-global padding-section-large">
           <div className="container-small">
             <div className="statement-reveal_component">

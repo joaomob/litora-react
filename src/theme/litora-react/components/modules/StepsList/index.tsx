@@ -8,11 +8,11 @@ import stepsListCss from './steps-list.css?inline';
 // Numbered steps on the rows of the topic grid without the thumbnail (topic-row_component is-no-media). Same markup
 // and classes as the Litora HubL module.
 export function Component({ fieldValues }: StepsListProps) {
-  const { heading, noWrapTerm, intro, items, background } = fieldValues;
+  const { heading, noWrapTerm, intro, items, style } = fieldValues;
   return (
     <>
       <InlineStyle sheet={stepsListCss} />
-      <section className={`section_steps-list ${backgroundClass(background)}`}>
+      <section className={`section_steps-list ${backgroundClass(style.background)}`}>
         <div className="padding-global padding-section-small">
           <div className="container-large">
             <div className="section-header_component" data-reveal>

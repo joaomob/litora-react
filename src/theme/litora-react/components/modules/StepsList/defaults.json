@@ -16,5 +16,7 @@
       "text": "After the webinar, the Litora team contacts you on the WhatsApp number you entered."
     }
   ],
-  "background": "primary"
+  "style": {
+    "background": "primary"
+  }
 }

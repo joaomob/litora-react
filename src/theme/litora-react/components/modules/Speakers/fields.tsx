@@ -1,35 +1,31 @@
-import { ModuleFields, TextField, RepeatedFieldGroup, ImageField, ChoiceField } from '@hubspot/cms-components/fields';
-// Every visitor text is a field, ported from the Litora HubL module (speakers.module/fields.json, by
-// scripts/port-fields.mjs). The defaults are the English page (content/webinar-en-us.json).
+import { ModuleFields, TextField, RepeatedFieldGroup } from '@hubspot/cms-components/fields';
+import { NoWrapTerm, Photo, SectionStyle } from '../../fieldLibrary/index.js';
+// Every visitor text is a field, ported from the Litora HubL module (speakers.module/fields.json).
+// The defaults are the English page (content/webinar-en-us.json).
 import defaults from './defaults.json';
 
 export const fields = (
   <ModuleFields>
-    <TextField label="Heading" name="heading" default={defaults.heading} />
+    <TextField label="Heading" name="heading" required default={defaults.heading} />
+    <NoWrapTerm defaultValue={defaults.noWrapTerm} />
     <TextField
-      label="Term kept on one line"
-      name="noWrapTerm"
-      inlineHelpText="Wherever this term appears in a heading, it never breaks across two lines."
-      default={defaults.noWrapTerm}
+      label="Note"
+      name="note"
+      inlineHelpText="Shown under the heading, such as a notice that the people are fictional."
+      default={defaults.note}
     />
-    <TextField label="Note" name="note" default={defaults.note} />
-    <RepeatedFieldGroup label="Items" name="items" occurrence={{ min: 0, max: 20 }} default={defaults.items}>
-      <TextField label="Name Text" name="nameText" />
+    <RepeatedFieldGroup
+      label="Speakers"
+      name="items"
+      inlineHelpText="Two or three per row on a computer, depending on how many there are."
+      occurrence={{ min: 1, max: 4, sorting_label_field: 'items.nameText' }}
+      default={defaults.items}
+    >
+      <TextField label="Name" name="nameText" />
       <TextField label="Role" name="role" />
-      <TextField label="Text" name="text" />
-      <ImageField label="Image" name="image" resizable={false} responsive showLoading={false} />
+      <TextField label="Short bio" name="text" />
+      <Photo />
     </RepeatedFieldGroup>
-    <ChoiceField
-      label="Section colour"
-      name="background"
-      inlineHelpText="Colours come from the theme settings."
-      display="select"
-      choices={[
-        ['primary', 'Light'],
-        ['secondary', 'Light alternate'],
-        ['inverse', 'Dark'],
-      ]}
-      default={defaults.background}
-    />
+    <SectionStyle defaultBackground={defaults.style.background} />
   </ModuleFields>
 );

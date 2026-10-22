@@ -8,11 +8,11 @@ import legalTextCss from './legal-text.css?inline';
 // The body of the privacy policy: the page heading, the date of the last update and the paragraphs. Same markup and
 // classes as the Litora HubL module.
 export function Component({ fieldValues }: LegalTextProps) {
-  const { heading, noWrapTerm, updated, paragraphs, background } = fieldValues;
+  const { heading, noWrapTerm, updated, paragraphs, style } = fieldValues;
   return (
     <>
       <InlineStyle sheet={legalTextCss} />
-      <section className={`section_legal-text ${backgroundClass(background)}`}>
+      <section className={`section_legal-text ${backgroundClass(style.background)}`}>
         <div className="padding-global padding-section-small">
           <div className="container-small">
             <div className="legal-text_content">

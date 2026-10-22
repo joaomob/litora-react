@@ -1,3 +1,4 @@
+import type { Background } from '../../utils/background.js';
 export type StatRowProps = {
   fieldValues: {
     heading: string;
@@ -18,6 +19,6 @@ export type StatRowProps = {
       }[];
       note: string;
     };
-    background: 'primary' | 'secondary' | 'inverse';
+    style: { background: Background };
   };
 };

@@ -9,11 +9,11 @@ import speakersCss from './speakers.css?inline';
 // Speaker photo cards (photo-card_* in system.css), name and role over the photo. Same markup and classes as the
 // Litora HubL module.
 export function Component({ fieldValues }: SpeakersProps) {
-  const { heading, noWrapTerm, note, items, background } = fieldValues;
+  const { heading, noWrapTerm, note, items, style } = fieldValues;
   return (
     <>
       <InlineStyle sheet={speakersCss} />
-      <section className={`section_speakers ${backgroundClass(background)}`} id="speakers">
+      <section className={`section_speakers ${backgroundClass(style.background)}`} id="speakers">
         <div className="padding-global padding-section-medium">
           <div className="container-large">
             <div className="speakers_layout">

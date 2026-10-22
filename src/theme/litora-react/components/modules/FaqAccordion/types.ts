@@ -1,3 +1,4 @@
+import type { Background } from '../../utils/background.js';
 export type FaqAccordionProps = {
   fieldValues: {
     heading: string;
@@ -18,6 +19,6 @@ export type FaqAccordionProps = {
         list?: string[];
       }[];
     }[];
-    background: 'primary' | 'secondary' | 'inverse';
+    style: { background: Background };
   };
 };

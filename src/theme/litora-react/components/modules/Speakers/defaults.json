@@ -28,5 +28,7 @@
       }
     }
   ],
-  "background": "secondary"
+  "style": {
+    "background": "secondary"
+  }
 }

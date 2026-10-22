@@ -1,3 +1,4 @@
+import type { Background } from '../../utils/background.js';
 export type LegalTextProps = {
   fieldValues: {
     heading: string;
@@ -6,6 +7,6 @@ export type LegalTextProps = {
     paragraphs: {
       text: string;
     }[];
-    background: 'primary' | 'secondary' | 'inverse';
+    style: { background: Background };
   };
 };

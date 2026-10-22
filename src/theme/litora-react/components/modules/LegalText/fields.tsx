@@ -1,37 +1,27 @@
-import { ModuleFields, TextField, RepeatedFieldGroup, ChoiceField } from '@hubspot/cms-components/fields';
-// Every visitor text is a field, ported from the Litora HubL module (legal-text.module/fields.json, by
-// scripts/port-fields.mjs). The defaults are the English page (content/privacy-en-us.json).
+import { ModuleFields, TextField, RepeatedFieldGroup } from '@hubspot/cms-components/fields';
+import { NoWrapTerm, SectionStyle } from '../../fieldLibrary/index.js';
+// Every visitor text is a field, ported from the Litora HubL module (legal-text.module/fields.json).
+// The defaults are the English page (content/privacy-en-us.json).
 import defaults from './defaults.json';
 
 export const fields = (
   <ModuleFields>
-    <TextField label="Heading" name="heading" default={defaults.heading} />
+    <TextField label="Heading" name="heading" required default={defaults.heading} />
+    <NoWrapTerm defaultValue={defaults.noWrapTerm} />
     <TextField
-      label="Term kept on one line"
-      name="noWrapTerm"
-      inlineHelpText="Wherever this term appears in a heading, it never breaks across two lines."
-      default={defaults.noWrapTerm}
+      label="Last update"
+      name="updated"
+      inlineHelpText="Such as Updated October 2, 2026. Change it with every new version."
+      default={defaults.updated}
     />
-    <TextField label="Updated" name="updated" default={defaults.updated} />
     <RepeatedFieldGroup
       label="Paragraphs"
       name="paragraphs"
-      occurrence={{ min: 0, max: 20 }}
+      occurrence={{ min: 1, max: 30 }}
       default={defaults.paragraphs}
     >
       <TextField label="Text" name="text" />
     </RepeatedFieldGroup>
-    <ChoiceField
-      label="Section colour"
-      name="background"
-      inlineHelpText="Colours come from the theme settings."
-      display="select"
-      choices={[
-        ['primary', 'Light'],
-        ['secondary', 'Light alternate'],
-        ['inverse', 'Dark'],
-      ]}
-      default={defaults.background}
-    />
+    <SectionStyle defaultBackground={defaults.style.background} />
   </ModuleFields>
 );

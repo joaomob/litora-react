@@ -1,3 +1,4 @@
+import type { Background } from '../../utils/background.js';
 import type { ImageValue } from '../../shared/types.js';
 
 export type SpeakersProps = {
@@ -11,6 +12,6 @@ export type SpeakersProps = {
       text: string;
       image: ImageValue;
     }[];
-    background: 'primary' | 'secondary' | 'inverse';
+    style: { background: Background };
   };
 };

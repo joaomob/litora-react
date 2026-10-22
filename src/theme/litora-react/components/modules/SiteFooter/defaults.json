@@ -1,6 +1,8 @@
 {
   "fictionalNotice": "Litora is a fictional brand created for a design portfolio. This page is not an offer to sell securities. The Tavessa project and the speakers are fictional too.",
-  "background": "secondary",
+  "style": {
+    "background": "secondary"
+  },
   "links": {
     "self": "/en/eb5-visa-webinar",
     "alternate": "/webinar-visto-eb5",

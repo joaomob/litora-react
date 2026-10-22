@@ -39,5 +39,7 @@
       "focus": "upper"
     }
   ],
-  "background": "primary"
+  "style": {
+    "background": "primary"
+  }
 }

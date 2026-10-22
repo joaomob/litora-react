@@ -1,7 +1,8 @@
+import type { Background } from '../../utils/background.js';
 export type SiteFooterProps = {
   fieldValues: {
     fictionalNotice: string;
-    background: 'primary' | 'secondary' | 'inverse';
+    style: { background: Background };
     links: {
       self: string;
       alternate: string;

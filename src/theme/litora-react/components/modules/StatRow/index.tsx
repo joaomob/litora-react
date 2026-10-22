@@ -8,11 +8,15 @@ import statRowCss from './stat-row.css?inline';
 // The program numbers on a ruler that draws itself (data-ruler, js/motion.js) and the cost table. Same markup and
 // classes as the Litora HubL module.
 export function Component({ fieldValues }: StatRowProps) {
-  const { heading, noWrapTerm, items, source, cost, background } = fieldValues;
+  const { heading, noWrapTerm, items, source, cost, style } = fieldValues;
   return (
     <>
       <InlineStyle sheet={statRowCss} />
-      <section className={`section_stat-row ${backgroundClass(background)}`} id="numbers" data-nav-theme="inverse">
+      <section
+        className={`section_stat-row ${backgroundClass(style.background)}`}
+        id="numbers"
+        data-nav-theme="inverse"
+      >
         <div className="padding-global padding-section-medium">
           <div className="container-large">
             <div className="section-header_component" data-reveal>

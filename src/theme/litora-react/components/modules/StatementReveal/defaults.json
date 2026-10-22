@@ -1,5 +1,7 @@
 {
   "labelText": "The webinar",
   "text": "In 75 minutes, you learn what the green card asks of you and your family, and you leave with the questions to take to your attorney.",
-  "background": "secondary"
+  "style": {
+    "background": "secondary"
+  }
 }

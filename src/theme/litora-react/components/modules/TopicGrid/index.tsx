@@ -9,11 +9,15 @@ import topicGridCss from './topic-grid.css?inline';
 // Topic rows with a number and a thumbnail that turns as the row comes in (data-line, data-topic-image, js/motion.js).
 // Same markup and classes as the Litora HubL module; the thumbnail is one file, so it goes through HubSpot's resizer.
 export function Component({ fieldValues }: TopicGridProps) {
-  const { heading, noWrapTerm, intro, items, background } = fieldValues;
+  const { heading, noWrapTerm, intro, items, style } = fieldValues;
   return (
     <>
       <InlineStyle sheet={topicGridCss} />
-      <section className={`section_topic-grid ${backgroundClass(background)}`} id="topics" data-nav-theme="inverse">
+      <section
+        className={`section_topic-grid ${backgroundClass(style.background)}`}
+        id="topics"
+        data-nav-theme="inverse"
+      >
         <div className="padding-global padding-section-medium">
           <div className="container-large">
             <div className="topic-grid_header" data-reveal>
