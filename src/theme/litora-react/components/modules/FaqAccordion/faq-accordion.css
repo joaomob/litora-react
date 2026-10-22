@@ -1,0 +1,106 @@
+/* faq-accordion: a 1 px line on top, the title on the left half and the questions on the right half
+   (LAYOUT-LOGIC.md, section 4, item 7; base: Avenlo, FAQ; interactions 7 and 10). The question is faq_item of
+   css/system.css, a native details. With 12 or 13 questions the title and the timeline stay in view beside them from
+   992 px up. */
+.faq-accordion_line {
+  display: block;
+  height: 1px;
+  margin-bottom: var(--_layout---spacing--xhuge);
+  background-color: var(--_theme---border-color--border-primary);
+  transform-origin: left center;
+}
+.faq-accordion_layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  gap: var(--_layout---spacing--medium);
+}
+.faq-accordion_header {
+  position: sticky;
+  top: calc(var(--_layout---nav--height) + var(--_layout---spacing--xlarge));
+  display: flex;
+  flex-direction: column;
+  gap: var(--_layout---spacing--small);
+}
+.faq-accordion_intro {
+  max-width: 26.25rem;
+}
+/* the honest timeline (referencias/MAPEAMENTO.md, 4b): three milestones on a vertical line, solid for what the law
+   sets, dashed for what depends on the project, and no end point */
+.faq_timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_layout---spacing--small);
+  max-width: 26.25rem;
+  margin-top: var(--_layout---spacing--xxlarge);
+}
+.faq_timeline-list {
+  list-style: none;
+}
+.faq_timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--_layout---spacing--tiny);
+  padding-bottom: var(--_layout---spacing--large);
+  padding-left: var(--_layout---spacing--large);
+}
+.faq_timeline-point {
+  position: absolute;
+  top: 0.4375rem;
+  left: 0;
+  width: var(--_layout---spacing--xxsmall);
+  height: var(--_layout---spacing--xxsmall);
+  border-radius: var(--_sizes---border-radius--round);
+  background-color: var(--_theme---text-color--text-brand);
+}
+/* the solid trace draws itself from the top with the scroll, like the line of the ruler; the dashed ones only fade in
+   (js/motion.js, interaction 15) */
+.faq_timeline-trace {
+  position: absolute;
+  top: 0.6875rem;
+  bottom: -0.6875rem;
+  left: 0.21875rem;
+  border-left: 1px solid var(--_theme---text-color--text-brand);
+  transform-origin: center top;
+}
+.faq_timeline-trace.is-dashed {
+  border-left-style: dashed;
+}
+/* the last stretch has no end point: it starts at the text and fades out */
+.faq_timeline-trace.is-open {
+  top: 0;
+  bottom: 0;
+  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
+  mask-image: linear-gradient(to bottom, #000 40%, transparent);
+}
+.faq-accordion_list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+/* Embed: the left column is up to 550 px high (English, and every language near 992 px of width) and sticks 112 px
+   from the top, so with 2rem of air below it needs a window of 694 px; in a lower window it scrolls with the page
+   (measured: at 1366 x 657 it would need 662 px; at 1024 x 768 it fits) */
+@media (max-height: 43.5rem) {
+  .faq-accordion_header {
+    position: static;
+  }
+}
+@media (max-width: 991px) {
+  .faq-accordion_layout {
+    grid-template-columns: 3fr 5fr;
+  }
+  .faq-accordion_header {
+    position: static;
+  }
+}
+@media (max-width: 767px) {
+  .faq-accordion_layout {
+    grid-template-columns: 1fr;
+    row-gap: var(--_layout---spacing--xlarge);
+  }
+  .faq-accordion_header {
+    position: static;
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "heading": "You're registered for the EB-5 visa webinar",
+  "noWrapTerm": "EB-5",
+  "details": [
+    {
+      "text": "Thursday, November 12, 2026, at 6 p.m. in New York, on Zoom. The webinar is in Portuguese."
+    }
+  ],
+  "bodyText": "",
+  "timeBlock": {
+    "date": "2026-11-12",
+    "day": "12",
+    "month": "Nov",
+    "rows": [
+      {
+        "time": "8 p.m.",
+        "datetime": "2026-11-12T20:00-03:00",
+        "place": "São Paulo"
+      },
+      {
+        "time": "6 p.m.",
+        "datetime": "2026-11-12T18:00-05:00",
+        "place": "New York"
+      }
+    ]
+  },
+  "calendar": {
+    "buttonLabel": "Add to calendar",
+    "fileName": "litora-eb5-webinar.ics",
+    "title": "EB-5 Visa Webinar · Litora",
+    "description": "The Zoom link arrives by email 24 hours before.",
+    "startUtc": "20261112T230000Z",
+    "endUtc": "20261113T001500Z"
+  },
+  "image": {
+    "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/hero/hero-wide-1920.webp",
+    "alt": "A white residential building with glass balconies on every floor, seen from the water in the late afternoon, with palm trees on the waterfront and two boats at the dock",
+    "width": 1920,
+    "height": 1200
+  },
+  "imageTall": {
+    "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/hero/hero-tall-1534.webp",
+    "alt": "A white residential building with glass balconies on every floor, seen from the water in the late afternoon, with palm trees on the waterfront and two boats at the dock",
+    "width": 1534,
+    "height": 1227
+  },
+  "showCalendar": true,
+  "links": {
+    "self": "/en/eb5-visa-webinar/thank-you",
+    "alternate": "/webinar-visto-eb5/obrigado",
+    "alternateLang": "pt-BR"
+  },
+  "global": {
+    "header": {
+      "logoText": "Litora",
+      "languageCurrent": "EN",
+      "languageOther": "PT",
+      "languageOtherLabel": "View this page in Portuguese"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+/* speakers: the title and the note in the first third, one photo card per speaker in the others (LAYOUT-LOGIC.md,
+   section 4, item 5; the same card as the audience). */
+.speakers_layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: var(--_layout---spacing--medium);
+}
+.speakers_header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_layout---spacing--small);
+}
+.speakers_list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: span 2;
+  gap: var(--_layout---spacing--medium);
+  list-style: none;
+}
+@media (max-width: 991px) {
+  .speakers_layout {
+    grid-template-columns: 1fr;
+    row-gap: var(--_layout---spacing--xhuge);
+  }
+  .speakers_list {
+    grid-column: auto;
+  }
+}
+@media (max-width: 767px) {
+  .speakers_list {
+    grid-template-columns: 1fr;
+    row-gap: var(--_layout---spacing--xlarge);
+  }
+  /* a portrait in a card wider than 27rem and 18.75rem high would lose the face behind the name */
+  .speakers_item {
+    max-width: 27rem;
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "heading": "EB-5 visa risks: what can go wrong",
+  "noWrapTerm": "EB-5",
+  "intro": "The questions people ask about EB-5, answered with no promises.",
+  "timeline": {
+    "legend": "Solid line: what the law sets. Dashed line: what depends on the project.",
+    "items": [
+      {
+        "title": "Investment",
+        "text": "The capital goes into the project.",
+        "trace": "set by law"
+      },
+      {
+        "title": "2 years",
+        "text": "The minimum time the law requires the capital to stay invested.",
+        "trace": "depends on the project"
+      },
+      {
+        "title": "Repayment",
+        "text": "Depends on how the project performs. It isn't guaranteed.",
+        "trace": ""
+      }
+    ]
+  },
+  "items": [
+    {
+      "question": "Does buying a home in the U.S. get me a green card?",
+      "answer": [
+        {
+          "text": "No. With EB-5, the money goes into a business that creates at least 10 jobs, all of them full time. USCIS says that owning a home to live in doesn't count as that business. In Tavessa, the sample project, you invest in the project company and you don't receive an apartment."
+        }
+      ]
+    },
+    {
+      "question": "Can I lose the money I invest?",
+      "answer": [
+        {
+          "text": "Yes. EB-5 requires the capital to stay invested for at least 2 years in a business, and that business can lose money. In the webinar, Rafael Moura shows where the money goes in the project and which risks stay with the investor."
+        }
+      ]
+    },
+    {
+      "question": "When and how does my capital come back?",
+      "answer": [
+        {
+          "text": "The law requires the capital to stay invested for at least 2 years. After that, repayment depends on how the project performs, and it isn't guaranteed. The SEC, the U.S. securities regulator, and USCIS say to be suspicious of anyone who promises to give your money back. The offering documents state the conditions for repayment, and Rafael Moura shows in the webinar where to read them."
+        }
+      ]
+    },
+    {
+      "question": "Does my green card depend on the project?",
+      "answer": [
+        {
+          "text": "In part, yes. The first green card is conditional, for 2 years. You file Form I-829 to remove the conditions in the 90 days before it expires. With Form I-829, you show that you kept the capital invested for the 2 years and that the project created the 10 jobs, or will create them within a reasonable time. That's why the project's progress matters for that filing. If USCIS denies Form I-829, the investor, the spouse and the children lose the green card as of the date of the decision. You can ask for a review only in the removal proceedings that USCIS opens next. Helena Prado explains what happens when construction runs late."
+        }
+      ]
+    },
+    {
+      "question": "Which family members are included?",
+      "answer": [
+        {
+          "text": "Your spouse and your unmarried children under 21 are included. They receive the same conditional green card, for 2 years, as the investor. The law doesn't include the investor's parents in the petition. If a child is close to turning 21, take the case to your attorney."
+        }
+      ]
+    },
+    {
+      "question": "What is the EB-5 processing time?",
+      "answer": [
+        {
+          "text": "No one can guarantee the timing, Litora included. Review time depends on USCIS, and the green card depends on a visa being available. In the webinar, Helena Prado lays out the steps in order (the petition, the conditional green card for 2 years and Form I-829)."
+        }
+      ]
+    },
+    {
+      "question": "Can I live in the U.S. while I wait?",
+      "answer": [
+        {
+          "text": "It depends on where you are. If you're in Brazil, you apply to the U.S. government for the immigrant visa, from outside the U.S., after the petition is approved. If you're already in the U.S., you can apply for the green card together with the petition when a visa is available. Helena Prado explains both paths in the webinar."
+        }
+      ]
+    },
+    {
+      "question": "How do I prove the source of my funds?",
+      "answer": [
+        {
+          "text": "With documents that show where the money came from and that it was obtained lawfully, such as the sale of a home or a company. The law asks the same for the money used for fees and lists, as applicable, business records and tax returns from the past 7 years. Borrowed or gifted money counts only if it was lent or given in good faith, and the law asks for records from the donor and from the lender, unless the lender is a bank. Your attorney puts your set of documents together."
+        }
+      ]
+    },
+    {
+      "question": "Will I pay U.S. tax on what I have in Brazil?",
+      "answer": [
+        {
+          "text": "The IRS, the U.S. tax agency, treats green card holders as U.S. tax residents. A resident reports worldwide income on the U.S. tax return, and that includes income from Brazil. How much you pay depends on your case. Take the question to a tax advisor who knows both countries before you invest."
+        }
+      ]
+    },
+    {
+      "question": "What if the rules change midway?",
+      "answer": [
+        {
+          "text": "Today, the Regional Center Program, which pools several investors in the same project, is authorized through September 30, 2027. The law tells the government to keep processing petitions filed on or before September 30, 2026, even if that authorization ends. That date has passed. Ask your attorney what applies to a petition filed now."
+        }
+      ]
+    },
+    {
+      "question": "What return will I get?",
+      "answer": [
+        {
+          "text": "Litora doesn't promise a return. Each project's terms are in the offering documents, and Litora shares those documents only with accredited investors."
+        }
+      ]
+    },
+    {
+      "question": "What should I ask before I invest?",
+      "answer": [
+        {
+          "text": "Be wary of anyone who guarantees a green card, a timeline or a return. Litora guarantees none of them. Before you send any money, ask for the offering documents in writing and take these questions to your attorney:"
+        },
+        {
+          "list": [
+            "Did the earlier projects repay the investors' capital?",
+            "How much of its own money did the developer put into the project?",
+            "Does the contract allow my money to be moved to another project without my choice?",
+            "Is the loan to the project backed by collateral?",
+            "Is the person who referred me paid a commission?"
+          ]
+        },
+        {
+          "text": "After the webinar, the next step is a conversation with an immigration attorney of your choice."
+        }
+      ]
+    }
+  ],
+  "background": "primary"
+}

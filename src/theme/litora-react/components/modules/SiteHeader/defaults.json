@@ -1,0 +1,17 @@
+{
+  "ctaLabel": "Register",
+  "ctaTarget": "#register",
+  "links": {
+    "self": "/en/eb5-visa-webinar",
+    "alternate": "/webinar-visto-eb5",
+    "alternateLang": "pt-BR"
+  },
+  "global": {
+    "header": {
+      "logoText": "Litora",
+      "languageCurrent": "EN",
+      "languageOther": "PT",
+      "languageOtherLabel": "View this page in Portuguese"
+    }
+  }
+}

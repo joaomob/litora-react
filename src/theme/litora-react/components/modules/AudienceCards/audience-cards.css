@@ -1,0 +1,14 @@
+/* audience-cards: three photo cards in a row, the text of each below it (LAYOUT-LOGIC.md, section 4, item 4; base:
+   Avenlo, Service Cards). The card is photo-card_component of css/system.css. */
+.audience-cards_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--_layout---spacing--medium);
+  list-style: none;
+}
+@media (max-width: 767px) {
+  .audience-cards_list {
+    grid-template-columns: 1fr;
+    row-gap: var(--_layout---spacing--xlarge);
+  }
+}

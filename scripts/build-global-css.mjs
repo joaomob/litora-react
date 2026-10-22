@@ -1,11 +1,11 @@
-// Builds css/global.hubl.css of the theme from source/css (tokens and system), the same way the Litora HubL theme builds
-// css/main.css (flowforge, projects/eb5-real-estate/hubspot/build-theme.mjs):
+// Builds css/global.hubl.css of the theme from source/css (tokens, system and the page shell), the same way the Litora
+// HubL theme builds css/main.css (flowforge, projects/eb5-real-estate/hubspot/build-theme.mjs):
 //   - comments out, because "{#" inside a CSS comment breaks HubL;
 //   - each font by get_asset_url, or inline when the file is 4 KB or less (the subset of the giant word);
 //   - the brand colours and the two text fonts read from the theme settings (fields.json).
 // The layout puts the file inside a <style> in the head ({% include %}), because a linked stylesheet was the one
 // render-blocking request left on the phone in the HubL theme (PageSpeed, 04/10/2026). Section styles live in each
-// React module, not here.
+// React module, not here; the shell (skip link, logo, language switch) is here because the layout owns the skip link.
 // The .hubl in the name is how a project knows a file has HubL in it (HubSpot, "Migrate a HubL theme to projects").
 // It also writes storybook/global.css, the same file in plain CSS (the default colours and fonts of tokens.css, fonts by
 // relative URL), because the Storybook preview runs on Vite and does not render HubL.
@@ -31,7 +31,7 @@ const FONTS = [
 const linkedFonts = new Set();
 const FONT_URL = /url\("\.\.\/assets\/fonts\/([\w.-]+\.woff2)"\)/g;
 const tokens = stripComments(read('css', 'tokens.css'));
-const system = stripComments(read('css', 'system.css'));
+const system = stripComments(read('css', 'system.css')) + '\n' + stripComments(read('css', 'shell.css'));
 const fontUrl = (linked) => (whole, file) => {
   const bytes = fs.readFileSync(path.join(SOURCE, 'fonts', file));
   if (bytes.length <= 4096) return `url("data:font/woff2;base64,${bytes.toString('base64')}")`;

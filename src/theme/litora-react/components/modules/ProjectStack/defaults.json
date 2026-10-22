@@ -1,0 +1,81 @@
+{
+  "labelText": "Inside Tavessa",
+  "items": [
+    {
+      "labelText": "Illustrative image",
+      "nameText": "Facade",
+      "caption": "A residential rental building in Fort Pierce.",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-facade-wide-2560.webp",
+        "alt": "The building entrance seen from the front, with a white canopy, glass balconies, palm trees on both sides and a silver car stopped at the door, under a blue sky",
+        "width": 2560,
+        "height": 1440,
+        "loading": "lazy"
+      },
+      "imageTall": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-facade-tall-709.webp",
+        "alt": "The building entrance seen from the front, with a white canopy, glass balconies, palm trees on both sides and a silver car stopped at the door, under a blue sky",
+        "width": 709,
+        "height": 1536,
+        "loading": "lazy"
+      }
+    },
+    {
+      "labelText": "Illustrative image",
+      "nameText": "Amenities",
+      "caption": "A pool and shared space for residents.",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-pool-wide-2560.webp",
+        "alt": "The pool on the building terrace in the late afternoon, with lounge chairs, a woman reading, fabric cabanas and a view of the marina and the lagoon",
+        "width": 2560,
+        "height": 1440,
+        "loading": "lazy"
+      },
+      "imageTall": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-pool-tall-709.webp",
+        "alt": "The pool on the building terrace in the late afternoon, with lounge chairs, a woman reading, fabric cabanas and a view of the marina and the lagoon",
+        "width": 709,
+        "height": 1536,
+        "loading": "lazy"
+      }
+    },
+    {
+      "labelText": "Illustrative image",
+      "nameText": "Lobby",
+      "caption": "The building entrance, with a front desk and a lounge.",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-lobby-wide-2560.webp",
+        "alt": "A double height lobby with light wood panels, a stone front desk with an attendant, a woman walking in with a suitcase, sofas and potted palms, and a glass wall facing the marina",
+        "width": 2560,
+        "height": 1440,
+        "loading": "lazy"
+      },
+      "imageTall": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-lobby-tall-709.webp",
+        "alt": "A double height lobby with light wood panels, a stone front desk with an attendant, a woman walking in with a suitcase, sofas and potted palms, and a glass wall facing the marina",
+        "width": 709,
+        "height": 1536,
+        "loading": "lazy"
+      }
+    },
+    {
+      "labelText": "Illustrative image",
+      "nameText": "Living room with a view",
+      "caption": "The living room of an apartment, with a balcony.",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-living-wide-2560.webp",
+        "alt": "A living room with a light sofa, a coffee table and a wooden dining table, with the glass doors open to the balcony and a view of the marina and the lagoon",
+        "width": 2560,
+        "height": 1440,
+        "loading": "lazy"
+      },
+      "imageTall": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/stack-living-tall-709.webp",
+        "alt": "A living room with a light sofa, a coffee table and a wooden dining table, with the glass doors open to the balcony and a view of the marina and the lagoon",
+        "width": 709,
+        "height": 1536,
+        "loading": "lazy"
+      }
+    }
+  ]
+}

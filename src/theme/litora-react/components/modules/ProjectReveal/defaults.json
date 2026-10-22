@@ -1,0 +1,23 @@
+{
+  "noWrapTerm": "EB-5",
+  "labelText": "The sample project",
+  "word": "TAVESSA",
+  "nameText": "Tavessa, in Fort Pierce, Florida",
+  "text": "Tavessa is a residential rental building in Fort Pierce, Florida. With EB-5, you invest in the company behind a project like this one, which creates the jobs the law requires, and you don't receive an apartment.",
+  "caption": "Aerial view of Tavessa, a fictional project created for this page.",
+  "buttonLabel": "Register for the webinar",
+  "buttonTarget": "#register",
+  "image": {
+    "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/aerial-wide-1920.webp",
+    "alt": "Aerial view of the white residential building on the lagoon, with a dock and two boats, a boat passing on the water, palm trees around it, a marina and a bridge in the background",
+    "width": 1920,
+    "height": 1080
+  },
+  "imageTall": {
+    "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/aerial-tall-864.webp",
+    "alt": "Aerial view of the white residential building on the lagoon, with a dock and two boats, a boat passing on the water, palm trees around it, a marina and a bridge in the background",
+    "width": 864,
+    "height": 1440
+  },
+  "background": "primary"
+}

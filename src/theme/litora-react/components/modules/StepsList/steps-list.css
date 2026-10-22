@@ -1,0 +1,8 @@
+/* steps-list: the numbered rows of the thank you pages, number and text (LAYOUT-LOGIC.md, section 7). The row is
+   topic-row_component is-no-media of css/system.css. */
+.steps-list_list {
+  list-style: none;
+}
+.steps-list_text {
+  max-width: 50rem;
+}

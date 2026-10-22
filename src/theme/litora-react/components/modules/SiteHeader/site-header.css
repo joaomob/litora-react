@@ -1,0 +1,47 @@
+/* site-header: the fixed bar (flowforge, projects/eb5-real-estate/LAYOUT-LOGIC.md, section 4, item 1). Three columns:
+   the language switch, the logo in the middle, the button. Over a hero it starts hidden and comes down when the hero
+   ends (js/motion.js); without JavaScript it shows from the start. The skip link, the logo and the language switch are
+   in the global CSS (source/css/shell.css). */
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--_theme---background-color--background-primary);
+  box-shadow: 0 1px 0 var(--_theme---border-color--border-primary);
+  transition: transform 0.01s linear, visibility 0.01s linear;
+}
+.site-header_layout {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: var(--_layout---nav--height);
+}
+.site-header_action {
+  justify-self: end;
+}
+/* Embed: over the final call the button of the bar is unseen, so it never stacks on the equal button of that section
+   (interaction 23, js/motion.js). Visibility keeps its place in the grid of three columns and takes it out of the
+   tab order. */
+.site-header_component.is-over-cta .site-header_action {
+  visibility: hidden;
+}
+/* Embed: the hidden state needs JavaScript to end, so it only exists when the script runs */
+.js .site-header_component.is-hidden {
+  visibility: hidden;
+  transform: translateY(-100%);
+}
+@media (max-width: 479px) {
+  /* logo on the left, button on the right; the language switch stays in the hero panel and in the footer */
+  .site-header_layout {
+    grid-template-columns: 1fr auto;
+  }
+  .site-header_languages {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header_component {
+    transition: none;
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "heading": "EB-5 visa requirements in numbers",
+  "noWrapTerm": "EB-5",
+  "items": [
+    {
+      "value": "$800,000",
+      "caption": "minimum investment in a targeted employment area (rural or high unemployment) or an infrastructure project"
+    },
+    {
+      "value": "$1,050,000",
+      "caption": "minimum investment outside those areas"
+    },
+    {
+      "value": "10 jobs",
+      "caption": "full time, per investor, created by the business that receives the investment"
+    },
+    {
+      "value": "2 years",
+      "caption": "minimum time the capital stays invested"
+    },
+    {
+      "value": "20%, 10% and 2%",
+      "caption": "of EB-5 visas are set aside for rural areas, high unemployment areas and infrastructure"
+    }
+  ],
+  "source": "Figures as of October 2026. Sources: USCIS and U.S. law (8 U.S.C. 1153). The minimum will be adjusted for inflation for petitions filed on or after January 1, 2027.",
+  "cost": {
+    "heading": "What it costs in total",
+    "rows": [
+      {
+        "labelText": "Minimum investment",
+        "values": [
+          {
+            "amount": "$800,000 or $1,050,000, depending on the area.",
+            "when": ""
+          }
+        ]
+      },
+      {
+        "labelText": "Fee for Form I-526E, the investor's petition to USCIS",
+        "values": [
+          {
+            "amount": "$3,675",
+            "when": "Petitions postmarked through November 29, 2026."
+          },
+          {
+            "amount": "$7,850",
+            "when": "Petitions postmarked on or after November 30, 2026."
+          }
+        ]
+      },
+      {
+        "labelText": "Integrity Fund, a fee the law charges with the petition",
+        "values": [
+          {
+            "amount": "$1,000",
+            "when": "Petitions postmarked through November 29, 2026."
+          },
+          {
+            "amount": "$1,100",
+            "when": "Petitions postmarked on or after November 30, 2026."
+          }
+        ]
+      },
+      {
+        "labelText": "Immigration attorney fees",
+        "values": [
+          {
+            "amount": "Agreed with your attorney.",
+            "when": ""
+          }
+        ]
+      },
+      {
+        "labelText": "Project fees",
+        "values": [
+          {
+            "amount": "Listed in the offering documents.",
+            "when": ""
+          }
+        ]
+      }
+    ],
+    "note": "USCIS fees are separate from the amount you invest. The law requires the petition to disclose every fee paid in connection with the investment."
+  },
+  "background": "inverse"
+}

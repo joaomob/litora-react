@@ -1,0 +1,9 @@
+/* statement-reveal: one sentence in title size, centred, whose words light up with the scroll (LAYOUT-LOGIC.md,
+   section 4, item 2b; base: Avenlo, Glass Panel; interaction 3). */
+.statement-reveal_component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--_layout---spacing--large);
+  text-align: center;
+}

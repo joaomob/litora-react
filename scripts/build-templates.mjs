@@ -1,7 +1,7 @@
 // Builds the page templates of the theme from content/*.json, the module parameters read from the Litora HubL
 // templates (scripts/extract-params.cjs). Each React module gets the parameters its fields define (the keys of its
-// defaults.json); the rest stays in the content file until that module exists in React. Same structure as the HubL
-// templates: a layout, the skip link text, and one full width dnd_section per module.
+// defaults.json). Same structure as the HubL templates: a layout, the skip link text, the header and the footer in
+// their blocks, and one full width dnd_section per module of the body.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -13,9 +13,35 @@ const MODULES = path.join(THEME, 'components', 'modules');
 const PAGES = [
   { content: 'webinar-pt-br', label: 'Litora webinar (Portuguese)' },
   { content: 'webinar-en-us', label: 'Litora webinar (English)' },
+  { content: 'webinar-thank-you-pt-br', label: 'Litora webinar thank you (Portuguese)' },
+  { content: 'webinar-thank-you-en-us', label: 'Litora webinar thank you (English)' },
+  { content: 'event-pt-br', label: 'Litora event (Portuguese)' },
+  { content: 'event-en-us', label: 'Litora event (English)' },
+  { content: 'event-thank-you-pt-br', label: 'Litora event thank you (Portuguese)' },
+  { content: 'event-thank-you-en-us', label: 'Litora event thank you (English)' },
+  { content: 'privacy-pt-br', label: 'Litora privacy policy (Portuguese)' },
+  { content: 'privacy-en-us', label: 'Litora privacy policy (English)' },
 ];
 // HubL module name -> React module folder
-const REACT_MODULES = { 'hero-event': 'HeroEvent' };
+const REACT_MODULES = {
+  'site-header': 'SiteHeader',
+  'hero-event': 'HeroEvent',
+  'confirmation-hero': 'ConfirmationHero',
+  'statement-reveal': 'StatementReveal',
+  'project-reveal': 'ProjectReveal',
+  'topic-grid': 'TopicGrid',
+  'audience-cards': 'AudienceCards',
+  'speakers': 'Speakers',
+  'stat-row': 'StatRow',
+  'project-stack': 'ProjectStack',
+  'faq-accordion': 'FaqAccordion',
+  'cta-band': 'CtaBand',
+  'steps-list': 'StepsList',
+  'legal-text': 'LegalText',
+  'site-footer': 'SiteFooter',
+};
+// the header and the footer sit outside the drag and drop area, in the blocks of the layout, as in the HubL templates
+const FIXED = { 'site-header': 'header', 'site-footer': 'footer' };
 
 const isObject = (v) => v && typeof v === 'object' && !Array.isArray(v);
 // keeps only the keys the module fields define, at every object level (arrays pass whole)
@@ -36,13 +62,19 @@ for (const page of PAGES) {
   const skipLink = modules.find((m) => m.params.global?.skipLink)?.params.global.skipLink;
   if (!skipLink) throw new Error(`${page.content}: no global.skipLink`);
   const sections = [];
+  const blocks = { header: '', footer: '' };
   for (const { module, params } of modules) {
     const folder = REACT_MODULES[module];
-    if (!folder) continue;
+    if (!folder) throw new Error(`${page.content}: no React module for ${module}`);
     const defaults = JSON.parse(fs.readFileSync(path.join(MODULES, folder, 'defaults.json'), 'utf8'));
     const args = [`path="../components/modules/${folder}"`];
     if (params.label) args.push(`label=${hubl(params.label)}`);
     for (const [key, value] of Object.entries(shape(params, defaults))) args.push(`${key}=${hubl(value)}`);
+    const block = FIXED[module];
+    if (block) {
+      blocks[block] = `{% module "site_${block}" ${args.join(',\n  ')}\n%}`;
+      continue;
+    }
     sections.push(`{% dnd_section full_width=true %}\n{% dnd_module\n  ${args.join(',\n  ')}\n%}\n{% end_dnd_module %}\n{% end_dnd_section %}`);
   }
   const template = `<!--
@@ -52,12 +84,18 @@ for (const page of PAGES) {
 -->
 {% extends "./layouts/base.hubl.html" %}
 {% block skip_link %}${skipLink}{% endblock skip_link %}
+{% block header %}
+${blocks.header}
+{% endblock header %}
 {% block body %}
 {% dnd_area "main" label="Page sections" %}
 ${sections.join('\n')}
 {% end_dnd_area %}
 {% endblock body %}
+{% block footer %}
+${blocks.footer}
+{% endblock footer %}
 `;
   fs.writeFileSync(path.join(THEME, 'templates', `${page.content}.hubl.html`), template);
-  console.log(`templates/${page.content}.hubl.html ${sections.length} module(s)`);
+  console.log(`templates/${page.content}.hubl.html ${sections.length} section(s)`);
 }

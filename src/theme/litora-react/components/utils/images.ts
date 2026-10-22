@@ -14,3 +14,13 @@ export function hubfsSrcset(src: string, widths: number[]): string | undefined {
   }
   return widths.map((w) => `/hs-fs/hubfs/${filePath}?width=${w} ${w}w`).join(', ');
 }
+
+// The src of a photo, as HubL's resize_image_url writes it: HubSpot's resizer on the site's domain, with the height kept
+// in proportion. Any photo outside File Manager stays as it is.
+export function resizedSrc(image: { src: string; width: number; height: number }, width: number): string {
+  const match = HUBFS_PATH.exec(image.src);
+  if (!match) return image.src;
+  const filePath = match[1];
+  const height = Math.round((width * image.height) / image.width);
+  return `/hs-fs/hubfs/${filePath}?width=${width}&height=${height}&name=${filePath.split('/').pop()}`;
+}

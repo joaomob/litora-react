@@ -1,7 +1,23 @@
-/* The logo and the language switch, shared by the top banner of the hero panel, the site header and the footer. From
-   the site header of the Litora HubL theme (flowforge, projects/eb5-real-estate/src/sections/site-header.css); the bar
-   itself comes with the header module. The logo is the symbol (LogoMark, one path in the colour of the text) and the
-   name in Jost 500. */
+/* The page shell every page shares, from the site header of the Litora HubL theme (flowforge,
+   projects/eb5-real-estate/src/sections/site-header.css): the skip link of the layout, the logo and the language switch
+   (shared by the site header, the top banner of the hero panel and the footer). Global, because the skip link belongs to
+   the layout and no module ships it. The logo is the symbol (shared/LogoMark.tsx, one path in the colour of the text)
+   and the name in Jost 500. */
+.skip-link_component {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  padding: var(--_layout---spacing--xsmall) var(--_layout---spacing--small);
+  background-color: var(--_theme---background-color--background-alternate);
+  color: var(--_theme---text-color--text-alternate);
+  /* a little past its own height: at 49.59 px the fraction left a 1 px line at the top of the page (04/10/2026) */
+  transform: translateY(calc(-100% - 0.25rem));
+}
+.skip-link_component:focus {
+  transform: none;
+}
+.site-header_component {
 .logo_component {
   display: inline-flex;
   align-items: center;

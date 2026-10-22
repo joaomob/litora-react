@@ -1,0 +1,43 @@
+{
+  "heading": "Who it is for",
+  "noWrapTerm": "EB-5",
+  "items": [
+    {
+      "heading": "Live in the U.S. with your family",
+      "text": "See the whole path before you hire an attorney.",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/audience/audience-family-square-840.webp",
+        "alt": "A couple and their two sons, seen from behind on an apartment balcony, watching the sunset over the water",
+        "width": 840,
+        "height": 840,
+        "loading": "lazy"
+      },
+      "focus": "upper"
+    },
+    {
+      "heading": "Invest in U.S. real estate",
+      "text": "Learn what EB-5 requires beyond the money.",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/audience/audience-entrepreneur-square-840.webp",
+        "alt": "A man with gray hair in a light linen jacket, leaning over floor plans on a wooden table, next to the white scale model of an apartment building with a pool, with the lagoon behind him",
+        "width": 840,
+        "height": 840,
+        "loading": "lazy"
+      },
+      "focus": "top"
+    },
+    {
+      "heading": "Stay in the U.S. for good",
+      "text": "For people who live there on a temporary visa and want the green card.",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/audience/audience-resident-square-840.webp",
+        "alt": "A woman in a light blazer with a bag on her shoulder walking on a stone sidewalk between palm trees and houses",
+        "width": 840,
+        "height": 840,
+        "loading": "lazy"
+      },
+      "focus": "upper"
+    }
+  ],
+  "background": "primary"
+}

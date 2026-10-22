@@ -1,3 +1,5 @@
+import type { ImageValue } from '../../shared/types.js';
+
 export type FieldType = 'text' | 'email' | 'tel' | 'radio' | 'checkbox' | 'consent';
 
 export type FormFieldValue = {
@@ -24,8 +26,6 @@ export type FormValue = {
   submitError: string;
   redirectUrl: string;
 };
-
-export type ImageValue = { src: string; alt: string; width: number; height: number };
 
 export type HeroEventProps = {
   fieldValues: {

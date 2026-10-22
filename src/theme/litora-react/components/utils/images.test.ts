@@ -1,4 +1,4 @@
-import { hubfsSrcset } from './images.js';
+import { hubfsSrcset, resizedSrc } from './images.js';
 
 describe('hubfsSrcset', () => {
   it('points each width to its own file for the theme photos', () => {
@@ -15,5 +15,16 @@ describe('hubfsSrcset', () => {
 
   it('gives nothing for a photo outside File Manager', () => {
     expect(hubfsSrcset('https://example.com/photo.jpg', [960])).toBeUndefined();
+  });
+});
+
+describe('resizedSrc', () => {
+  it('goes through the resizer on the site domain, as resize_image_url does', () => {
+    const image = { src: 'https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/project/aerial-wide-1920.webp', width: 1920, height: 1080 };
+    expect(resizedSrc(image, 1280)).toBe('/hs-fs/hubfs/litora/images/project/aerial-wide-1920.webp?width=1280&height=720&name=aerial-wide-1920.webp');
+  });
+
+  it('keeps a photo outside File Manager', () => {
+    expect(resizedSrc({ src: 'https://example.com/photo.jpg', width: 800, height: 600 }, 400)).toBe('https://example.com/photo.jpg');
   });
 });

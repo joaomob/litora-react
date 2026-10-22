@@ -1,0 +1,139 @@
+/* project-reveal: text and button, then the band of the aerial photo, stuck in the middle of the screen while its
+   track passes, with the giant word over it (LAYOUT-LOGIC.md, section 4, item 2c; base: Livion, photo-apartments;
+   interactions 4 and 5; the opening through a circle is ours, referencias/MAPEAMENTO.md, 4b). The band is 41.25rem high, or what the window leaves below the fixed header when the window is lower than that. */
+.project-reveal_header {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: end;
+  column-gap: var(--_layout---spacing--medium);
+  margin-bottom: var(--_layout---spacing--xhuge);
+}
+.project-reveal_intro {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 8;
+  gap: var(--_layout---spacing--small);
+}
+.project-reveal_action {
+  grid-column: span 4;
+  justify-self: end;
+}
+/* the band stays stuck for 26.25rem of scroll: in the base the track is 1080 px for a band of 660 px (measured in
+   the Livion copy in stage 10); 2.5rem more for the caption. Only with motion on: without script or with reduced
+   motion nothing opens, and the track is the height of the band and its caption (04/10/2026, found by the portfolio
+   chat: 426 px of empty band under the caption) */
+.js-motion .project-reveal_track {
+  height: calc(min(41.25rem, 100dvh - var(--_layout---nav--height) - 5rem) + 28.75rem);
+}
+.project-reveal_figure {
+  position: sticky;
+  top: max(calc(var(--_layout---nav--height) + 1.25rem), calc((100dvh - 41.25rem) / 2));
+}
+.project-reveal_frame {
+  position: relative;
+  height: min(41.25rem, calc(100dvh - var(--_layout---nav--height) - 5rem));
+  overflow: hidden;
+  border-radius: var(--_sizes---border-radius--large);
+  background-color: var(--_theme---background-color--background-dark);
+}
+.project-reveal_media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.project-reveal_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* the veil sits only behind the word, at the foot of the band: the darkest green at 64% from the foot to the top of the
+   letters, then fading to nothing. It never passes 45% of the band, so the tower stays clean in the upper 55%
+   (design judgment, second round, item 1). The size inside the calc is the size of the word, below. */
+.project-reveal_veil {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: min(45%, calc(min(var(--_typography---display--large), (100vw - 2 * var(--_layout---spacing--global-padding)) / 5.9) + 8rem));
+  background-image: linear-gradient(to top, color-mix(in srgb, var(--_theme---background-color--background-dark) 64%, transparent) calc(min(var(--_typography---display--large), (100vw - 2 * var(--_layout---spacing--global-padding)) / 5.9) * 0.8 + 2rem), transparent);
+}
+/* the word rests on the foot of the band: its baseline 2rem above the edge (measured: the line box of Unbounded at
+   line height 1 leaves 0.125 of the size under the baseline, and the capitals rise 0.75 of the size above it, 0.77
+   with the round letters) */
+.project-reveal_title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: calc(2rem - min(var(--_typography---display--large), (100vw - 2 * var(--_layout---spacing--global-padding)) / 5.9) * 0.125);
+}
+/* the word is 5.57 times its size wide in Unbounded 500 with its letter spacing (1158 px at 13rem, inside the band
+   of 1280 px): between 992 and 1387 px of window the size follows the width of the band, so the word takes 94% of it
+   at most (the one fluid size of the page). The divisor 5.9 is the width of the word plus that margin; a new word or
+   a new family changes it here, in the veil and in the title above. */
+.project-reveal_word {
+  color: var(--_theme---text-color--text-on-dark);
+  font-size: min(var(--_typography---display--large), calc((100vw - 2 * var(--_layout---spacing--global-padding)) / 5.9));
+}
+/* the ring of 1 px around the circle that opens the photo: the circle is the sun of the logo (interaction 4). It only
+   exists with motion on: without script and with reduced motion the photo shows whole. */
+.project-reveal_ring {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background-color: var(--_theme---text-color--text-brand);
+}
+.project-reveal_caption {
+  margin-top: var(--_layout---spacing--xsmall);
+}
+/* Embed: with motion on, the photo starts as a circle of 5rem in the middle of the band, the sun of the logo, and
+   opens with the scroll (interaction 4); the word waits until the photo is open */
+.js-motion .project-reveal_media {
+  clip-path: circle(5rem at 50% 50%);
+}
+/* around the circle the surface of the section shows, not the dark fill of the band */
+.js-motion .project-reveal_frame {
+  background-color: transparent;
+}
+.js-motion .project-reveal_word {
+  opacity: 0;
+}
+/* the ring is a disc 1 px larger than the circle of the photo, behind it */
+.js-motion .project-reveal_ring {
+  display: block;
+  clip-path: circle(calc(5rem + 1px) at 50% 50%);
+}
+@media (max-width: 991px) {
+  .project-reveal_header {
+    grid-template-columns: 1fr;
+    row-gap: var(--_layout---spacing--large);
+  }
+  .project-reveal_intro {
+    grid-column: auto;
+  }
+  .project-reveal_action {
+    grid-column: auto;
+    justify-self: start;
+  }
+  .js-motion .project-reveal_track {
+    height: calc(min(34.5rem, 100svh - var(--_layout---nav--height) - 5rem) + 28.75rem);
+  }
+  .project-reveal_figure {
+    top: max(calc(var(--_layout---nav--height) + 1.25rem), calc((100svh - 34.5rem) / 2));
+  }
+  .project-reveal_frame {
+    height: min(34.5rem, calc(100svh - var(--_layout---nav--height) - 5rem));
+  }
+}

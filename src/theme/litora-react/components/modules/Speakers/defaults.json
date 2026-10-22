@@ -1,0 +1,32 @@
+{
+  "heading": "Speakers",
+  "noWrapTerm": "EB-5",
+  "note": "Helena Prado and Rafael Moura are fictional characters, and so is Litora.",
+  "items": [
+    {
+      "nameText": "Helena Prado",
+      "role": "U.S. immigration attorney",
+      "text": "Covers the USCIS petition, proof of the source of funds and the conditional green card. Takes the immigration questions.",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/speakers/speaker-helena-square-840.webp",
+        "alt": "Portrait of Helena Prado, a woman with dark hair pulled back, a dark green blazer and a light blouse, smiling slightly at the camera in front of a bookshelf",
+        "width": 840,
+        "height": 840,
+        "loading": "lazy"
+      }
+    },
+    {
+      "nameText": "Rafael Moura",
+      "role": "Investor relations director at Litora",
+      "text": "Shows how an EB-5 real estate project is structured and where the risks are. Takes the project questions.",
+      "image": {
+        "src": "https://149475007.fs1.hubspotusercontent-eu1.net/hubfs/149475007/litora/images/speakers/speaker-rafael-square-840.webp",
+        "alt": "Portrait of Rafael Moura, a man with short curly hair and a graying beard, in a beige linen jacket and a white shirt, smiling at the camera, with a scale model of a building behind him",
+        "width": 840,
+        "height": 840,
+        "loading": "lazy"
+      }
+    }
+  ],
+  "background": "secondary"
+}

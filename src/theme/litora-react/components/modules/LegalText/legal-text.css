@@ -1,0 +1,13 @@
+/* legal-text: the privacy page, small and plain (LAYOUT-LOGIC.md, section 7). The fixed header shows from the start
+   on this page, so the section starts below it. */
+.section_legal-text {
+  padding-top: var(--_layout---nav--height);
+}
+.legal-text_content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_layout---spacing--small);
+}
+.legal-text_paragraph {
+  max-width: 65ch;
+}

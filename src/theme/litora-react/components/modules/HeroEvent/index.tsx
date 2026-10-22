@@ -2,18 +2,13 @@ import { Island, getPortalID } from '@hubspot/cms-components';
 // @ts-expect-error -- the ?island import is not typed
 import RegisterFormIsland from './islands/RegisterForm.js?island';
 import heroEventIcon from './assets/hero-event.svg';
-import { LogoMark } from '../../shared/LogoMark.js';
-import { hubfsSrcset } from '../../utils/images.js';
+import { LanguageSwitch, Logo } from '../../shared/Brand.js';
+import { ArtDirectedPhoto } from '../../shared/Photo.js';
 import { withNoWrap } from '../../utils/text.js';
 import { InlineStyle } from '../../utils/inline-style.js';
 import type { HeroEventProps } from './types.js';
-import brandCss from '../../shared/brand.css?inline';
 import heroEventCss from './hero-event.css?inline';
 import formCardCss from './form-card.css?inline';
-
-// React 18 knows no fetchPriority prop (it warns and writes the attribute as is); the lowercase HTML attribute goes
-// through untouched. React 19 takes fetchPriority.
-const HIGH_PRIORITY = { fetchpriority: 'high' } as Record<string, string>;
 
 // Event hero: photo, schedule and the sign up form. Same markup and classes as the Litora HubL module, so the section
 // CSS and motion.js (data-hero, data-hero-image, data-hero-runway) work unchanged. Only the form is an island.
@@ -24,50 +19,33 @@ export function Component({ fieldValues }: HeroEventProps) {
   return (
     <>
       {/* first screen of the page: its CSS goes in the head (utils/inline-style.tsx) */}
-      <InlineStyle sheet={brandCss + heroEventCss + formCardCss} />
+      <InlineStyle sheet={heroEventCss + formCardCss} />
       <section className="section_hero-event theme-inverse" data-hero>
         <div className="hero_layout">
           <div className="hero_media">
-            <picture>
-              <source
-                media="(max-width: 767px)"
-                srcSet={hubfsSrcset(imageTall.src, [750, 1534]) ?? imageTall.src}
-                sizes="100vw"
-                width={imageTall.width}
-                height={imageTall.height}
-              />
-              <img
-                className="hero_image"
-                src={image.src}
-                srcSet={hubfsSrcset(image.src, [960, 1440, 1920])}
-                sizes="100vw"
-                width={image.width}
-                height={image.height}
-                alt={image.alt}
-                {...HIGH_PRIORITY}
-                data-hero-image
-              />
-            </picture>
+            <ArtDirectedPhoto
+              image={image}
+              imageTall={imageTall}
+              tallMedia="(max-width: 767px)"
+              tallWidths={[750, 1534]}
+              wideWidths={[960, 1440, 1920]}
+              srcWidth={1920}
+              sizes="100vw"
+              className="hero_image"
+              firstScreen
+              dataAttribute="data-hero-image"
+            />
           </div>
           <div className="hero_panel">
             <div className="hero_top-banner">
-              <a className="logo_component" href={links.self}>
-                <LogoMark />
-                <span className="logo_text">{header.logoText}</span>
-              </a>
-              <ul className="language-switch_list" role="list">
-                <li>
-                  <span className="language-switch_link is-current" aria-current="true">
-                    {header.languageCurrent}
-                  </span>
-                </li>
-                <li>
-                  <a className="language-switch_link" href={links.alternate} hrefLang={links.alternateLang}>
-                    <span aria-hidden="true">{header.languageOther}</span>
-                    <span className="visually-hidden">{header.languageOtherLabel}</span>
-                  </a>
-                </li>
-              </ul>
+              <Logo href={links.self} text={header.logoText} />
+              <LanguageSwitch
+                current={header.languageCurrent}
+                other={header.languageOther}
+                otherLabel={header.languageOtherLabel}
+                alternate={links.alternate}
+                alternateLang={links.alternateLang}
+              />
             </div>
             <div className="hero_content">
               <p className="text-style-eyebrow text-color-secondary">{eyebrow}</p>
