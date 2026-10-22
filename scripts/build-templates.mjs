@@ -43,6 +43,19 @@ const REACT_MODULES = {
 // the header and the footer sit outside the drag and drop area, in the blocks of the layout, as in the HubL templates
 const FIXED = { 'site-header': 'header', 'site-footer': 'footer' };
 
+// The React pages live next to the HubL pages on the same domain, under /react/ and /en/react/, so every link between
+// the 10 pages (logo, language switch, privacy, form redirect) points to the React page of the same path
+const readContent = (page) => JSON.parse(fs.readFileSync(path.join(ROOT, 'content', `${page.content}.json`), 'utf8'));
+const PAGE_PATHS = new Set(PAGES.flatMap((page) => readContent(page).map((m) => m.params.links?.self).filter(Boolean)));
+if (PAGE_PATHS.size !== PAGES.length) throw new Error(`expected ${PAGES.length} page paths, found ${PAGE_PATHS.size}`);
+const reactPath = (p) => p.replace(/^\/(en\/)?/, (_, en) => (en ? '/en/react/' : '/react/'));
+function toReactPaths(value) {
+  if (typeof value === 'string') return PAGE_PATHS.has(value) ? reactPath(value) : value;
+  if (Array.isArray(value)) return value.map(toReactPaths);
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, toReactPaths(v)]));
+  return value;
+}
+
 const isObject = (v) => v && typeof v === 'object' && !Array.isArray(v);
 // keeps only the keys the module fields define, at every object level (arrays pass whole)
 function shape(value, defaults) {
@@ -58,7 +71,7 @@ function hubl(value) {
 }
 
 for (const page of PAGES) {
-  const modules = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', `${page.content}.json`), 'utf8'));
+  const modules = toReactPaths(readContent(page));
   const skipLink = modules.find((m) => m.params.global?.skipLink)?.params.global.skipLink;
   if (!skipLink) throw new Error(`${page.content}: no global.skipLink`);
   const sections = [];
