@@ -44,3 +44,10 @@
     height: 1px;
   }
 }
+/* "Contrast with the last section": light alternate, and light after a page that ends on a light alternate section.
+   The footer shared by every page (templates/partials) takes no setting per page, so the page tells which colour it ends
+   on: the last section of the main area, the module right inside it. */
+.page-wrapper:has(.main-wrapper .dnd-section:last-child .hs_cos_wrapper_type_module > .background-color-secondary)
+  .site-footer_component.is-contrast {
+  background-color: var(--_theme---background-color--background-primary);
+}

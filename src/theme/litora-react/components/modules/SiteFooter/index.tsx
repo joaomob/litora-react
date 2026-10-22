@@ -1,5 +1,6 @@
 import siteFooterIcon from './assets/site-footer.svg';
 import { Logo } from '../../shared/Brand.js';
+import { usePageLinks } from '../../shared/pageLinks.js';
 import { InlineStyle } from '../../utils/inline-style.js';
 import { backgroundClass } from '../../utils/background.js';
 import type { SiteFooterProps } from './types.js';
@@ -8,12 +9,15 @@ import siteFooterCss from './site-footer.css?inline';
 // The footer: the brand, the notice that the company is fictional, the privacy and language links and the legal
 // notice. Same markup and classes as the Litora HubL module.
 export function Component({ fieldValues }: SiteFooterProps) {
-  const { fictionalNotice, style, links, global } = fieldValues;
+  const { fictionalNotice, style, links: fieldLinks, global } = fieldValues;
+  const links = usePageLinks(fieldLinks);
   const { header, footer } = global;
   return (
     <>
       <InlineStyle sheet={siteFooterCss} />
-      <footer className={`site-footer_component ${backgroundClass(style.background)}`}>
+      <footer
+        className={`site-footer_component ${style.background === 'contrast' ? 'background-color-secondary is-contrast' : backgroundClass(style.background)}`}
+      >
         <div className="padding-global">
           <div className="container-large">
             <div className="site-footer_top">

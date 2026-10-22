@@ -29,6 +29,6 @@ export const fields = (
         />
       </FieldGroup>
     </HeaderText>
-    <SectionStyle defaultBackground={defaults.style.background} />
+    <SectionStyle defaultBackground={defaults.style.background} contrastChoice />
   </ModuleFields>
 );

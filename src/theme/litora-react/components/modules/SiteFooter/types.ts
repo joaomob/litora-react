@@ -1,8 +1,8 @@
-import type { Background } from '../../utils/background.js';
+import type { FooterBackground } from '../../utils/background.js';
 export type SiteFooterProps = {
   fieldValues: {
     fictionalNotice: string;
-    style: { background: Background };
+    style: { background: FooterBackground };
     links: {
       self: string;
       alternate: string;

@@ -58,11 +58,5 @@
 {% end_dnd_area %}
 {% endblock body %}
 {% block footer %}
-{% module "site_footer" path="../components/modules/SiteFooter",
-  label="Footer with legal notice and links",
-  fictionalNotice="Litora is a fictional brand created for a design portfolio. This page is not an offer to sell securities. The Tavessa project and the speakers are fictional too.",
-  style={"background":"primary"},
-  links={"self":"/en/react/eb5-visa-webinar/thank-you","alternate":"/react/webinar-visto-eb5/obrigado","alternateLang":"pt-BR","privacy":"/en/react/privacy"},
-  global={"header":{"logoText":"Litora"},"footer":{"about":"Litora structures U.S. real estate projects for Brazilian investors through EB-5.","legalNoticeTitle":"Legal notice.","legalNotice":"This page is for information only. It is not an offer to sell, or a solicitation of an offer to buy, any securities. Any offer would be made only through an offering memorandum, which Litora shares only with accredited investors. Investing in an EB-5 project carries risk, including the loss of capital. Approval, timing and the green card depend on U.S. immigration authorities, and no result is guaranteed. Consult an immigration attorney and a tax advisor before you decide. Program figures are as of October 2026, from USCIS and U.S. law (8 U.S.C. 1153), and will be adjusted for inflation for petitions filed on or after January 1, 2027.","privacyLabel":"Privacy policy","languageLinkLabel":"Português"}}
-%}
+{% global_partial path="./partials/footer-webinar-en-us.hubl.html" %}
 {% endblock footer %}

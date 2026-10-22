@@ -3,6 +3,7 @@ import { Island, getPortalID } from '@hubspot/cms-components';
 import RegisterFormIsland from './islands/RegisterForm.js?island';
 import heroEventIcon from './assets/hero-event.svg';
 import { LanguageSwitch, Logo } from '../../shared/Brand.js';
+import { usePageLinks } from '../../shared/pageLinks.js';
 import { ArtDirectedPhoto } from '../../shared/Photo.js';
 import { withNoWrap } from '../../utils/text.js';
 import { InlineStyle } from '../../utils/inline-style.js';
@@ -13,8 +14,20 @@ import formCardCss from './form-card.css?inline';
 // Event hero: photo, schedule and the sign up form. Same markup and classes as the Litora HubL module, so the section
 // CSS and motion.js (data-hero, data-hero-image, data-hero-runway) work unchanged. Only the form is an island.
 export function Component({ fieldValues }: HeroEventProps) {
-  const { eyebrow, heading, noWrapTerm, details, timeBlock, bodyText, image, imageTall, form, links, global } =
-    fieldValues;
+  const {
+    eyebrow,
+    heading,
+    noWrapTerm,
+    details,
+    timeBlock,
+    bodyText,
+    image,
+    imageTall,
+    form,
+    links: fieldLinks,
+    global,
+  } = fieldValues;
+  const links = usePageLinks(fieldLinks);
   const { header } = global;
 
   return (

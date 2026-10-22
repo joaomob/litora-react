@@ -1,5 +1,6 @@
 import confirmationHeroIcon from './assets/confirmation-hero.svg';
 import { LanguageSwitch, Logo } from '../../shared/Brand.js';
+import { usePageLinks } from '../../shared/pageLinks.js';
 import { Button } from '../../shared/Button.js';
 import { ArtDirectedPhoto } from '../../shared/Photo.js';
 import { InlineStyle } from '../../utils/inline-style.js';
@@ -21,8 +22,20 @@ export function calendarHref({ title, description, startUtc, endUtc }: CalendarE
 // The thank you hero: the event hero without the form, with the schedule and the calendar file. It shares the CSS of
 // the event hero (hero_* classes).
 export function Component({ fieldValues }: ConfirmationHeroProps) {
-  const { heading, noWrapTerm, details, bodyText, timeBlock, calendar, image, imageTall, showCalendar, links, global } =
-    fieldValues;
+  const {
+    heading,
+    noWrapTerm,
+    details,
+    bodyText,
+    timeBlock,
+    calendar,
+    image,
+    imageTall,
+    showCalendar,
+    links: fieldLinks,
+    global,
+  } = fieldValues;
+  const links = usePageLinks(fieldLinks);
   const { header } = global;
   return (
     <>

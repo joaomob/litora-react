@@ -40,8 +40,19 @@ const REACT_MODULES = {
   'legal-text': 'LegalText',
   'site-footer': 'SiteFooter',
 };
-// the header and the footer sit outside the drag and drop area, in the blocks of the layout, as in the HubL templates
-const FIXED = { 'site-header': 'header', 'site-footer': 'footer' };
+// The header sits outside the drag and drop area, in its block of the layout, as in the HubL templates. It stays on
+// each page because its button changes with the page (Register, Request a time, none on the thank you pages).
+const FIXED = { 'site-header': 'header' };
+// The footer is a global partial (templates/partials), edited once in the global content editor for all the pages that
+// share it. Its links to this page and to the translated page come from the language variants of the page
+// (components/shared/pageLinks.ts) and its colour contrasts with the last section (site-footer.css), so only its text
+// tells two footers apart: one partial per campaign and language, because the fictional brand notice names what the
+// campaign makes up (the speakers of the webinar, the host and the address of the event). A page whose footer text
+// matches one already written shares that partial (the privacy policy shares the webinar one).
+const FOOTER = 'site-footer';
+const LANGUAGES = { 'pt-br': 'Portuguese', 'en-us': 'English' };
+const footers = new Map(); // footer text -> { name, values }
+const footerContent = ({ links, ...rest }) => JSON.stringify({ ...rest, privacy: links?.privacy });
 
 // The React pages live next to the HubL pages on the same domain, under /react/ and /en/react/, so every link between
 // the 10 pages (logo, language switch, privacy, form redirect) points to the React page of the same path
@@ -102,6 +113,8 @@ for (const page of PAGES) {
   if (!skipLink) throw new Error(`${page.content}: no global.skipLink`);
   const sections = [];
   const blocks = { header: '', footer: '' };
+  const language = Object.keys(LANGUAGES).find((code) => page.content.endsWith(`-${code}`));
+  if (!language) throw new Error(`${page.content}: no language suffix`);
   for (const { module, params } of modules) {
     const folder = REACT_MODULES[module];
     if (!folder) throw new Error(`${page.content}: no React module for ${module}`);
@@ -111,7 +124,20 @@ for (const page of PAGES) {
     // The HubL modules keep the section colour at the top level; the React fields keep it in the Style tab group
     const moved =
       defaults.style && 'background' in params ? { ...params, style: { background: params.background } } : params;
-    for (const [key, value] of Object.entries(shape(moved, defaults))) args.push(`${key}=${hubl(value)}`);
+    const values = shape(moved, defaults);
+    if (module === FOOTER) {
+      const footer = { ...values, style: { background: 'contrast' } };
+      const text = footerContent(footer);
+      if (!footers.has(text)) {
+        const name = `footer-${page.content.split('-')[0]}-${language}`;
+        if ([...footers.values()].some((other) => other.name === name))
+          throw new Error(`${page.content}: second ${name}`);
+        footers.set(text, { name, language, campaign: page.content.split('-')[0], values: footer });
+      }
+      blocks.footer = `{% global_partial path="./partials/${footers.get(text).name}.hubl.html" %}`;
+      continue;
+    }
+    for (const [key, value] of Object.entries(values)) args.push(`${key}=${hubl(value)}`);
     const block = FIXED[module];
     if (block) {
       blocks[block] = `{% module "site_${block}" ${args.join(',\n  ')}\n%}`;
@@ -142,4 +168,26 @@ ${blocks.footer}
 `;
   fs.writeFileSync(path.join(THEME, 'templates', `${page.content}.hubl.html`), template);
   console.log(`templates/${page.content}.hubl.html ${sections.length} section(s)`);
+}
+
+// The footer partials: a drag and drop area, as HubSpot asks of the global partials of a theme, holding the footer module
+for (const { name, language, campaign, values } of footers.values()) {
+  const args = ['path="../../components/modules/SiteFooter"', 'label="Footer"'];
+  for (const [key, value] of Object.entries(values)) args.push(`${key}=${hubl(value)}`);
+  const partial = `<!--
+  templateType: global_partial
+  label: Litora ${campaign} footer (${LANGUAGES[language]})
+-->
+{% dnd_area "footer" label="Footer" %}
+{% dnd_section full_width=true %}
+{% dnd_module
+  ${args.join(',\n  ')}
+%}
+{% end_dnd_module %}
+{% end_dnd_section %}
+{% end_dnd_area %}
+`;
+  fs.mkdirSync(path.join(THEME, 'templates', 'partials'), { recursive: true });
+  fs.writeFileSync(path.join(THEME, 'templates', 'partials', `${name}.hubl.html`), partial);
+  console.log(`templates/partials/${name}.hubl.html`);
 }

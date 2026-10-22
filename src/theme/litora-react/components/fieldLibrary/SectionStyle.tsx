@@ -5,7 +5,10 @@ import { isBackground } from '../utils/background.js';
 // the module: the alias reads the value the pages saved before the move (HubSpot alias mapping), so no page loses its
 // colour. Same default and no "required", as the old field, because the docs ask both fields to match on these.
 // The default comes from defaults.json, typed as a plain string, so it is checked here and a wrong one stops the build.
-export function SectionStyle({ defaultBackground }: { defaultBackground: string }) {
+// The footer adds a fourth choice, the colour that contrasts with the last section, for the footer shared by every page.
+type SectionStyleProps = { defaultBackground: string; contrastChoice?: boolean };
+
+export function SectionStyle({ defaultBackground, contrastChoice = false }: SectionStyleProps) {
   if (!isBackground(defaultBackground)) throw new Error(`Section style: unknown background "${defaultBackground}"`);
   return (
     <FieldGroup label="Section style" name="style" tab="STYLE" expanded>
@@ -18,6 +21,7 @@ export function SectionStyle({ defaultBackground }: { defaultBackground: string 
           ['primary', 'Light'],
           ['secondary', 'Light alternate'],
           ['inverse', 'Dark'],
+          ...(contrastChoice ? [['contrast', 'Contrast with the last section'] as [string, string]] : []),
         ]}
         default={defaultBackground}
         propertyAliasesPaths={{ background: ['background'] }}

@@ -1,5 +1,6 @@
 import siteHeaderIcon from './assets/site-header.svg';
 import { LanguageSwitch, Logo } from '../../shared/Brand.js';
+import { usePageLinks } from '../../shared/pageLinks.js';
 import { Button } from '../../shared/Button.js';
 import { InlineStyle } from '../../utils/inline-style.js';
 import type { SiteHeaderProps } from './types.js';
@@ -8,7 +9,8 @@ import siteHeaderCss from './site-header.css?inline';
 // The fixed header that comes in once the hero leaves the screen (data-site-header, js/motion.js). Hidden in the
 // markup, as the HubL module writes it; the button shows only when the page has a call to action.
 export function Component({ fieldValues }: SiteHeaderProps) {
-  const { ctaLabel, ctaTarget, links, global } = fieldValues;
+  const { ctaLabel, ctaTarget, links: fieldLinks, global } = fieldValues;
+  const links = usePageLinks(fieldLinks);
   const { header } = global;
   return (
     <>
