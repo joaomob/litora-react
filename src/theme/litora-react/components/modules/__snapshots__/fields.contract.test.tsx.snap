@@ -1,0 +1,283 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`./AudienceCards/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "heading: text",
+  "noWrapTerm: text",
+  "items: group",
+  "items.heading: text",
+  "items.text: text",
+  "items.image: image",
+  "items.focus: text",
+  "background: choice",
+]
+`;
+
+exports[`./ConfirmationHero/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "heading: text",
+  "noWrapTerm: text",
+  "details: group",
+  "details.text: text",
+  "bodyText: text",
+  "timeBlock: group",
+  "timeBlock.date: text",
+  "timeBlock.day: text",
+  "timeBlock.month: text",
+  "timeBlock.rows: group",
+  "timeBlock.rows.time: text",
+  "timeBlock.rows.datetime: text",
+  "timeBlock.rows.place: text",
+  "calendar: group",
+  "calendar.buttonLabel: text",
+  "calendar.fileName: text",
+  "calendar.title: text",
+  "calendar.description: text",
+  "calendar.startUtc: text",
+  "calendar.endUtc: text",
+  "image: image",
+  "imageTall: image",
+  "showCalendar: boolean",
+  "links: group",
+  "links.self: text",
+  "links.alternate: text",
+  "links.alternateLang: text",
+  "global: group",
+  "global.header: group",
+  "global.header.logoText: text",
+  "global.header.languageCurrent: text",
+  "global.header.languageOther: text",
+  "global.header.languageOtherLabel: text",
+]
+`;
+
+exports[`./CtaBand/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "heading: text",
+  "noWrapTerm: text",
+  "text: text",
+  "buttonLabel: text",
+  "buttonTarget: text",
+  "image: image",
+  "imageTall: image",
+]
+`;
+
+exports[`./FaqAccordion/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "heading: text",
+  "noWrapTerm: text",
+  "intro: text",
+  "timeline: group",
+  "timeline.legend: text",
+  "timeline.items: group",
+  "timeline.items.title: text",
+  "timeline.items.text: text",
+  "timeline.items.trace: text",
+  "items: group",
+  "items.question: text",
+  "items.answer: group",
+  "items.answer.text: text",
+  "items.answer.list: text",
+  "background: choice",
+]
+`;
+
+exports[`./HeroEvent/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "eyebrow: text",
+  "heading: text",
+  "noWrapTerm: text",
+  "details: group",
+  "details.text: text",
+  "timeBlock: group",
+  "timeBlock.date: text",
+  "timeBlock.day: text",
+  "timeBlock.month: text",
+  "timeBlock.rows: group",
+  "timeBlock.rows.time: text",
+  "timeBlock.rows.datetime: text",
+  "timeBlock.rows.place: text",
+  "bodyText: text",
+  "image: image",
+  "imageTall: image",
+  "form: group",
+  "form.anchorId: text",
+  "form.heading: text",
+  "form.hubspotFormGuid: text",
+  "form.fields: group",
+  "form.fields.propertyName: text",
+  "form.fields.type: choice",
+  "form.fields.labelText: text",
+  "form.fields.autocomplete: text",
+  "form.fields.half: boolean",
+  "form.fields.errors: group",
+  "form.fields.errors.required: text",
+  "form.fields.errors.invalid: text",
+  "form.fields.help: text",
+  "form.fields.options: group",
+  "form.fields.options.value: text",
+  "form.fields.options.labelText: text",
+  "form.fields.linkLabel: text",
+  "form.fields.linkUrl: text",
+  "form.submitLabel: text",
+  "form.submitNote: text",
+  "form.notice: text",
+  "form.submitError: text",
+  "form.redirectUrl: text",
+  "links: group",
+  "links.self: text",
+  "links.alternate: text",
+  "links.alternateLang: text",
+  "links.privacy: text",
+  "global: group",
+  "global.header: group",
+  "global.header.logoText: text",
+  "global.header.languageCurrent: text",
+  "global.header.languageOther: text",
+  "global.header.languageOtherLabel: text",
+]
+`;
+
+exports[`./LegalText/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "heading: text",
+  "noWrapTerm: text",
+  "updated: text",
+  "paragraphs: group",
+  "paragraphs.text: text",
+  "background: choice",
+]
+`;
+
+exports[`./ProjectReveal/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "noWrapTerm: text",
+  "labelText: text",
+  "word: text",
+  "nameText: text",
+  "text: text",
+  "caption: text",
+  "buttonLabel: text",
+  "buttonTarget: text",
+  "image: image",
+  "imageTall: image",
+  "background: choice",
+]
+`;
+
+exports[`./ProjectStack/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "labelText: text",
+  "items: group",
+  "items.labelText: text",
+  "items.nameText: text",
+  "items.caption: text",
+  "items.image: image",
+  "items.imageTall: image",
+]
+`;
+
+exports[`./SiteFooter/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "fictionalNotice: text",
+  "background: choice",
+  "links: group",
+  "links.self: text",
+  "links.alternate: text",
+  "links.alternateLang: text",
+  "links.privacy: text",
+  "global: group",
+  "global.header: group",
+  "global.header.logoText: text",
+  "global.footer: group",
+  "global.footer.about: text",
+  "global.footer.legalNoticeTitle: text",
+  "global.footer.legalNotice: text",
+  "global.footer.privacyLabel: text",
+  "global.footer.languageLinkLabel: text",
+]
+`;
+
+exports[`./SiteHeader/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "ctaLabel: text",
+  "ctaTarget: text",
+  "links: group",
+  "links.self: text",
+  "links.alternate: text",
+  "links.alternateLang: text",
+  "global: group",
+  "global.header: group",
+  "global.header.logoText: text",
+  "global.header.languageCurrent: text",
+  "global.header.languageOther: text",
+  "global.header.languageOtherLabel: text",
+]
+`;
+
+exports[`./Speakers/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "heading: text",
+  "noWrapTerm: text",
+  "note: text",
+  "items: group",
+  "items.nameText: text",
+  "items.role: text",
+  "items.text: text",
+  "items.image: image",
+  "background: choice",
+]
+`;
+
+exports[`./StatRow/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "heading: text",
+  "noWrapTerm: text",
+  "items: group",
+  "items.value: text",
+  "items.caption: text",
+  "source: text",
+  "cost: group",
+  "cost.heading: text",
+  "cost.rows: group",
+  "cost.rows.labelText: text",
+  "cost.rows.values: group",
+  "cost.rows.values.amount: text",
+  "cost.rows.values.when: text",
+  "cost.note: text",
+  "background: choice",
+]
+`;
+
+exports[`./StatementReveal/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "labelText: text",
+  "text: text",
+  "background: choice",
+]
+`;
+
+exports[`./StepsList/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "heading: text",
+  "noWrapTerm: text",
+  "intro: text",
+  "items: group",
+  "items.text: text",
+  "background: choice",
+]
+`;
+
+exports[`./TopicGrid/fields.tsx > keeps the field paths and types 1`] = `
+[
+  "heading: text",
+  "noWrapTerm: text",
+  "intro: text",
+  "items: group",
+  "items.heading: text",
+  "items.text: text",
+  "items.image: image",
+  "background: choice",
+]
+`;

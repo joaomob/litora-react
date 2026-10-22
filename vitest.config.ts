@@ -10,6 +10,8 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./vitest.setup.ts'],
     include: ['src/**/*.test.{ts,tsx}'],
+    // Processed by Vite, so the fields library uses the deduplicated React instead of the theme folder copy
+    server: { deps: { inline: ['@hubspot/cms-components'] } },
   },
   resolve: {
     dedupe: ['react', 'react-dom'],
