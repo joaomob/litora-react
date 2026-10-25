@@ -45,10 +45,18 @@ jobs:
       cancel-in-progress: false
     steps:
       - uses: actions/checkout@v7
-      - name: Upload and deploy the project
-        uses: HubSpot/hubspot-project-actions@v1.1.2
+      # the validate and upload steps of HubSpot's action, called one by one at v1.1.2: its top-level action.yml still
+      # calls the v1.1.0 upload step, which breaks on an apostrophe in the commit message (fixed in the v1.1.2 step)
+      - name: Validate the project
+        uses: HubSpot/hubspot-project-actions/project-validate@v1.1.2
         with:
           account_id: ${{ vars.HUBSPOT_ACCOUNT_ID }}
           personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
           # the CLI version of package.json, so CI builds with the same CLI as a local upload
+          cli_version: 8.16.0
+      - name: Upload and deploy the project
+        uses: HubSpot/hubspot-project-actions/project-upload@v1.1.2
+        with:
+          account_id: ${{ vars.HUBSPOT_ACCOUNT_ID }}
+          personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
           cli_version: 8.16.0
