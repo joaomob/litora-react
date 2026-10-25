@@ -52,8 +52,10 @@ npm run upload        # verify, then hs project upload
 ## Continuous integration
 
 `.github/workflows/checks.yml` runs on every push and pull request: the guards' self-tests, `npm run verify` and
-`npm run check:generated`, which fails when the committed templates and CSS differ from what the build writes. It does
-not deploy: that needs the HubSpot key as a repository secret, which is not set up.
+`npm run check:generated`, which fails when the committed templates and CSS differ from what the build writes. A push to
+`main` that passes the checks uploads and deploys the project with
+[HubSpot's project action](https://github.com/HubSpot/hubspot-project-actions). The key is the repository secret
+`HUBSPOT_PERSONAL_ACCESS_KEY` and the account id the variable `HUBSPOT_ACCOUNT_ID`. Pull requests run only the checks.
 
 ## Build guards
 
